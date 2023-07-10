@@ -1,3 +1,4 @@
+import _ from 'lodash';
 /**
  * 랜덤값 생성
  *
@@ -5,9 +6,10 @@
  *
  * @returns
  *
- * 확인
+ * 확인 
  */
 const randomId = (lengthParam: number = 10) => {
+	
 	const length = lengthParam > 10 ? 10 : lengthParam;
 
 	return Math.random()
@@ -44,6 +46,65 @@ const formatAccountNumber = (value: string | number): string => {
 	} else {
 		return '';
 	}
+};
+/**
+ * 계좌번호 하이픈 제거
+ *
+ * @param strDate 원본 String
+ *
+ * @returns 변환된 문자열 리턴
+ *
+ * 확인
+ */
+const sbTransAcctNo = (strAcctNo: string) => {
+	return sbReplaceAll(strAcctNo, '-', '');
+};
+
+/**
+ * 전화번호 포맷 리턴한다.
+ *
+ * @param 포맷이 적용되지 않은 전화번호(10자리 이상 16자리 이하)
+ *
+ * @returns 포맷이 적용된 전화번호
+ *
+ * 확인
+ */
+const sbFormatTelNo = (pStr: string) => {
+	const str = sbTransAcctNo(pStr);
+
+	if (str === '') return '';
+
+	// 전화번호는 10자리 이상 16자리 이하
+	if (str.length < 9 || str.length > 16) return pStr;
+
+	const telNoHead02 = '02'; // 지역번호 2자리
+	const telNoHead03 =
+		'031,032,033,041,042,043,044,051,052,053,054,055,061,062,063,064,070,080,010,011,016,017,018,019'; // 지역번호 3자리
+	const telNoHead04 = '0130,0303,0502,0504,0505,0506,0507'; // 지역번호 4자리
+
+	let telNo01 = '';
+	let telNo02 = '';
+	let telNo03 = '';
+
+	// 1. 뒷자리 4자리는 고정
+	telNo03 = str.substring(str.length - 4, str.length);
+
+	// 2. 첫자리 4자리는 telNoHead 값중 하나
+	if (telNoHead02.indexOf(str.substring(0, 2)) > -1) {
+		telNo01 = str.substring(0, 2);
+	} else if (telNoHead03.indexOf(str.substring(0, 3)) > -1) {
+		telNo01 = str.substring(0, 3);
+	} else if (telNoHead04.indexOf(str.substring(0, 4)) > -1) {
+		telNo01 = str.substring(0, 4);
+	}
+
+	// 지역번호 검색안됨 -> 받은 데이터 리턴
+	if (telNo01 === '') return pStr;
+
+	// 3. 중간자리는 나머지 값으로 채운다.
+	telNo02 = str.substring(telNo01.length, str.length - 4);
+
+	return `${telNo01}-${telNo02}-${telNo03}`;
 };
 
 /**
@@ -86,9 +147,11 @@ const decimalSeparator = (value: string | number, isOneKShorten: boolean = false
  * 확인
  */
 const sbGetByteLength = (s: string) => {
+
 	let len: number = 0;
 
 	for (let i = 0; i < s.length; i++) {
+		
 		const _ch: number = s.charCodeAt(i);
 
 		if (_ch >= 0x0080 && _ch <= 0xffff) {
@@ -376,46 +439,26 @@ const sbSignDTFormat = (str: string, type: string, sep: string) => {
 	return dtRet;
 };
 
-const euckr = {
-	korean: `가각간갇갈갉갊감갑값갓갔강갖갗같갚갛개객갠갤갬갭갯갰갱갸갹갼걀걋걍걔걘걜거걱건걷걸걺검겁것겄겅겆겉겊겋게겐겔겜겝겟겠겡겨격겪견겯결겸겹겻겼경곁계곈곌곕곗고곡곤곧골곪곬곯곰곱곳공곶과곽관괄괆괌괍괏광괘괜
-	괠괩괬괭괴괵괸괼굄굅굇굉교굔굘굡굣구국군굳굴굵굶굻굼굽굿궁궂궈궉권궐궜궝궤궷귀귁귄귈귐귑귓규균귤그극근귿글긁금급긋긍긔기긱긴긷길긺김깁깃깅깆깊까깍깎깐깔깖깜깝깟깠깡깥깨깩깬깰깸깹깻깼깽꺄꺅꺌꺼꺽꺾껀껄
-	껌껍껏껐껑께껙껜껨껫껭껴껸껼꼇꼈꼍꼐꼬꼭꼰꼲꼴꼼꼽꼿꽁꽂꽃꽈꽉꽐꽜꽝꽤꽥꽹꾀꾄꾈꾐꾑꾕꾜꾸꾹꾼꿀꿇꿈꿉꿋꿍꿎꿔꿜꿨꿩꿰꿱꿴꿸뀀뀁뀄뀌뀐뀔뀜뀝뀨끄끅끈끊끌끎끓끔끕끗끙끝끼끽낀낄낌낍낏낑나낙낚난낟날낡낢남
-	납낫났낭낮낯낱낳내낵낸낼냄냅냇냈냉냐냑냔냘냠냥너넉넋넌널넒넓넘넙넛넜넝넣네넥넨넬넴넵넷넸넹녀녁년녈념녑녔녕녘녜녠노녹논놀놂놈놉놋농높놓놔놘놜놨뇌뇐뇔뇜뇝뇟뇨뇩뇬뇰뇹뇻뇽누눅눈눋눌눔눕눗눙눠눴눼뉘뉜뉠뉨
-	뉩뉴뉵뉼늄늅늉느늑는늘늙늚늠늡늣능늦늪늬늰늴니닉닌닐닒님닙닛닝닢다닥닦단닫달닭닮닯닳담답닷닸당닺닻닿대댁댄댈댐댑댓댔댕댜더덕덖던덛덜덞덟덤덥덧덩덫덮데덱덴델뎀뎁뎃뎄뎅뎌뎐뎔뎠뎡뎨뎬도독돈돋돌돎돐돔돕돗
-	동돛돝돠돤돨돼됐되된될됨됩됫됴두둑둔둘둠둡둣둥둬뒀뒈뒝뒤뒨뒬뒵뒷뒹듀듄듈듐듕드득든듣들듦듬듭듯등듸디딕딘딛딜딤딥딧딨딩딪따딱딴딸땀땁땃땄땅땋때땍땐땔땜땝땟땠땡떠떡떤떨떪떫떰떱떳떴떵떻떼떽뗀뗄뗌뗍뗏뗐뗑
-	뗘뗬또똑똔똘똥똬똴뙈뙤뙨뚜뚝뚠뚤뚫뚬뚱뛔뛰뛴뛸뜀뜁뜅뜨뜩뜬뜯뜰뜸뜹뜻띄띈띌띔띕띠띤띨띰띱띳띵라락란랄람랍랏랐랑랒랖랗래랙랜랠램랩랫랬랭랴략랸럇량러럭런럴럼럽럿렀렁렇레렉렌렐렘렙렛렝려력련렬렴렵렷렸령례
-	롄롑롓로록론롤롬롭롯롱롸롼뢍뢨뢰뢴뢸룀룁룃룅료룐룔룝룟룡루룩룬룰룸룹룻룽뤄뤘뤠뤼뤽륀륄륌륏륑류륙륜률륨륩륫륭르륵른를름릅릇릉릊릍릎리릭린릴림립릿링마막만많맏말맑맒맘맙맛망맞맡맣매맥맨맬맴맵맷맸맹맺먀먁
-	먈먕머먹먼멀멂멈멉멋멍멎멓메멕멘멜멤멥멧멨멩며멱면멸몃몄명몇몌모목몫몬몰몲몸몹못몽뫄뫈뫘뫙뫼묀묄묍묏묑묘묜묠묩묫무묵묶문묻물묽묾뭄뭅뭇뭉뭍뭏뭐뭔뭘뭡뭣뭬뮈뮌뮐뮤뮨뮬뮴뮷므믄믈믐믓미믹민믿밀밂밈밉밋밌밍
-	및밑바박밖밗반받발밝밞밟밤밥밧방밭배백밴밸뱀뱁뱃뱄뱅뱉뱌뱍뱐뱝버벅번벋벌벎범법벗벙벚베벡벤벧벨벰벱벳벴벵벼벽변별볍볏볐병볕볘볜보복볶본볼봄봅봇봉봐봔봤봬뵀뵈뵉뵌뵐뵘뵙뵤뵨부북분붇불붉붊붐붑붓붕붙붚붜붤
-	붰붸뷔뷕뷘뷜뷩뷰뷴뷸븀븃븅브븍븐블븜븝븟비빅빈빌빎빔빕빗빙빚빛빠빡빤빨빪빰빱빳빴빵빻빼빽뺀뺄뺌뺍뺏뺐뺑뺘뺙뺨뻐뻑뻔뻗뻘뻠뻣뻤뻥뻬뼁뼈뼉뼘뼙뼛뼜뼝뽀뽁뽄뽈뽐뽑뽕뾔뾰뿅뿌뿍뿐뿔뿜뿟뿡쀼쁑쁘쁜쁠쁨쁩삐삑삔삘
-	삠삡삣삥사삭삯산삳살삵삶삼삽삿샀상샅새색샌샐샘샙샛샜생샤샥샨샬샴샵샷샹섀섄섈섐섕서석섞섟선섣설섦섧섬섭섯섰성섶세섹센셀셈셉셋셌셍셔셕션셜셤셥셧셨셩셰셴셸솅소속솎손솔솖솜솝솟송솥솨솩솬솰솽쇄쇈쇌쇔쇗쇘쇠
-	쇤쇨쇰쇱쇳쇼쇽숀숄숌숍숏숑수숙순숟술숨숩숫숭숯숱숲숴쉈쉐쉑쉔쉘쉠쉥쉬쉭쉰쉴쉼쉽쉿슁슈슉슐슘슛슝스슥슨슬슭슴습슷승시식신싣실싫심십싯싱싶싸싹싻싼쌀쌈쌉쌌쌍쌓쌔쌕쌘쌜쌤쌥쌨쌩썅써썩썬썰썲썸썹썼썽쎄쎈쎌쏀쏘
-	쏙쏜쏟쏠쏢쏨쏩쏭쏴쏵쏸쐈쐐쐤쐬쐰쐴쐼쐽쑈쑤쑥쑨쑬쑴쑵쑹쒀쒔쒜쒸쒼쓩쓰쓱쓴쓸쓺쓿씀씁씌씐씔씜씨씩씬씰씸씹씻씽아악안앉않알앍앎앓암압앗았앙앝앞애액앤앨앰앱앳앴앵야약얀얄얇얌얍얏양얕얗얘얜얠얩어억언얹얻얼얽
-	얾엄업없엇었엉엊엌엎에엑엔엘엠엡엣엥여역엮연열엶엷염엽엾엿였영옅옆옇예옌옐옘옙옛옜오옥온올옭옮옰옳옴옵옷옹옻와왁완왈왐왑왓왔왕왜왝왠왬왯왱외왹왼욀욈욉욋욍요욕욘욜욤욥욧용우욱운울욹욺움웁웃웅워웍원월웜
-	웝웠웡웨웩웬웰웸웹웽위윅윈윌윔윕윗윙유육윤율윰윱윳융윷으윽은을읊음읍읏응읒읓읔읕읖읗의읜읠읨읫이익인일읽읾잃임입잇있잉잊잎자작잔잖잗잘잚잠잡잣잤장잦재잭잰잴잼잽잿쟀쟁쟈쟉쟌쟎쟐쟘쟝쟤쟨쟬저적전절젊점접
-	젓정젖제젝젠젤젬젭젯젱져젼졀졈졉졌졍졔조족존졸졺좀좁좃종좆좇좋좌좍좔좝좟좡좨좼좽죄죈죌죔죕죗죙죠죡죤죵주죽준줄줅줆줌줍줏중줘줬줴쥐쥑쥔쥘쥠쥡쥣쥬쥰쥴쥼즈즉즌즐즘즙즛증지직진짇질짊짐집짓징짖짙짚짜짝짠짢
-	짤짧짬짭짯짰짱째짹짼쨀쨈쨉쨋쨌쨍쨔쨘쨩쩌쩍쩐쩔쩜쩝쩟쩠쩡쩨쩽쪄쪘쪼쪽쫀쫄쫌쫍쫏쫑쫓쫘쫙쫠쫬쫴쬈쬐쬔쬘쬠쬡쭁쭈쭉쭌쭐쭘쭙쭝쭤쭸쭹쮜쮸쯔쯤쯧쯩찌찍찐찔찜찝찡찢찧차착찬찮찰참찹찻찼창찾채책챈챌챔챕챗챘챙챠챤
-	챦챨챰챵처척천철첨첩첫첬청체첵첸첼쳄쳅쳇쳉쳐쳔쳤쳬쳰촁초촉촌촐촘촙촛총촤촨촬촹최쵠쵤쵬쵭쵯쵱쵸춈추축춘출춤춥춧충춰췄췌췐취췬췰췸췹췻췽츄츈츌츔츙츠측츤츨츰츱츳층치칙친칟칠칡침칩칫칭카칵칸칼캄캅캇캉캐캑
-	캔캘캠캡캣캤캥캬캭컁커컥컨컫컬컴컵컷컸컹케켁켄켈켐켑켓켕켜켠켤켬켭켯켰켱켸코콕콘콜콤콥콧콩콰콱콴콸쾀쾅쾌쾡쾨쾰쿄쿠쿡쿤쿨쿰쿱쿳쿵쿼퀀퀄퀑퀘퀭퀴퀵퀸퀼큄큅큇큉큐큔큘큠크큭큰클큼큽킁키킥킨킬킴킵킷킹타탁탄
-	탈탉탐탑탓탔탕태택탠탤탬탭탯탰탱탸턍터턱턴털턺텀텁텃텄텅테텍텐텔템텝텟텡텨텬텼톄톈토톡톤톨톰톱톳통톺톼퇀퇘퇴퇸툇툉툐투툭툰툴툼툽툿퉁퉈퉜퉤튀튁튄튈튐튑튕튜튠튤튬튱트특튼튿틀틂틈틉틋틔틘틜틤틥티틱틴틸팀
-	팁팃팅파팍팎판팔팖팜팝팟팠팡팥패팩팬팰팸팹팻팼팽퍄퍅퍼퍽펀펄펌펍펏펐펑페펙펜펠펨펩펫펭펴편펼폄폅폈평폐폘폡폣포폭폰폴폼폽폿퐁퐈퐝푀푄표푠푤푭푯푸푹푼푿풀풂품풉풋풍풔풩퓌퓐퓔퓜퓟퓨퓬퓰퓸퓻퓽프픈플픔픕픗
-	피픽핀필핌핍핏핑하학한할핥함합핫항해핵핸핼햄햅햇했행햐향허헉헌헐헒험헙헛헝헤헥헨헬헴헵헷헹혀혁현혈혐협혓혔형혜혠혤혭호혹혼홀홅홈홉홋홍홑화확환활홧황홰홱홴횃횅회획횐횔횝횟횡효횬횰횹횻후훅훈훌훑훔훗훙훠
-	훤훨훰훵훼훽휀휄휑휘휙휜휠휨휩휫휭휴휵휸휼흄흇흉흐흑흔흖흗흘흙흠흡흣흥흩희흰흴흼흽힁히힉힌힐힘힙힛힝`,
-};
 
 /**
- * euc-kr 해당 한글만 존재하는지 검사
- *
- * @param str [String] 대상 문자열
- * @returns [Boolean] euc-kr범위 여부(true : 범위내 문자, false : 범위에 포함되지 않는 문자열 포함)
+ *  해당 한글만 존재하는지 검사
  */
-const sbHasOnlyEucKrKorean = (str: string) => {
-	if (typeof str !== 'string') return false;
-	return str.split('').every((v) => {
-		const c = v.charCodeAt(0);
-
-		return c < 0xac00 || c > 0xd7a3 || euckr.korean.indexOf(v) >= 0;
-	});
+const sbHasOnlyKorean = (str: string) => {
+	
+	if ( str == null ) return false ;
+   
+	for(var i=0; i < str.length; i++){
+ 
+	  var c=str.charCodeAt(i);
+ 
+	  //( 0xAC00 <= c && c <= 0xD7A3 ) 초중종성이 모인 한글자 
+	  //( 0x3131 <= c && c <= 0x318E ) 자음 모음
+ 
+	  if( !( ( 0xAC00 <= c && c <= 0xD7A3 ) || ( 0x3131 <= c && c <= 0x318E ) ) ) {      
+		 return false ; 
+	  }
+	}  
+	return true ;
 };
 
 /**
@@ -462,6 +505,218 @@ const parseJSON = (value: string) => {
 	}
 };
 
+// 계좌번호 하이픈 제거
+const removeAcctFor = (strMoney: string) => {
+	let money;
+
+	const str = sbGetStrValue(strMoney);
+
+	if (str === '') {
+		money = '0';
+	} else {
+		money = sbReplaceAll(str, '-', '');
+	}
+
+	return money;
+};
+
+
+/**
+ * 금액 콤마 제거
+ *
+ * @param strMoney 원본 String
+ *
+ * @returns 변환된 문자열 리턴
+ *
+ * 확인
+ */
+const sbTransMoney = (strMoney: string) => {
+	let money;
+
+	const str = sbGetStrValue(strMoney);
+
+	if (str === '') {
+		money = '0';
+	} else {
+		money = sbReplaceAll(str, ',', '');
+	}
+
+	return money;
+};
+
+/**
+ * Null 값 제거(String)
+ *
+ * @param strTemp
+ *
+ * @returns String
+ *
+ * 확인
+ */
+const sbGetStrValue = (strTemp: string, defaultText?: string) => {
+	if (!strTemp) {
+		if (typeof defaultText !== 'undefined') {
+			return defaultText;
+		} else {
+			return '';
+		}
+	}
+
+	return _.trim(strTemp);
+};
+
+/**
+ * 문자 Replace All
+ *
+ * @param strTemp 원본 String
+ * @param strOld 교체대상 String
+ * @param strNew 교체이후 String
+ *
+ * @returns 교체된 문자열 리턴
+ */
+const sbReplaceAll= (strTemp: string, strOld: string, strNew?: string) => {
+	
+	return sbGetStrValue(strTemp).replace(new RegExp(`${strOld}`, 'g'), strNew || '');
+};
+
+/**
+ * Null 값 제거(Float)
+ *
+ * @param floatTemp
+ *
+ * @returns Float (null 인경우 0 리턴)
+ *
+ * 확인
+ */
+const sbGetFloatValue = (floatTemp: any) => {
+	if (floatTemp === null) {
+		return 0;
+	}
+	let _floatTemp = floatTemp;
+
+	if (_.trim(floatTemp) === '') return 0;
+
+	_floatTemp = sbTransMoney(_floatTemp);
+
+	return parseFloat(_floatTemp);
+};
+
+/**
+ * null 체크함수
+ *
+ * @param value 체크할 파라미터(숫자, 문자열, object 등) 단, 0은 not null 처리
+ *
+ * @return boolean
+ *
+ * 확인
+ */
+const sbIsNull = (value: any) => {
+	if (value === '') {
+		return true;
+	}
+
+	if (_.isNil(value)) {
+		return true;
+	}
+
+	// 함수는 false - as-is 동일하게 변경
+	if (_.isFunction(value)) {
+		return false;
+	}
+
+	if (_.isObject(value)) {
+		// {}, [] ==> true
+		return _.isEmpty(value);
+	}
+
+	if (value === undefined) {
+		return true;
+	}
+
+	return false;
+};
+
+/**
+ * 금액 콤마 삽입 (3자리마다 콤마를 삽입한다.)
+ *
+ * @param strTemp 원본 String
+ * @param[option] procZero 0 처리 여부(Y/N) (Y: 공백, N: 0 으로 리턴) 디폴트 값은 Y 임
+ *
+ * @returns 변환된 문자열 리턴
+ *
+ * 확인
+ */
+const sbGetFormatAmt = (strTemp: string, procZero: string, sIptId: any, sUnit: any) => {
+	let _strTemp = strTemp;
+	let _procZero = procZero;
+
+	if (strTemp === '') return strTemp;
+	if (procZero === null) _procZero = 'Y'; // default 값
+
+	_strTemp += '';
+	_strTemp = sbTransMoney(_strTemp);
+
+	const arrTemp = _strTemp.split('.');
+	const str = arrTemp[0].replace(/[^0-9]/g, '');
+	let i;
+	let result = '';
+	let cnt = 0;
+
+	// 소숫점 앞자리 처리
+	for (i = str.length - 1; i >= 0; i--, cnt++) {
+		if (cnt > 0 && cnt % 3 === 0) result = `,${result}`;
+
+		result = str.substring(i, i + 1) + result;
+	}
+
+	// 소숫점 뒷자리 처리
+	if (arrTemp.length > 1) {
+		result += `.${arrTemp[1].replace(/[^0-9]/g, '')}`;
+	}
+
+	if (result !== '0') {
+		/* 금액 앞에 숫자 0이 먼저 시작되는것을 삭제함(단, 소수점 처리는 제외) */
+		if (result.substring(0, 1) === '0' && result.indexOf('.') === -1) {
+			result = result.replace(/[^1-9]+/, '');
+			if (_procZero === 'N' && result === '') result = '0';
+		}
+	}
+
+	if (_procZero === 'Y') {
+		if (result === '0') {
+			result = '';
+		}
+	}
+
+	// 마이너스 처리 (최초에 들어온값이 마이너스라면 부호 붙여준다.
+	if (sbGetFloatValue(_strTemp) < 0) result = `-${result}`;
+
+	if (sbIsNull(sIptId)) {
+		return result;
+	} else {
+		const nFocusLen = result.length;
+
+		if (nFocusLen > 0) {
+			if (sbIsNull(sUnit)) {
+				// $(`#${sIptId}`).val(`${result}원`);
+				// const thisObj = $(`#${sIptId}`);
+				// thisObj.focus();
+				// thisObj.selRange(nFocusLen, nFocusLen);
+			} else {
+				// $(`#${sIptId}`).val(result + sUnit);
+				// const thisObj = $(`#${sIptId}`);
+				// thisObj.focus();
+				// thisObj.selRange(nFocusLen, nFocusLen);
+			}
+		} else {
+			// $(`#${sIptId}`).val('');
+		}
+	}
+	return result;
+};
+
+
+
 const stringUtil00 = {
 	randomId,
 	formatAccountNumber,
@@ -478,10 +733,15 @@ const stringUtil00 = {
 	sbSafeStr,
 	sbMaskingEngName,
 	sbSignDTFormat,
-	sbHasOnlyEucKrKorean,
+	sbHasOnlyKorean,
 	getQueryParam,
 	uuidv4,
 	parseJSON,
+	sbGetFormatAmt,
+	sbTransMoney,
+	removeAcctFor,
+	sbReplaceAll,
+	sbFormatTelNo
 };
 
 export default stringUtil00;
