@@ -1,8 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import UtilStyle from "./Util.module.scss";
-import { InputGroup, Button, Form } from "react-bootstrap";
 import validationUtil00 from "@utils/basis/validationUtil00";
-import { useState } from "react";
+import { UtilLayout } from "@components";
 
 function ValidationUtil() {
   // 특수문자 공통함수 계산
@@ -116,85 +115,85 @@ function ValidationUtil() {
 
   // 함수리스트(카드리스트) 컴포넌트
   // inputTitArr = [{title: '', placeholder:''}, ]
-  const FunctionListComp = ({ title, description, calFunc, inputTitArr }) => {
-    const [inputValue2, setInputValue2] = useState({});
-    const [result, setResult] = useState();
-    const calFuncBase = () => {
-      setResult(calFunc(inputValue2));
-    };
+  // const FunctionListComp = ({ title, description, calFunc, inputTitArr }) => {
+  //   const [inputValue2, setInputValue2] = useState({});
+  //   const [result, setResult] = useState();
+  //   const calFuncBase = () => {
+  //     setResult(calFunc(inputValue2));
+  //   };
 
-    return (
-      <>
-        <div className={UtilStyle["fnList"]}>
-          <p className={UtilStyle["fnTitle"]}>{title}</p>
-          <span>{description}</span>
-          <br />
-          <hr></hr>
+  //   return (
+  //     <>
+  //       <div className={UtilStyle["fnList"]}>
+  //         <p className={UtilStyle["fnTitle"]}>{title}</p>
+  //         <span>{description}</span>
+  //         <br />
+  //         <hr></hr>
 
-          {inputTitArr && inputTitArr.length > 0 ? (
-            inputTitArr.map((item, idx) => {
-              return (
-                <InputGroup className="mb-3" key={`group${idx}`}>
-                  <InputGroup.Text id={`title${idx}`}>
-                    {item.title}
-                  </InputGroup.Text>
-                  <Form.Control
-                    key={`text${idx}`}
-                    placeholder={item.placeholder}
-                    aria-label=""
-                    aria-describedby={idx}
-                    onChange={(val) => {
-                      setInputValue2((prev) => {
-                        return {
-                          ...prev,
-                          [item.title]: val.target.value,
-                        };
-                      });
-                    }}
-                  />
-                </InputGroup>
-              );
-            })
-          ) : (
-            <InputGroup className="mb-3">
-              {/* <InputGroup.Text id="basic-addon1">{}</InputGroup.Text>
-              <Form.Control
-                placeholder=""
-                aria-label=""
-                aria-describedby="basic-addon1"
-                onChange={(val) => {
-                  setInputValue(val.target.value);
-                }}
-              /> */}
-            </InputGroup>
-          )}
+  //         {inputTitArr && inputTitArr.length > 0 ? (
+  //           inputTitArr.map((item, idx) => {
+  //             return (
+  //               <InputGroup className="mb-3" key={`group${idx}`}>
+  //                 <InputGroup.Text id={`title${idx}`}>
+  //                   {item.title}
+  //                 </InputGroup.Text>
+  //                 <Form.Control
+  //                   key={`text${idx}`}
+  //                   placeholder={item.placeholder}
+  //                   aria-label=""
+  //                   aria-describedby={idx}
+  //                   onChange={(val) => {
+  //                     setInputValue2((prev) => {
+  //                       return {
+  //                         ...prev,
+  //                         [item.title]: val.target.value,
+  //                       };
+  //                     });
+  //                   }}
+  //                 />
+  //               </InputGroup>
+  //             );
+  //           })
+  //         ) : (
+  //           <InputGroup className="mb-3">
+  //             {/* <InputGroup.Text id="basic-addon1">{}</InputGroup.Text>
+  //             <Form.Control
+  //               placeholder=""
+  //               aria-label=""
+  //               aria-describedby="basic-addon1"
+  //               onChange={(val) => {
+  //                 setInputValue(val.target.value);
+  //               }}
+  //             /> */}
+  //           </InputGroup>
+  //         )}
 
-          <div style={{ textAlign: "right" }}>
-            <Button variant="outline-dark" onClick={calFuncBase}>
-              확인
-            </Button>
-          </div>
+  //         <div style={{ textAlign: "right" }}>
+  //           <Button variant="outline-dark" onClick={calFuncBase}>
+  //             확인
+  //           </Button>
+  //         </div>
 
-          <br />
-          <p>
-            결과값: <span>{result}</span>
-          </p>
-        </div>
-      </>
-    );
-  };
+  //         <br />
+  //         <p>
+  //           결과값: <span>{result}</span>
+  //         </p>
+  //       </div>
+  //     </>
+  //   );
+  // };
 
   return (
     <div className={UtilStyle["context"]}>
       {contextArr.map((item, idx) => {
         return (
-          <FunctionListComp
+          <UtilLayout
             key={`funclist${idx}`}
             title={item.title}
             description={item.description}
             calFunc={item.calFunc}
             inputTitArr={item.inputTitArr}
-          ></FunctionListComp>
+          ></UtilLayout>
         );
       })}
 
