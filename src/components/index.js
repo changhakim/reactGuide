@@ -8,6 +8,7 @@ import UtilLayout from './layout/UtilLayout';
 import CalendarPicker from './calendar/CalendarPicker';
 import { FullPopup, FullPopupPortal } from './popup/fullPopup';
 import Checkbox from './checkbox/Checkbox';
+import Tab from './tab/Tab';
 export {
 	ModalPopupPortal,
 	ModalAlertPopup,
@@ -17,5 +18,6 @@ export {
 	CalendarPicker,
 	FullPopup,
 	FullPopupPortal,
-	Checkbox
+	Checkbox,
+	Tab
 };

@@ -24,6 +24,17 @@ function ComponentHome() {
           >
             checkbox
           </Button>
+          
+        </ButtonGroup>
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("SamplePageTab");
+            }}
+          >
+            Tab
+          </Button>
+          
         </ButtonGroup>
       </ButtonToolbar>
     </>
