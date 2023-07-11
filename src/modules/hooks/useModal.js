@@ -28,7 +28,7 @@ const useModal = () => {
 				const popupElement = document.getElementById(popupArgs.id);
 
 				if (!popupElement) {
-					
+					debugger
 					dispatch(modalActions.fullPopup({ [popupArgs.id]: popupArgs }));
 				} else if (popupElement && !popupArgs.isOpen) {
 					// 닫을경우 별도의 로직 필요시 이부분이 기입
