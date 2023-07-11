@@ -20,7 +20,7 @@ function Header(){
 }
 const movePage  = e =>{
     let btnNm = e.target.getAttribute("data-rr-ui-event-key");
-    debugger
+
     if(btnNm === "Main"){
         btnNm = "";
     }
