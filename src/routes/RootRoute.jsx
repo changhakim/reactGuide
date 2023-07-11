@@ -2,7 +2,9 @@ import { useRoutes } from 'react-router-dom';
 import {Main,NotFound} from "@layouts";
 import Component from "@pages/components/ComponentHome";
 import {UtilHome,StringUtil,DateUtil,CommonUtil,ValidationUtil} from "@pageutils";
-import {SamplePageHome,SamplePageCalendarPicker} from "@samplePages";
+import {SamplePageHome} from "@samplePages";
+
+import SamplePageCalendarPicker from "@pages/components/SamplePageCalendarPicker";
 
 
 const RootRoute = () =>{

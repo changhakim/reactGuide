@@ -1,4 +1,4 @@
-import SamplePageCalendarPicker from './SamplePageCalendarPicker';
+import SamplePageCalendarPicker from '../components/SamplePageCalendarPicker';
 import SamplePageHome from './SamplePageHome';
 
 export {

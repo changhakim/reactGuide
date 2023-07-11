@@ -1,5 +1,5 @@
 import { useState, useLayoutEffect } from 'react';
-import { string, any, array, bool } from 'prop-types';
+import { any, bool } from 'prop-types';
 import Calendar from 'react-calendar';
 import dayjs from 'dayjs';
 import 'react-calendar/dist/Calendar.css';
@@ -73,6 +73,7 @@ const CalendarPicker = ({
 				}}
 				minDate={new Date(getDateFormatAsString(minDate))}
 				maxDate={new Date(getDateFormatAsString(maxDate))}
+				tileDisabled={({date}) => [0, 6].includes(date.getDay())}
 				// tileDisabled={({ date }) =>
 				// 	dayjs(getDateFormatAsString(date)).get('month') !==
 				// 	dayjs(getDateFormatAsString(dateValue)).get('month')

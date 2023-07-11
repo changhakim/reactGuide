@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import CalendarPicker from "@pages/components/CalendarPicker";
+import { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
 import 'react-calendar/dist/Calendar.css';
 import { Button } from 'react-bootstrap';
 import { store, modalActions } from '@modules/redux';
+import { CalendarPicker } from '@components';
+// import CalendarPicker from '@components/CalendarPicker';
 
 
 function SamplePageCalendarPicker(){
@@ -15,6 +16,11 @@ function SamplePageCalendarPicker(){
     const [maxDate, setMaxDate] = useState('20231231');
     const [resDate, setResDate] = useState('');
     const [resDateDisp, setResDateDisp] = useState('');
+    const [isOk, setIsOk] = useState('');
+
+    useEffect(()=>{
+        setResDateDisp(resDate)
+    },[isOk]);
 
     const onClickBUtton = ()=>{
         console.log('selDate::' + selDate)
@@ -40,13 +46,16 @@ function SamplePageCalendarPicker(){
                 onConfirm: {
                     confirmClick: () => {
                         console.log('confirmClick');
+                        console.log('confirmClickresDate;;' + resDate)
                         // debugger
                         // setResDateDisp(resDate);
+                        setIsOk(true);
                     },
                 },
                 onCancel: {
                     cancelClick: () => {
                         console.log('cancelClick');
+                        setIsOk(false);
                     },
                 },
             }),
@@ -97,7 +106,7 @@ function SamplePageCalendarPicker(){
                 <input
                 type='text'
                 id="ipResult"
-                value={resDate}
+                value={resDateDisp}
                 readOnly={true}
             />
             </div>
