@@ -1,3 +1,5 @@
+import _ from 'lodash';
+import {stringUtil} from "@utils"
 /**
  * Object 가 가지고 있는 모든 하위 값value 들을 변경할 수 없게 만든다
  *
@@ -163,7 +165,94 @@ const delay = async (delayTime: number): Promise<any> =>
 			resolve(true);
 		}, delayTime);
 	});
+/**
+ * null 체크함수
+ *
+ * @param value 체크할 파라미터(숫자, 문자열, object 등) 단, 0은 not null 처리
+ *
+ * @return boolean
+ *
+ * 확인
+ */
+const sbIsNull = (value: any) => {
+	if (value === '') {
+		return true;
+	}
 
+	if (_.isNil(value)) {
+		return true;
+	}
+
+	// 함수는 false - as-is 동일하게 변경
+	if (_.isFunction(value)) {
+		return false;
+	}
+
+	if (_.isObject(value)) {
+		// {}, [] ==> true
+		return _.isEmpty(value);
+	}
+
+	if (value === undefined) {
+		return true;
+	}
+
+	return false;
+};
+
+/**
+ * 배열로 만들어주는 함수 - 배열이 들어오면 그냥 배열을 리턴, 객체가 들어오면 그 객체가 들어있는 배열로 만들어 리턴
+ *
+ * @param arr - 배열 또는 객체
+ *
+ * @returns array
+ *
+ * 확인
+ */
+const makeArray = (arr: any) => {
+	if (_.isArray(arr)) {
+		return arr;
+	} else {
+		return [arr];
+	}
+};
+/**
+ * 국문성명 마스킹 리턴한다.
+ *
+ * @param str 국문성명
+ *
+ * @returns 마스킹이 적용된 국문성명
+ *
+ * 확인
+ */
+const sbMaskingKorName = (str: string, pattern: string = '●'): string => {
+	const p: string = pattern;
+
+	if (str === '') return '';
+	if (typeof str !== 'string') {
+		
+		return str;
+	}
+
+	// 공백 제거
+	// str = str.replaceAll(' ', '');
+
+	// 국문성명 최대 20Byte
+	if (stringUtil.sbGetByteLength(str) <= 20) {
+		if (str.length === 2) {
+			return `${str.substring(0, 1)}${p}`;
+		} else if (str.length >= 3) {
+			let maskingStr = '';
+
+			for (let i = 0; i < str.length - 2; i++) {
+				maskingStr += p;
+			}
+			return str.substring(0, 1) + maskingStr + str.substring(str.length - 1, str.length);
+		}
+	}
+
+	return str;
+};
 const commonUtil00 = {
 	deepFreeze,
 	escape,
@@ -173,6 +262,9 @@ const commonUtil00 = {
 	sbMaskingAccountNo,
 	getCurView,
 	delay,
+	sbIsNull,
+	makeArray,
+	sbMaskingKorName
 };
 
 export default commonUtil00;
