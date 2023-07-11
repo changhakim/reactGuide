@@ -1,0 +1,112 @@
+@import '@styles/scss/_variables';
+@import '@styles/scss/_mixins';
+
+.full-popup {
+	--bottomSpace: 16px;
+	--defaultSpace: 40px;
+
+	@supports (padding-bottom: constant(safe-area-inset-bottom)) {
+		--bottomSpace: calc(16px + constant(safe-area-inset-bottom));
+		--defaultSpace: calc(40px + constant(safe-area-inset-bottom));
+	}
+
+	@supports (padding-bottom: env(safe-area-inset-bottom)) {
+		--bottomSpace: calc(16px + env(safe-area-inset-bottom));
+		--defaultSpace: calc(40px + env(safe-area-inset-bottom));
+	}
+
+	position: fixed;
+	z-index: 800;
+	top: 100%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-between;
+	background: $white;
+	overflow-y: scroll;
+	-webkit-overscroll-begavior: none;
+	overscroll-behavior: none;
+	transition: transform 0.2s ease-in-out;
+
+	&.full-content {
+		.popup-content {
+			padding: {
+				top: var(--spacing);
+				right: 0;
+				left: 0;
+			}
+		}
+
+		:global(.bottom-button) {
+			padding: 40px 20px 0;
+		}
+	}
+
+	.popup-content {
+		@include text14;
+
+		display: flex;
+		flex: 1 0 auto;
+		flex-direction: column;
+		margin-bottom: auto;
+		color: $greyscale600;
+		font-weight: 300;
+		padding: {
+			top: var(--spacing);
+			right: 20px;
+			bottom: var(--defaultSpace);
+			left: 20px;
+		}
+
+		.popup-content-title {
+			@include text14 {
+				color: $greyscale900;
+				font-weight: 500;
+			}
+		}
+
+		.popup-content-desc {
+			margin-top: 8px;
+
+			@include text14 {
+				color: $greyscale600;
+				font-weight: 300;
+			}
+
+			& + .popup-content-title {
+				margin-top: 32px;
+			}
+
+			& + .popup-content-desc {
+				margin-top: 24px;
+			}
+		}
+
+		& :global(.bottom-button-sticky) {
+			bottom: 0;
+
+			// margin-bottom: 0;
+		}
+	}
+
+	&.active {
+		transform: translateY(-100%);
+	}
+
+	:global(.bottom-button) {
+		padding: 40px 0 0;
+		justify-self: flex-end;
+
+		&:global(.bottom-button-sticky) {
+			display: flex;
+			flex: 1 0 auto;
+			flex-direction: column;
+			justify-content: flex-end;
+			padding-top: 0;
+			margin-top: 40px;
+		}
+	}
+}
