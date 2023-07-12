@@ -9,7 +9,7 @@ function Popup(){
     }
     return (
     <>
-        <h1>팝업 열림</h1>
+        <h1>팝업 콘텐츠</h1>
         <button onClick={closePopup}>팝업 닫기</button>
     </>
     )

@@ -31,7 +31,6 @@ export const FullPopup = ({ popupId }) => {
 		linkedPopupId,
 		callbackData,
 	} = useModal().modalState.fullPopup[popupId];
-
 	const [sheetClass, setSheetClass] = useState('');
 	const { modalA11Y } = useA11Y(isOpen);
 
@@ -92,6 +91,7 @@ export const FullPopup = ({ popupId }) => {
 			>
 				<PopupHeader
 					from="FullPopup"
+					title={title}
 					titleAlign={titleAlign}
 					clickRightBtn={onCloseEvent}
 					leftArea={leftArea}
@@ -101,9 +101,9 @@ export const FullPopup = ({ popupId }) => {
 					clickLeftBtn={clickLeftBtn}
 					clickRightBtn2={clickRightBtn2}
 					clickRightBtn3={clickRightBtn3}
-					linkedPopupId={linkedPopupId}
+					linkedPopupId={linkedPopupId}					
 				>
-					{title}
+					{title}				
 				</PopupHeader>
 				<div className={FullPopupStyle['popup-content']} onScroll={handleScroll}>
 					{memoizedContent}
