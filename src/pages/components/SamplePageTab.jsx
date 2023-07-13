@@ -66,36 +66,6 @@ const SamplePageTab = () => {
     )
     
   };
-  
-
-  // function TabPanels ({children, activeTab, id}){ 
-
-  //   const act = activeTab;
-  //   const temp  = Children.map(children, (el, idx)=>{ 
-  //         return cloneElement(el, {
-  //             'mom':'miss',
-  //             'active' : idx ===act,
-  //             id,
-  //             idx
-  //         });
-  //   });
-
-  //   return <div className="test">{temp}</div>
-  // }
-
-  // function TabPanel ({ children, activeTab = 0, id, active }){  
-  //   return (
-  //     <div
-  //       role="tabpanel"
-  //       id ={id}
-  //       hidden={!active}
-     
-  //     >
-  //       {active && children}
-  //     </div>
-  //   );
-
-  // }
 
   export default SamplePageTab;
     

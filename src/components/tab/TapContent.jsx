@@ -1,7 +1,5 @@
 import React, { cloneElement, Children } from 'react';
 
-
-
 const TapContent = ({ children, activeTab = 0, id, active })=>{ 
 
     return (
@@ -9,7 +7,6 @@ const TapContent = ({ children, activeTab = 0, id, active })=>{
           role="tabpanel"
           id ={id}
           hidden={!active}
-       
         >
           {active && children}
         </div>
