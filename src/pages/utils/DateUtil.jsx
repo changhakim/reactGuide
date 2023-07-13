@@ -1,8 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import UtilStyle from "./Util.module.scss";
-import { InputGroup, Button, Form } from "react-bootstrap";
-import { useState } from 'react';
 import {dateUtil} from '@utils';
+import { UtilLayout } from "@components";
 
 
 function DateUtil(){
@@ -93,104 +92,104 @@ function DateUtil(){
     
 
 
-    const FunctionListComp = ({ title, description, calFunc, inputTitArr }) => {
-        //const [inputValue, setInputValue] = useState();
-        const [inputValue2, setInputValue2] = useState({});
-        const [result, setResult] = useState();
-        const calFuncBase = () => {
-            setResult(calFunc(inputValue2));
-        };
-        return (
-            <>
-                <div className={UtilStyle["fnList"]}>
-                    <p className={UtilStyle["fnTitle"]}>{title}</p>
-                    <span>{description}</span>
-                    <br />
-                    <hr></hr>
+    // const FunctionListComp = ({ title, description, calFunc, inputTitArr }) => {
+    //     //const [inputValue, setInputValue] = useState();
+    //     const [inputValue2, setInputValue2] = useState({});
+    //     const [result, setResult] = useState();
+    //     const calFuncBase = () => {
+    //         setResult(calFunc(inputValue2));
+    //     };
+    //     return (
+    //         <>
+    //             <div className={UtilStyle["fnList"]}>
+    //                 <p className={UtilStyle["fnTitle"]}>{title}</p>
+    //                 <span>{description}</span>
+    //                 <br />
+    //                 <hr></hr>
 
-                    {inputTitArr && inputTitArr.length > 0 ? (
-                        inputTitArr.map((item, idx) => {
-                            return (
-                                <InputGroup className="mb-3" key={`tmp${idx}`}>
-                                    <InputGroup.Text id={idx}>{item.title}</InputGroup.Text>
-                                    <Form.Control
-                                    key={idx}
-                                    placeholder={item.placeholder}
-                                    aria-label=""
-                                    aria-describedby={idx}
-                                    onChange={(val) => {
-                                        setInputValue2((prev) => {
-                                            return {
-                                                ...prev,
-                                                [item.title]: val.target.value,
-                                            };
-                                        });
-                                    }}
-                                    />
-                                </InputGroup>
-                            );
-                        })
-                    ) : (
-                        <InputGroup className="mb-3">
-                        {/* <InputGroup.Text id="basic-addon1">{}</InputGroup.Text>
-                        <Form.Control
-                            placeholder=""
-                            aria-label=""
-                            aria-describedby="basic-addon1"
-                            onChange={(val) => {
-                            setInputValue(val.target.value);
-                            }}
-                        /> */}
-                        </InputGroup>
-                    )}
+    //                 {inputTitArr && inputTitArr.length > 0 ? (
+    //                     inputTitArr.map((item, idx) => {
+    //                         return (
+    //                             <InputGroup className="mb-3" key={`tmp${idx}`}>
+    //                                 <InputGroup.Text id={idx}>{item.title}</InputGroup.Text>
+    //                                 <Form.Control
+    //                                 key={idx}
+    //                                 placeholder={item.placeholder}
+    //                                 aria-label=""
+    //                                 aria-describedby={idx}
+    //                                 onChange={(val) => {
+    //                                     setInputValue2((prev) => {
+    //                                         return {
+    //                                             ...prev,
+    //                                             [item.title]: val.target.value,
+    //                                         };
+    //                                     });
+    //                                 }}
+    //                                 />
+    //                             </InputGroup>
+    //                         );
+    //                     })
+    //                 ) : (
+    //                     <InputGroup className="mb-3">
+    //                     {/* <InputGroup.Text id="basic-addon1">{}</InputGroup.Text>
+    //                     <Form.Control
+    //                         placeholder=""
+    //                         aria-label=""
+    //                         aria-describedby="basic-addon1"
+    //                         onChange={(val) => {
+    //                         setInputValue(val.target.value);
+    //                         }}
+    //                     /> */}
+    //                     </InputGroup>
+    //                 )}
 
-                    <div style={{ textAlign: "right" }}>
-                        <Button variant="outline-dark" onClick={calFuncBase}>
-                            확인
-                        </Button>
-                    </div>
+    //                 <div style={{ textAlign: "right" }}>
+    //                     <Button variant="outline-dark" onClick={calFuncBase}>
+    //                         확인
+    //                     </Button>
+    //                 </div>
         
-                    <br />
-                    <p>
-                        결과값: <span>{result}</span>
-                    </p>
-                </div>
-            </>
-        );
-    };
+    //                 <br />
+    //                 <p>
+    //                     결과값: <span>{result}</span>
+    //                 </p>
+    //             </div>
+    //         </>
+    //     );
+    // };
     return (
         <div className={UtilStyle["context"]}>
-            <FunctionListComp
+            <UtilLayout
                 title={"numberToString"}
                 description={"string 으로 변환하기"}
                 calFunc={numberToString}
                 inputTitArr={[{ title: "input" }]}
-            ></FunctionListComp>
-            <FunctionListComp
+            ></UtilLayout>
+            <UtilLayout
                 title={"weekDay"}
                 description={"해당 날짜의 요일 구하기"}
                 calFunc={sbWeekDay}
                 inputTitArr={[{ title: "input" }]}
-            ></FunctionListComp>
-            <FunctionListComp
+            ></UtilLayout>
+            <UtilLayout
                 title={"isLeapYear"}
                 description={"윤년체크하기"}
                 calFunc={sbIsLeapYear}
                 inputTitArr={[{ title: "input" }]}
-            ></FunctionListComp>
-            <FunctionListComp
+            ></UtilLayout>
+            <UtilLayout
                 title={"sbGetMonthLastDay"}
                 description={"말일 구하기"}
                 calFunc={sbGetMonthLastDay}
                 inputTitArr={[{ title: "input" }]}
-            ></FunctionListComp>
-            <FunctionListComp
+            ></UtilLayout>
+            <UtilLayout
                 title={"sbGetFormatTime"}
                 description={"시간형태 반환하기"}
                 calFunc={sbGetFormatTime}
                 inputTitArr={[{ title: "input" }]}
-            ></FunctionListComp>
-            <FunctionListComp
+            ></UtilLayout>
+            <UtilLayout
                 title={"getDiffDate"}
                 description={"시작일, 종료일 간의 일수 반환하기"}
                 calFunc={getDiffDate}
@@ -198,8 +197,8 @@ function DateUtil(){
                     { title: "startDt", placeholder: "시작날짜" },
                     { title: "endDt", placeholder: "종료날짜" },
                 ]}
-            ></FunctionListComp>
-            <FunctionListComp
+            ></UtilLayout>
+            <UtilLayout
                 title={"getDiffeMonth"}
                 description={"시작일, 종료일 간의 개월수 반환하기"}
                 calFunc={getDiffeMonth}
@@ -207,19 +206,19 @@ function DateUtil(){
                     { title: "startDt", placeholder: "시작날짜" },
                     { title: "endDt", placeholder: "종료날짜" },
                 ]}
-            ></FunctionListComp>
-            <FunctionListComp
+            ></UtilLayout>
+            <UtilLayout
                 title={"getToday"}
                 description={"오늘 날짜 구하기"}
                 calFunc={getToday}
-            ></FunctionListComp>
-            <FunctionListComp
+            ></UtilLayout>
+            <UtilLayout
                 title={"checkDate"}
                 description={"날짜 포맷 및 오늘날짜 반환"}
                 calFunc={checkDate}
                 inputTitArr={[{ title: "input" }]}
-            ></FunctionListComp>
-            {/* <FunctionListComp
+            ></UtilLayout>
+            {/* <UtilLayout
                 title={"sbGetBirthByVal"}
                 description={"생년월일 반환하기"}
                 calFunc={sbGetBirthByVal}
@@ -227,7 +226,7 @@ function DateUtil(){
                     { title: "num1", placeholder: "실명번호 앞자리" },
                     { title: "num2", placeholder: "실명번호 뒷자리(1자리 or 7자리)" },
                 ]}
-            ></FunctionListComp> */}
+            ></UtilLayout> */}
             
         </div>
     )

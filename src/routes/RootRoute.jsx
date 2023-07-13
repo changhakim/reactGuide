@@ -13,6 +13,7 @@ import { SamplePageHome } from "@samplePages";
 import SamplePageCalendarPicker from "@pages/components/SamplePageCalendarPicker";
 import SamplePageCheckbox from "@pages/components/SamplePageCheckbox";
 import SamplePageTab from "@pages/components/SamplePageTab"; 
+import SamplePageToggle from "@pages/components/SamplePageToggle"; 
 
 const RootRoute = () => {
   const rootRoute = [
@@ -59,6 +60,10 @@ const RootRoute = () => {
     {
       path: "/SamplePageTab/*",
       element: <SamplePageTab />,
+    },
+    {
+      path: "/SamplePageToggle/*",
+      element: <SamplePageToggle />,
     },
     {
       path: "*",

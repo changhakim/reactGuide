@@ -11,6 +11,7 @@ import { Checkbox, CheckboxItem, WRAPPER_TYPE } from './checkbox';
 // import { CheckboxItem }  from './checkbox/CheckboxItem';
 // import { WRAPPER_TYPE } from './checkbox';
 import Tab from './tab/Tab';
+import Toggle from './toggle/Toggle';
 export {
 	ModalPopupPortal,
 	ModalAlertPopup,
@@ -23,5 +24,6 @@ export {
 	Checkbox,
 	Tab, 
 	CheckboxItem,
-	WRAPPER_TYPE
+	WRAPPER_TYPE,
+	Toggle,
 };
