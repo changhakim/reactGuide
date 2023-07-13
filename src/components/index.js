@@ -7,7 +7,9 @@ import FallbackLoader from "./loder/FallbackLoader";
 import UtilLayout from './layout/UtilLayout';
 import CalendarPicker from './calendar/CalendarPicker';
 import { FullPopup, FullPopupPortal } from './popup/fullPopup';
-import Checkbox from './checkbox/Checkbox';
+import { Checkbox, CheckboxItem, WRAPPER_TYPE } from './checkbox';
+// import { CheckboxItem }  from './checkbox/CheckboxItem';
+// import { WRAPPER_TYPE } from './checkbox';
 import Tab from './tab/Tab';
 export {
 	ModalPopupPortal,
@@ -19,5 +21,7 @@ export {
 	FullPopup,
 	FullPopupPortal,
 	Checkbox,
-	Tab
+	Tab, 
+	CheckboxItem,
+	WRAPPER_TYPE
 };
