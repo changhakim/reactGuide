@@ -6,7 +6,6 @@ const TapContents = ({children, activeTab, id})=>{
     const act = activeTab;
     const temp  = Children.map(children, (el, idx)=>{ 
           return cloneElement(el, {
-              'mom':'miss',
               'active' : idx ===act,
               id,
               idx
