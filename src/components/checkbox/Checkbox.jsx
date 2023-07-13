@@ -20,7 +20,6 @@ const Checkbox = ({ uiType, id, name, items, onChange }) => {
 
   const onChangeHandler = useCallback(
     (evt) => {
-      debugger;
       const rtn = {
         values: [],
         selected: [],
