@@ -10,7 +10,6 @@ export default function NewsletterStates() {
   const onNewsletterChange = (checked) => {
     setSelectAll(checked);
     if (!checked) {
-      
       setOption1(false);
       setOption2(false);
       setOption3(false);
@@ -36,7 +35,7 @@ export default function NewsletterStates() {
         <Toggle
           id="option1"
           small
-          disabled={!selectAll}
+          disabled={false}
           checked={option1}
           onChange={setOption1}
         />
