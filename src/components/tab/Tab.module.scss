@@ -1,0 +1,43 @@
+.tab-tabConten {
+    border:  20px;
+    padding : 10px
+}
+
+.tab-nav {
+    padding: 20px 0 0 20px;
+}
+
+.tab-ul {
+    list-style-type: none;
+    display: flex;
+    
+    
+}
+
+
+
+.tab_ul_li {
+    background-color: antiquewhite;
+    width: 100%;
+    height: 35px;
+    display: block;
+    margin: 0 5px;
+    cursor: pointer;
+    text-align: center;
+  
+  
+}
+
+.tab_ul_li_active {
+    background-color: antiquewhite;
+    width: 100%;
+    height: 35px;
+    display: block;
+    margin: 0 5px;
+    cursor: pointer;
+    text-align: center;
+    color : red;
+  
+}
+
+

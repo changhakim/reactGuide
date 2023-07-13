@@ -1,53 +1,86 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {Nav} from 'react-bootstrap';
+import TabStyle from './Tab.module.scss';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import TabItem from './TabItem';
 
-
-const Tab = ()=>{  
-    const [activeTab, setActiveTab] = useState(0);
-    const selectTab = (idx)=>{  
-        setActiveTab(idx);
-    }
-   
-    const tabData = [ 
-        { title :'탭1', body: 'StringUtil.jsx'},
-        { title :'탭2', body: 'DateUtil.jsx'},
-        { title :'탭3', body: 'validationUtil.jsx'},
-        { title :'탭4', body: 'commonUtil.jsx'}
-    ]
- 
-   
-    
+const Tab = ({
+        tabData, 
+        navColor,
+        justify, 
+        defaultTab,
+        tabHandle
+    })=>{   
+        
+    const [activeTab, setActiveTab] = useState(defaultTab);
 
     return (
         <>
-            {
-                tabData.length >0 ? (
+            {/* {
+                tabData && tabData.length >0 ? (
                     <>
+                     <Nav
+                        justify  
+                        className={TabStyle["tab-nav"]}  
+                        variant="tabs" 
+                        defaultActiveKey={defaultTab}>
                     {
                         tabData.map((item,idx)=>{
                             return (
-                                <Nav key= {idx} variant="tabs"  defaultActiveKey="link0">
-                                    <Nav.Item key ={`nav+${item.title}`}>
-                                        <Nav.Link eventKey={`link+${idx}`} onClick={()=>{ 
-                                            setActiveTab(idx);
-                                        }}>{item.title}</Nav.Link>
-                                    </Nav.Item>
-                                </Nav>
-    
+
+                                    <Nav.Item key ={`nav${item.title}`} style={{'color':navColor}} >
+                                        <Nav.Link className={defaultTab ===idx}
+                                            eventKey={`link${idx}`} onClick={()=>{ 
+                                          // setActiveTab(idx);
+                                           tabHandle(idx);
+                                        }} >{item.title}</Nav.Link>
+                                    </Nav.Item> 
                             )
                         })    
                     }
-
-                    <p>{tabData[activeTab].body}</p>
+                      </Nav>
                     </>
                 ) : null
-            }
+            } */}
+
+                <div className={TabStyle["tab-container"]}>
+                        <ul className={TabStyle["tab-ul"]}>
+
+                            {  
+                                tabData&& tabData.length > 0 ? (
+                                <>
+                                    
+                                    {  
+                                        tabData.map((item,idx)=> {
+                                            
+                                                return (
+                                                
+                                                    <li className= { activeTab ===idx? TabStyle["tab_ul_li_active"] : TabStyle["tab_ul_li"]}
+                                                        data-tab={`tab-${idx}`} key={idx} onClick={()=>{
+                                                        //setActiveTab(idx);
+                                                        tabHandle(idx);
+                                                    }} >{item.title}</li>
+                                                ) 
+
+                                            })
+                                    }
+                                    <br/>
+
+                                </>
+                                ) :  null
+                            }
+                
+                        </ul>
+                    </div>
            
            
         </>
     );
 }
 
+Tab.prototype = { 
 
+}
 
 export default Tab; 
