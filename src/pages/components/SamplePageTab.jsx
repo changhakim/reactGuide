@@ -19,9 +19,9 @@ const SamplePageTab = () => {
 
     return(
       <>
-        <Tab tabData={tabData} navColor={'pink'}
-             tabHandle={tabHandle} activeTab= {activeTab}
-             defaultTab ='2' />
+        <Tab tabData={tabData} 
+             tabHandle={tabHandle} 
+             activeTab ={activeTab} />
 
         <TabContents activeTab={activeTab}>
           <TabContent id="TabPanel1"  key='TabPanel1'>
