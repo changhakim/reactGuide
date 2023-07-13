@@ -5,17 +5,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Tab = ({
-        tabData, 
-        navColor,
-        justify, 
-        defaultTab,
-        tabHandle
+        tabData,  
+        tabHandle,
+        activeTab
     })=>{   
-        
-    const [activeTab, setActiveTab] = useState(defaultTab);
-
+    
     return (
-        <>
+        <>      
                 <div className={TabStyle["tab-container"]}>
                         <ul className={TabStyle["tab-ul"]}>
 
@@ -43,8 +39,6 @@ const Tab = ({
                 
                         </ul>
                     </div>
-           
-           
         </>
     );
 }
