@@ -7,12 +7,12 @@ import 'react-calendar/dist/Calendar.css';
 
 const CalendarPicker = ({    
 	defaultDateValue,
-	minDate,
-	maxDate,
+	minDate = undefined,
+	maxDate = undefined,
 	getValue = null,
 }) => {
 
-	console.log(defaultDateValue, minDate, maxDate);
+	console.log('start::' + defaultDateValue + '::' +  minDate + '::' +  maxDate);
 	
 	const getDateFormatAsString = (dateValue, displayTime = false) => {
 		let stringDateFormat = null;
@@ -71,9 +71,9 @@ const CalendarPicker = ({
 				onChange={(value) => {
 					calendarValueChanged(value);
 				}}
-				minDate={new Date(getDateFormatAsString(minDate))}
-				maxDate={new Date(getDateFormatAsString(maxDate))}
-				tileDisabled={({date}) => [0, 6].includes(date.getDay())}
+				minDate={minDate === undefined ? undefined : new Date(getDateFormatAsString(minDate))}
+				maxDate={maxDate === undefined ? undefined : new Date(getDateFormatAsString(maxDate))}
+				tileDisabled={ ({activeStartDate, date, view }) => view === 'month' && [0, 6].includes(date.getDay())}
 				// tileDisabled={({ date }) =>
 				// 	dayjs(getDateFormatAsString(date)).get('month') !==
 				// 	dayjs(getDateFormatAsString(dateValue)).get('month')

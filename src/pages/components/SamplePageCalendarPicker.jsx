@@ -3,7 +3,8 @@ import dayjs from 'dayjs';
 import 'react-calendar/dist/Calendar.css';
 import { Button } from 'react-bootstrap';
 import { store, modalActions } from '@modules/redux';
-import { CalendarPicker } from '@components';
+import { CalendarPicker, InputCalendarPicker } from '@components';
+import { values } from 'lodash';
 // import CalendarPicker from '@components/CalendarPicker';
 
 
@@ -17,10 +18,13 @@ function SamplePageCalendarPicker(){
     const [resDate, setResDate] = useState('');
     const [resDateDisp, setResDateDisp] = useState('');
     const [isOk, setIsOk] = useState('');
+    const [inputCalendarPickerDate, setInputCalendarPickerDate] = useState('2023-07-03')
 
     useEffect(()=>{
-        setResDateDisp(resDate)
-    },[isOk]);
+        if(isOk){
+            setResDateDisp(resDate);
+        }
+    },[isOk, resDate]);
 
     const onClickBUtton = ()=>{
         console.log('selDate::' + selDate)
@@ -64,8 +68,9 @@ function SamplePageCalendarPicker(){
 
     return (
         <>
-            <h3>CalendarPicker</h3>
+            <h2>Calendar</h2>
             <br></br>
+            <h4>{'<CalendarPicker>'}</h4>
             <span>선택날짜 : </span>
             <input
                 type='number'
@@ -110,6 +115,16 @@ function SamplePageCalendarPicker(){
                 readOnly={true}
             />
             </div>
+            <br></br><br></br>
+            <h4>{'<Calendar Input>'}</h4>
+            <InputCalendarPicker
+                defaultDateValue={inputCalendarPickerDate}
+                minDate={minDate}
+                getValue={(value) => {
+                    console.log('samplepage InputCalendarPicker getValue:' + JSON.stringify(value));
+                    setInputCalendarPickerDate(value);
+                }}
+            ></InputCalendarPicker>
         </>
     );
 

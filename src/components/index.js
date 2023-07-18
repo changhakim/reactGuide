@@ -6,6 +6,7 @@ import {
 import FallbackLoader from "./loder/FallbackLoader";
 import UtilLayout from './layout/UtilLayout';
 import CalendarPicker from './calendar/CalendarPicker';
+import InputCalendarPicker from './calendar/InputCalendarPicker';
 import { FullPopup, FullPopupPortal } from './popup/fullPopup';
 import { Checkbox, CheckboxItem, WRAPPER_TYPE } from './checkbox';
 
@@ -22,6 +23,7 @@ export {
 	FallbackLoader,
 	UtilLayout,
 	CalendarPicker,
+	InputCalendarPicker,
 	FullPopup,
 	FullPopupPortal,
 	Checkbox,
