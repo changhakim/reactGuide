@@ -14,6 +14,7 @@ import SamplePageCalendarPicker from "@pages/components/SamplePageCalendarPicker
 import SamplePageCheckbox from "@pages/components/SamplePageCheckbox";
 import SamplePageTab from "@pages/components/SamplePageTab"; 
 import SamplePageToggle from "@pages/components/SamplePageToggle"; 
+import CommonAccList from "@pages/samplePages/CommonAccList"; 
 
 const RootRoute = () => {
   const rootRoute = [
@@ -64,6 +65,10 @@ const RootRoute = () => {
     {
       path: "/SamplePageToggle/*",
       element: <SamplePageToggle />,
+    },
+    {
+      path: "/CommonAccList/*",
+      element: <CommonAccList />,
     },
     {
       path: "*",

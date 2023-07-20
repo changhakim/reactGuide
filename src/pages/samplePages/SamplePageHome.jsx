@@ -1,9 +1,26 @@
+import { ButtonToolbar } from "react-bootstrap";
+import { ButtonGroup } from "reactstrap";
+import Button from "react-bootstrap/Button";
 function SamplePage(){
     return (
-        <div>
-            샘플페이지 진입
-        </div>
+        <>
+        <br />
+        <ButtonToolbar>
+          <ButtonGroup className="me-2">
+            <Button
+              onClick={() => {
+                movePage("CommonAccList");
+              }}
+            >
+              CommonAccList
+            </Button>
+          </ButtonGroup>
+        </ButtonToolbar>
+      </>
     )
 
 }
+const movePage = (pageNm) => {
+    window.navigate("/" + pageNm, {});
+  };
 export default SamplePage;

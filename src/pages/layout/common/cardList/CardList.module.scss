@@ -1,0 +1,1002 @@
+@import '@styles/scss/_variables';
+@import '@styles/scss/_mixins';
+
+$itemSpace: 8px;
+$containerSpace: 16px;
+
+// 카드형 공통
+.card-list-wrap {
+	&:not(.card-icon) {
+		padding: $containerSpace;
+	}
+
+	background: $backgroundWhite;
+	border-radius: 6px;
+
+	.info-wrap {
+		margin-top: $itemSpace;
+		text-align: right;
+	}
+
+	.btn-floating-wrap {
+		position: absolute;
+		z-index: 10;
+		top: $containerSpace;
+		right: $containerSpace;
+	}
+
+	.btn-wrap {
+		display: flex;
+
+		$gap: $itemSpace;
+
+		> * {
+			margin-left: $gap;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+
+		button {
+			width: 100%;
+		}
+	}
+
+	svg {
+		display: inline-block;
+		vertical-align: bottom;
+	}
+}
+
+// 카드 자체 링크형
+.card-link {
+	position: relative;
+	z-index: 1;
+	text-align: left;
+
+	&::after {
+		position: absolute;
+		z-index: 10;
+		top: 50%;
+		right: $containerSpace;
+		width: $iconSize;
+		height: $iconSize;
+		margin-top: calc($iconSize / 2 * -1);
+		background: url(~@styles/assets/images/icon/icon-arrow-right-24.svg) no-repeat center center /
+			$iconSize $iconSize;
+		content: '';
+	}
+
+	.category-wrap {
+		display: block;
+
+		@include text12 {
+			color: $greyscale500;
+		}
+	}
+
+	.title {
+		display: block;
+		padding-right: $iconSize;
+		margin-top: $itemSpace;
+
+		@include text14 {
+			color: $greyscale800;
+		}
+	}
+
+	.info-wrap {
+		display: block;
+	}
+}
+
+// 카드 내 북마크형
+.card-button {
+	.title {
+		@include text16 {
+			color: $greyscale900;
+		}
+	}
+}
+
+// 카드 내 버튼 존재형 & 자세히보기 공통
+.card-bookmark,
+.card-detail {
+	position: relative;
+	z-index: 1;
+	display: flex;
+
+	.img-wrap {
+		display: inline-block;
+		width: $iconSize;
+		height: $iconSize;
+		background: $greyscale200;
+		border-radius: 50%;
+	}
+
+	@include text14 {
+		color: $greyscale900;
+	}
+
+	.inner {
+		flex: 1;
+		margin-left: $itemSpace;
+
+		.title {
+			padding-right: $iconSize;
+		}
+	}
+}
+
+// 카드 내 버튼 존재형
+.card-bookmark {
+	.inner {
+		.account {
+			color: $greyscale600;
+			font-weight: 300;
+		}
+
+		.amount {
+			text-align: right;
+
+			@include text16 {
+				color: $greyscale900;
+			}
+		}
+	}
+}
+
+// 카드형 내 자세히보기
+.card-detail {
+	border: 1px solid $borderCard;
+	border-radius: $borderRadiusCard;
+
+	.description {
+		@include text12 {
+			color: $greyscale600;
+			font-weight: 300;
+		}
+	}
+
+	.info-wrap {
+		margin: (16px - 5px) 0 -5px 0;
+	}
+}
+
+// 카드형 : + 복합기능
+.card-complex {
+	position: relative;
+	z-index: 1;
+
+	.inner {
+		.title {
+			padding-right: $iconSize;
+
+			@include text16 {
+				color: $greyscale900;
+			}
+		}
+
+		.account {
+			margin-top: 4px;
+
+			@include text14 {
+				color: $greyscale600;
+			}
+		}
+
+		[class*='list-container-wrap'] {
+			margin-top: 24px;
+		}
+	}
+
+	.btn-wrap {
+		margin-top: 24px;
+	}
+
+	.detail-more-btn {
+		position: absolute;
+		z-index: 10;
+		top: $containerSpace;
+		right: $containerSpace;
+
+		svg path {
+			fill: $greyscale900;
+		}
+	}
+}
+
+// 카드형 : + 기능
+.card-addition {
+	position: relative;
+	z-index: 1;
+
+	.tag-wrap {
+		&.label {
+			span + span {
+				margin-left: 4px;
+			}
+		}
+
+		&.text {
+			line-height: 24px;
+
+			span + span::before {
+				margin: 0 8px;
+				content: '|';
+			}
+		}
+
+		@include text12 {
+			color: $greyscale600;
+			font-weight: 300;
+		}
+	}
+
+	.title {
+		margin-top: 8px;
+
+		@include text16 {
+			color: $greyscale900;
+		}
+	}
+
+	.percent {
+		margin-top: 8px;
+		text-align: right;
+	}
+}
+
+// 카드형 : 단일카드
+.card-single {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+
+	.inner {
+		.tag-wrap {
+			text-align: left;
+		}
+
+		.title {
+			margin-top: 4px;
+
+			@include text18 {
+				color: $greyscale800;
+			}
+		}
+
+		.account {
+			margin-top: 4px;
+
+			@include text12 {
+				color: $greyscale500;
+				font-weight: 300;
+			}
+		}
+
+		.btn-floating-wrap {
+			top: $containerSpace - 5px;
+			right: $containerSpace - 12px;
+		}
+	}
+
+	.btn-wrap {
+		margin-top: 16px;
+	}
+}
+
+.card-single .inner .amount {
+	margin-top: 16px;
+
+	.num {
+		@include text20 {
+			color: $greyscale800;
+			font-weight: 500;
+		}
+	}
+
+	.unit {
+		@include text18 {
+			color: $greyscale800;
+			font-weight: 500;
+		}
+	}
+}
+
+// 카드형 : 그룹카드 기본형
+.card-group-wrap.card-group {
+	& + .card-group-wrap.card-group {
+		margin-top: 32px;
+	}
+
+	.title-wrap {
+		padding: 0 0 $itemSpace 0;
+		border-bottom: 1px solid $greyscale600;
+
+		@include text12 {
+			color: $greyscale550;
+			font-weight: 300;
+		}
+	}
+
+	li {
+		@include dividers-full {
+			border-top-width: 0;
+			border-bottom-width: 1px;
+		}
+	}
+
+	.card-list-wrap {
+		width: 100%;
+		padding: 16px 0;
+
+		.inner {
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
+		}
+
+		& + .card-list-wrap {
+			margin-top: 3px;
+		}
+	}
+}
+
+.card-group-wrap.card-group .card-list-wrap .info-basic-wrap {
+	text-align: left;
+
+	& > span + span {
+		margin-top: 4px;
+	}
+
+	.info-title {
+		display: block;
+
+		span {
+			@include text14 {
+				color: $greyscale700;
+				font-weight: 300;
+			}
+		}
+	}
+
+	.info-basic {
+		display: block;
+
+		span {
+			display: inline-block;
+
+			@include text14 {
+				color: $greyscale500;
+			}
+		}
+
+		.type {
+			margin-left: 4px;
+		}
+	}
+
+	.info-account {
+		display: block;
+
+		@include text14 {
+			color: $greyscale900;
+			font-weight: 500;
+		}
+	}
+}
+
+.card-group-wrap.card-group .card-list-wrap .amount-wrap {
+	text-align: right;
+
+	.status-wrap {
+		.status {
+			margin-right: 4px;
+
+			@include text16 {
+				font-weight: 300;
+			}
+		}
+
+		.amount {
+			@include text16 {
+				font-weight: 500;
+			}
+		}
+	}
+
+	.balance {
+		display: block;
+		margin-top: 8px;
+		text-align: right;
+
+		@include text12 {
+			color: $greyscale550;
+			font-weight: 300;
+		}
+
+		.num {
+			margin-left: 4px;
+		}
+	}
+}
+
+// 카드형 : 그룹카드 요약형
+.card-group-wrap.card-group-simple {
+	.title-wrap {
+		padding: $itemSpace 0;
+
+		.title {
+			@include text14 {
+				color: $greyscale900;
+				font-weight: 300;
+			}
+
+			.num {
+				margin-left: 4px;
+			}
+		}
+
+		.total {
+			display: flex;
+			flex: 0 0 auto;
+			justify-content: space-between;
+			margin-top: $itemSpace;
+
+			@include text14 {
+				color: $greyscale500;
+				font-weight: 300;
+			}
+
+			.balance {
+				color: $greyscale900;
+				font-weight: 500;
+			}
+		}
+	}
+
+	.card-list-wrap {
+		width: 100%;
+		text-align: left;
+
+		.title {
+			display: block;
+
+			@include text14 {
+				color: $greyscale900;
+				font-weight: 500;
+			}
+		}
+
+		.account {
+			display: block;
+			margin-top: 4px;
+
+			@include text14 {
+				color: $greyscale500;
+			}
+		}
+
+		.balance-wrap {
+			display: flex;
+			flex: 0 0 auto;
+			justify-content: space-between;
+			margin-top: 4px;
+
+			@include text14 {
+				color: $greyscale600;
+			}
+
+			.balance {
+				color: $greyscale900;
+				font-weight: 500;
+			}
+		}
+	}
+}
+
+// 카드형 : + 부가정보 확장형
+.card-accordion {
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	padding: 16px 16px 0;
+	background: $white;
+	border-radius: 8px;
+
+	.top-info {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		.inner {
+			flex: 1 0 auto;
+			margin-left: 8px;
+
+			.title {
+				@include text14;
+
+				color: $greyscale900;
+			}
+
+			.date {
+				@include text14 {
+					font-weight: 300;
+				}
+
+				color: $greyscale600;
+			}
+
+			.amount {
+				@include text16;
+
+				color: $greyscale900;
+				text-align: right;
+			}
+		}
+
+		& > button {
+			position: absolute;
+			z-index: 10;
+			top: 15px;
+			right: 4px;
+		}
+	}
+
+	ul[data-role='accordion-group'] {
+		button[data-role='accordion-btn'] {
+			min-height: 40px;
+
+			&::after {
+				right: 0;
+			}
+		}
+
+		div[data-role='accordion-contents'] {
+			border-color: transparent;
+			transition: height 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+			&[aria-hidden='false'] {
+				border-color: $borderDivider;
+			}
+
+			:global {
+				.inner {
+					padding: 8px 0 16px;
+				}
+			}
+		}
+
+		h5 {
+			@include text14;
+
+			color: $greyscale900;
+		}
+
+		p {
+			@include text12 {
+				font-weight: 300;
+			}
+
+			margin-top: 8px;
+			color: $greyscale600;
+		}
+
+		strong {
+			@include text16;
+
+			display: block;
+			margin-top: 8px;
+			color: $greyscale900;
+			text-align: right;
+		}
+	}
+}
+
+// 카드형 : 꾹이체용
+.card-wrapper {
+	.card-wrapper-inner {
+		position: relative;
+		z-index: 1;
+
+		[class*='overflow-menu-wrap'] {
+			position: absolute;
+			z-index: 10;
+			top: $containerSpace;
+			right: $containerSpace;
+		}
+	}
+
+	.alarm-wrap {
+		position: relative;
+		padding: 8px $containerSpace;
+		text-align: right;
+
+		&::after {
+			position: absolute;
+			z-index: -1;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: calc(100% + 12px);
+			background: $greyscale500;
+			border-radius: 0 0 12px 12px;
+			content: '';
+		}
+
+		.expiration {
+			padding-left: calc($iconSize + 4px);
+			background: url(~@styles/assets/images/icon/icon-alarm-white01.svg) no-repeat left top /
+				$iconSize $iconSize;
+			text-align: left;
+
+			@include text14 {
+				color: $white;
+				font-weight: 500;
+			}
+		}
+
+		[class*='button-default'] {
+			margin-top: 8px;
+
+			svg {
+				vertical-align: bottom;
+			}
+
+			svg path {
+				stroke: $white;
+			}
+		}
+	}
+}
+
+/* 꾹이체 전용 카트 */
+.card-3d {
+	display: flex;
+	width: 100%;
+	border: 1px solid transparent;
+	background: var(--bgColor);
+	border-radius: $borderRadiusCard;
+	text-align: left;
+
+	&.selected {
+		border-color: $primary400;
+	}
+
+	.img-wrap {
+		margin-right: 8px;
+	}
+
+	.inner {
+		display: block;
+		width: 100%;
+
+		.title {
+			display: block;
+			padding-right: 16px;
+
+			@include text16 {
+				color: $greyscale700;
+			}
+		}
+
+		.account {
+			display: block;
+			margin-top: 4px;
+
+			@include text14 {
+				color: $greyscale500;
+				font-weight: 300;
+			}
+		}
+
+		.category {
+			display: block;
+			margin-top: 4px;
+
+			@include text12 {
+				color: $greyscale500;
+				font-weight: 300;
+			}
+		}
+
+		.amount {
+			display: block;
+			margin-top: 8px;
+
+			@include text18 {
+				color: $greyscale900;
+				font-weight: 500;
+				text-align: right;
+			}
+		}
+	}
+}
+
+// 휴면 계좌 카드
+.card-dormant {
+	position: relative;
+	z-index: 1;
+	background: $greyscale50;
+	border-radius: $borderRadiusCard;
+
+	.card-inner {
+		display: flex;
+		width: 100%;
+
+		&::after {
+			position: absolute;
+			z-index: 10;
+			top: $containerSpace;
+			right: $containerSpace;
+			width: $iconSize;
+			height: $iconSize;
+			background: url(~@styles/assets/images/icon/icon-depth-arrow01.svg) no-repeat center
+				center / $iconSize $iconSize;
+			content: '';
+		}
+	}
+
+	.img-wrap {
+		display: inline-block;
+	}
+
+	.inner {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		margin-left: 8px;
+		text-align: left;
+
+		.title {
+			display: block;
+
+			@include text16 {
+				color: $greyscale900;
+				font-weight: 500;
+			}
+		}
+
+		.account {
+			display: block;
+			margin-top: 4px;
+
+			@include text14 {
+				color: $greyscale600;
+				font-weight: 300;
+			}
+		}
+
+		.date {
+			display: block;
+			margin-top: 8px;
+
+			@include text12 {
+				color: $greyscale500;
+				font-weight: 300;
+			}
+		}
+
+		.amount {
+			display: block;
+			margin-top: 8px;
+
+			@include text18 {
+				color: $greyscale700;
+				font-weight: 500;
+				text-align: right;
+			}
+		}
+	}
+
+	.btn-right-wrap {
+		margin-top: 8px;
+		text-align: right;
+	}
+}
+
+// 카드형 아이콘
+.card-icon {
+	&.type01 {
+		border: 1px solid $borderCard;
+		border-radius: $borderRadiusCard;
+	}
+
+	&.type02 {
+		border: 1px solid $borderCard;
+		border-radius: $borderRadiusCard;
+
+		.card-inner::before {
+			top: calc(15px + 28px);
+		}
+	}
+
+	.card-inner {
+		position: relative;
+		display: flex;
+		width: 100%;
+		flex-wrap: wrap;
+		align-items: center;
+		padding: 16px;
+		text-align: left;
+
+		&::before {
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			width: 24px;
+			height: 24px;
+			background: url(~@styles/assets/images/icon/icon-arrow-right12.svg) no-repeat center
+				center / 12px;
+			content: '';
+		}
+
+		.tag-wrap {
+			flex-basis: 100%;
+			margin-bottom: 6px;
+		}
+
+		.img-wrap {
+			display: inline-block;
+			margin: 4px 8px auto 0;
+		}
+
+		.account-wrap {
+			display: flex;
+			align-items: center;
+
+			.inner {
+				display: flex;
+				flex: 1 1;
+				flex-direction: column;
+
+				span,
+				strong {
+					color: $greyscale600;
+				}
+
+				.title {
+					@include text14 {
+						color: $greyscale900;
+						font-weight: 500;
+					}
+				}
+
+				.account {
+					@include text12;
+				}
+
+				.description {
+					@include text12;
+				}
+
+				.dday {
+					@include text12 {
+						font-weight: 700;
+					}
+				}
+			}
+		}
+
+		.amount {
+			width: 100%;
+			text-align: right;
+
+			span {
+				@include text16 {
+					color: $greyscale900;
+					font-weight: 500;
+				}
+
+				&.num {
+					font-weight: 700;
+				}
+			}
+		}
+	}
+}
+
+.card-list-wrap.withdraw-account {
+	$itemSpace: 4px;
+	$iconSize: 32px;
+
+	&.disabled {
+		background-color: $greyscale50;
+
+		.img-wrap {
+			opacity: 0.3;
+		}
+
+		.account-info {
+			.title {
+				color: $greyscale500;
+			}
+
+			.account {
+				color: $greyscale400;
+			}
+		}
+
+		.amount-wrap {
+			.disabled-text {
+				color: $greyscale550;
+				font-weight: 500;
+			}
+		}
+	}
+
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	padding: 16px 20px;
+	text-align: left;
+
+	.account-info {
+		.img-wrap {
+			display: inline-block;
+			width: $iconSize;
+			height: $iconSize;
+			margin-right: 12px;
+			background: $greyscale200;
+			border-radius: 50%;
+
+			[class*='logo-wrap'] {
+				width: $iconSize;
+				height: $iconSize;
+			}
+		}
+
+		display: flex;
+		align-items: center;
+
+		.title {
+			display: block;
+
+			@include text16 {
+				color: $greyscale700;
+				font-weight: 500;
+			}
+		}
+
+		.account {
+			display: block;
+			margin-top: $itemSpace;
+
+			@include text14 {
+				color: $greyscale550;
+				font-weight: 300;
+			}
+		}
+	}
+
+	.inner {
+		display: flex;
+		justify-content: flex-end;
+
+		.amount-wrap {
+			display: flex;
+			align-items: center;
+			margin-top: $itemSpace;
+			text-align: right;
+
+			.text {
+				@include text12;
+			}
+
+			.amount {
+				display: inline-flex;
+				align-items: center;
+				margin-left: 8px;
+				color: $greyscale900;
+				font-weight: 700;
+			}
+
+			@include text14-1 {
+				color: $greyscale600;
+				font-weight: 300;
+			}
+		}
+	}
+}

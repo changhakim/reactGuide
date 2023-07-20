@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Header, Bottom } from "@layouts";
 import RootRoute from "@routes/RootRoute";
 import { Suspense } from "react";
-import { ModalPopupPortal, FallbackLoader, FullPopupPortal } from "@components";
+import { ModalPopupPortal, FallbackLoader, FullPopupPortal,DrawerPopupPortal } from "@components";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -19,6 +19,7 @@ const App = () => {
         <RootRoute />
         <Bottom />
       </div>
+      <DrawerPopupPortal />
       <ModalPopupPortal />
       <FullPopupPortal />
     </Suspense>
