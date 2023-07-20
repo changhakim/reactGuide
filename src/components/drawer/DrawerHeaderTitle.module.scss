@@ -1,0 +1,63 @@
+@import '@styles/scss/_variables';
+@import '@styles/scss/_mixins';
+
+// publish link - BottomSheetTitle.module.scss
+.button-default {
+	display: flex;
+	justify-content: space-between;
+	padding: 14px 0;
+	text-align: left;
+
+	.title {
+		@include text16 {
+			font-weight: 400;
+		}
+
+		display: inline-flex;
+		flex-direction: column;
+		color: $greyscale900;
+	}
+
+	.title-sub {
+		padding-top: 4px;
+
+		@include text14 {
+			font-weight: 300;
+		}
+
+		color: $greyscale550;
+	}
+
+	.button-close {
+		display: block;
+		width: 24px;
+		height: 24px;
+		background: url('~@styles/assets/images/icon/icon-drawer-close.svg') no-repeat 0 0 / 100%;
+	}
+
+	.button-down {
+		display: block;
+		width: 24px;
+		height: 24px;
+		background: url('~@styles/assets/images/icon/icon-list-arrow-down01.svg') no-repeat 0 0 /
+			100%;
+	}
+
+	.button-up {
+		display: block;
+		width: 24px;
+		height: 24px;
+		background: url('~@styles/assets/images/icon/icon-list-arrow-up.svg') no-repeat 0 0 / 100%;
+	}
+
+	.hidden {
+		@include hidden;
+	}
+}
+
+div[class*='full'] {
+	.button-close {
+		background: url('~@styles/assets/images/icon/icon-list-arrow-down01.svg') no-repeat 0 0 /
+			100%;
+	}
+}

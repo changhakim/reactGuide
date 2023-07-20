@@ -1,0 +1,41 @@
+@import '@styles/scss/_variables';
+@import '@styles/scss/_mixins';
+
+.wrap {
+	display: flex;
+	flex: 1 0 auto;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: var(--spacing);
+
+	img {
+		width: 280px;
+		height: auto;
+	}
+
+	.title {
+		margin-top: 12px;
+		color: $greyscale900;
+		font-weight: 300;
+		text-align: center;
+		white-space: pre;
+
+		@include text16;
+	}
+
+	.sub-title {
+		@include text14;
+
+		margin-top: 16px;
+		color: $greyscale600;
+		font-weight: 300;
+		text-align: center;
+		white-space: pre;
+	}
+
+	.button {
+		margin-top: 16px;
+		text-align: center;
+	}
+}

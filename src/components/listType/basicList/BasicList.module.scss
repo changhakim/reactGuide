@@ -1,0 +1,645 @@
+@import '@styles/scss/_variables';
+@import '@styles/scss/_mixins';
+// @import '@components/checkbox/Checkbox.module';
+// @import '@components/radio/Radio.module';
+
+$space: 16px;
+$supporting-visual-arrow-size: 24px;
+$card-arrow-size: 12px;
+
+.list-wrap {
+	margin-top: var(--spacing);
+
+	&.checkbox,
+	&.radio {
+		[class*='checkbox-item'] {
+			display: block;
+			width: 100%;
+			padding: $space 20px;
+		}
+	}
+
+	.item-inner,
+	.text-btn {
+		display: block;
+		width: 100%;
+		padding: $space 0;
+		text-align: left;
+	}
+
+	.text-inner {
+		display: block;
+		width: 100%;
+	}
+
+	.title {
+		display: block;
+
+		@include text16 {
+			color: $greyscale900;
+			font-weight: 500;
+		}
+
+		&.medium {
+			@include text14;
+		}
+
+		&.large {
+			@include text16;
+		}
+	}
+
+	.list-item {
+		&.desc-default {
+			.desc,
+			.description {
+				color: $greyscale550;
+			}
+		}
+
+		&.desc-type01 {
+			.desc,
+			.description {
+				color: $greyscale600;
+			}
+		}
+
+		&.desc-type02 {
+			.desc,
+			.description {
+				color: $greyscale900;
+			}
+		}
+
+		&.desc-type03 {
+			.desc,
+			.description {
+				color: $greyscale550;
+			}
+		}
+	}
+}
+
+// ListTextItem
+.list-text {
+	position: relative;
+	z-index: 1;
+
+	&:not(:only-child) {
+		@include dividers-full {
+			border-width: 0;
+			border-bottom-width: 1px;
+		}
+	}
+
+	&.right .text-btn .text-inner {
+		display: flex;
+		align-items: center;
+
+		.desc {
+			margin-right: 4px;
+			margin-left: auto;
+		}
+	}
+
+	&.is-arrow .text-btn {
+		display: flex;
+		align-items: center;
+
+		svg {
+			display: block;
+		}
+	}
+
+	&.medium {
+		.title {
+			@include text14;
+		}
+	}
+
+	.title {
+		@include ellipsis(2, 24px);
+
+		height: auto;
+		max-height: calc(2 * 24px);
+	}
+
+	.desc {
+		@include ellipsis(2, 20px);
+		@include text14-1;
+
+		height: auto;
+		max-height: calc(2 * 20px);
+		color: $greyscale600;
+	}
+
+	.text-btn {
+		padding: {
+			right: 20px;
+			left: 20px;
+		}
+	}
+
+	.option-wrap {
+		width: 100%;
+		flex-basis: 100%;
+	}
+
+	.refresh {
+		position: absolute;
+		z-index: 10;
+		top: 16px;
+		right: 16px;
+		display: block;
+		width: 24px;
+		height: 24px;
+
+		button {
+			display: block;
+
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+// ListIconItem
+.list-item.list-icon {
+	display: flex;
+	align-items: center;
+
+	.text-btn {
+		display: flex;
+		align-items: center;
+	}
+
+	// http://localhost:3001/react/CA/login/CA0301-S0012-B01
+	&.right {
+		.title-description-wrap {
+			display: flex;
+			align-items: center;
+
+			.description {
+				margin-left: auto;
+			}
+		}
+
+		.arrow {
+			margin-left: 4px;
+		}
+	}
+
+	&.disabled {
+		background: $greyscale50;
+
+		.title,
+		.description {
+			color: $greyscale550;
+		}
+	}
+
+	.supporting-visual button,
+	.supporting-visual span {
+		&.icon-medium-align {
+			.icon {
+				margin-top: 8px;
+			}
+		}
+	}
+
+	&.drawer-active {
+		> div.supporting-visual {
+			.arrow {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	.refresh {
+		display: block;
+		width: 24px;
+		height: 24px;
+
+		button {
+			display: block;
+
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+.arrow {
+	width: $supporting-visual-arrow-size;
+	height: $supporting-visual-arrow-size;
+	align-self: center;
+	margin-left: 14px;
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-size: $supporting-visual-arrow-size $supporting-visual-arrow-size;
+
+	&.arrow-bottom {
+		background-image: url(~@styles/assets/images/icon/icon-arrow-down-24.svg);
+		background-position: center center;
+		transition: transform 0.3s ease-in-out;
+	}
+
+	// drawer가 열렸을 때 나타나는 효과
+
+	&.arrow-right {
+		width: $card-arrow-size;
+		height: $card-arrow-size;
+		background-image: url(~@styles/assets/images/icon/icon-arrow-right-12.svg);
+		background-size: $card-arrow-size $card-arrow-size;
+	}
+
+	&.arrow-left {
+		background-image: url(~@styles/assets/images/icon/icon-arrow-left-24.svg);
+	}
+
+	&.arrow-none {
+		background-image: none;
+	}
+}
+
+// ListIconAmountItem
+.list-item.list-icon-amount {
+	position: relative;
+	z-index: 1;
+	flex-direction: column;
+
+	&.error {
+		.input-error-wrap {
+			width: 100%;
+			margin-top: 4px;
+
+			[class*='message'] {
+				position: relative;
+			}
+		}
+
+		.amount-wrap {
+			bottom: calc($space + 22px); // 22px : InputMessage값
+		}
+
+		.supporting-visual button {
+			border-color: $secondaryRed700;
+		}
+	}
+
+	&.arrow-bottom .supporting-visual button {
+		border-color: $border;
+	}
+
+	.supporting-visual {
+		button {
+			padding: $space $space calc(18px + 2 * $space);
+			border: 1px solid $borderCard;
+			border-radius: $borderRadiusCard;
+		}
+	}
+
+	.amount-wrap {
+		position: absolute;
+		z-index: 10;
+		right: $space;
+		bottom: $space;
+		display: flex;
+
+		@include text12 {
+			text-align: right;
+		}
+
+		.amount-title {
+			color: $greyscale600;
+			font-weight: 300;
+		}
+
+		.amount-value {
+			margin-left: 8px;
+			color: $greyscale900;
+			font-weight: 500;
+		}
+
+		&.amount-loading {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&.normal-text {
+		> div {
+			padding: $space $space calc(18px + 2 * $space);
+			border: 1px solid $borderCard;
+			border-radius: $borderRadiusCard;
+		}
+	}
+}
+
+// ListContorlItem
+.list-item.list-control {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&.left {
+		flex-direction: row-reverse;
+
+		.control-wrap {
+			margin: {
+				right: 8px;
+				left: 0;
+			}
+		}
+	}
+
+	.icon-wrap {
+		margin-right: 8px;
+	}
+
+	.text-btn {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.control-wrap {
+		flex: none;
+		margin-left: 8px;
+
+		[class*='secondary-3rd'] {
+			&:not([class*='medium32']) {
+				padding: {
+					top: 5px;
+					bottom: 5px;
+				}
+
+				@include text14-1;
+			}
+		}
+	}
+
+	& > .title {
+		padding: $space 0;
+	}
+
+	&.list-control-ellipsis {
+		.supporting-visual {
+			width: calc(100% - 32px);
+		}
+	}
+
+	.title-text-ellipsis {
+		.icon + .title-description-wrap {
+			max-width: calc(100% - 44px);
+		}
+
+		&.icon-medium-align {
+			.icon {
+				margin-top: 4px;
+
+				.title-description-wrap {
+					max-width: calc(100% - 36px);
+				}
+			}
+		}
+
+		// &.icon-large-align {
+		// 	.icon {
+		// 		// margin-top: 0;
+		// 	}
+		// }
+	}
+}
+
+// ListTooltipItem
+.list-tooltip {
+	.title-small {
+		@include text14-1;
+	}
+
+	.tooltip-wrap {
+		vertical-align: middle;
+
+		[class*='tooltip-wrap-basic'] {
+			vertical-align: bottom;
+		}
+	}
+}
+
+// ListCheckButtonItem
+.list-item.list-checkbox-button {
+	.item-inner {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	[class*='checkbox-item'] {
+		flex: none;
+
+		label {
+			display: block;
+			padding: {
+				right: 28px;
+				left: 0;
+			}
+
+			@include text12 {
+				color: $greyscale600;
+				font-weight: 300;
+				line-height: 24px;
+			}
+		}
+
+		label::before {
+			right: 0;
+			left: auto;
+		}
+	}
+}
+
+.supporting-visual {
+	width: 100%;
+
+	.icon {
+		display: flex;
+		justify-content: center;
+		margin-right: 8px;
+	}
+
+	.icon-large-align {
+		.icon {
+			margin-right: 12px;
+		}
+	}
+
+	button,
+	.normal-wrap {
+		display: flex;
+		width: 100%;
+		align-items: center;
+
+		&.selected {
+			background: $greyscale100;
+		}
+
+		&.top {
+			align-items: flex-start;
+
+			.icon {
+				margin-top: 4px;
+			}
+		}
+
+		&.icon-align-center {
+			align-items: center;
+		}
+
+		&.icon-medium-align {
+			align-items: normal;
+
+			.icon {
+				margin-top: 4px;
+			}
+		}
+
+		&.icon-large-align {
+			align-items: center;
+
+			.icon {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.title-description-wrap {
+		flex: 1 0 0;
+		text-align: left;
+	}
+
+	.title-inner {
+		display: flex;
+		align-items: center;
+	}
+
+	.title {
+		color: $greyscale900;
+		font-weight: 500;
+	}
+
+	.title-moreinfo {
+		flex: 0 0 auto;
+		margin-left: 4px;
+	}
+
+	.description {
+		color: $greyscale550;
+		font-weight: 300;
+	}
+
+	.sub-description {
+		color: $greyscale550;
+		font-weight: 500;
+	}
+
+	.medium {
+		> .title {
+			@include text14;
+		}
+
+		+ span {
+			> span {
+				@include text12;
+			}
+		}
+	}
+
+	.large {
+		> .title {
+			@include text16;
+		}
+
+		+ span {
+			> span {
+				@include text14;
+			}
+		}
+	}
+
+	.label {
+		display: flex;
+		align-items: center;
+
+		[class*='label'] {
+			margin-left: 4px;
+		}
+	}
+
+	&.type01 {
+		.top .icon {
+			margin-top: 10px;
+		}
+
+		.icon {
+			margin-right: 12px;
+		}
+
+		.title {
+			margin-bottom: 4px;
+			color: $greyscale700;
+		}
+
+		.description {
+			display: block;
+			color: $greyscale550;
+		}
+
+		&.has-subdescription {
+			.title-text-ellipsis .icon {
+				margin-top: -20px;
+			}
+		}
+	}
+
+	.title-text-ellipsis {
+		.title-description-wrap {
+			max-width: 100%;
+
+			.title {
+				display: block;
+				overflow: hidden;
+				max-width: 100%;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			.title span {
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+
+		.icon + .title-description-wrap {
+			max-width: calc(100% - 44px);
+		}
+
+		&.icon-medium-align {
+			.icon {
+				margin-top: 4px;
+
+				.title-description-wrap {
+					max-width: calc(100% - 36px);
+				}
+			}
+		}
+
+		// &.icon-large-align {
+		// 	.icon {
+		// 		// margin-top: 0;
+		// 	}
+		// }
+	}
+}

@@ -1,0 +1,38 @@
+@import '@styles/scss/_variables';
+@import '@styles/scss/_mixins';
+
+.drawer-wrap {
+	$bottomSpace: 16px;
+	$contentBottomSpace: 32px;
+	$xLargeButton: 56px;
+	$defaultSpace: $contentBottomSpace + $bottomSpace + $xLargeButton;
+
+	padding: 0 20px $defaultSpace;
+	padding-bottom: calc(constant(safe-area-inset-bottom) + $defaultSpace);
+	padding-bottom: calc(env(safe-area-inset-bottom) + $defaultSpace);
+	margin-top: var(--spacing);
+
+	&.full {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	&:only-child {
+		padding-bottom: 0;
+		padding-bottom: constant(safe-area-inset-bottom);
+		padding-bottom: env(safe-area-inset-bottom);
+
+		&::after {
+			display: block;
+			width: 100%;
+			height: constant(safe-area-inset-bottom);
+			height: env(safe-area-inset-bottom);
+			min-height: 16px;
+			content: '';
+		}
+	}
+
+	&.with-cycle-rmc-picker {
+		padding-bottom: 30px;
+	}
+}

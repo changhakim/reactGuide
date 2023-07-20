@@ -2,21 +2,24 @@
     "compilerOptions": {
       "baseUrl": ".",
       "paths": {
-        "@pages/*": ["src/pages/*"],
-        "@layouts": ["src/pages/layout/index.js"],
-        "@pageutils": ["src/pages/utils/index.js"],
-        "@samplePages": ["src/pages/samplePages/index.js"],
-        "@components/*": ["src/components/*"],
-        "@components"  : ["src/components/index.js"],
-        "@routes/*": ["src/routes/*"],
-        "@hooks/*": ["src/modules/hooks/*"],
-        "@hooks": ["src/modules/hooks/index.js"],
-        "@modules/*": ["src/modules/*"],
-        "@modules/redux": ["src/modules/index.js"],
-        "@utils": ["src/utils/index.ts"],
-        "@utils/*": ["src/utils/*"],
-        "@styles/*": ["src/styles/*"],
-        "@commmons/*": ["src/commons/*"]
+        "@*": ["./src/*"],
+        "@pages/*": ["./src/pages/*"],
+        "@layouts": ["./src/pages/layout/index.js"],
+        "@layouts/*": ["./src/pages/layout/*"],
+        "@pageutils": ["./src/pages/utils/index.js"],
+        "@samplePages": ["./src/pages/samplePages/index.js"],
+        "@components/*": ["./src/components/*"],
+        "@components"  : ["./src/components/index.js"],
+        "@constants": ["./src/constants/index.js"],
+        "@routes/*": ["./src/routes/*"],
+        "@hooks/*": ["./src/modules/hooks/*"],
+        "@hooks": ["./src/modules/hooks/index.js"],
+        "@modules/*": ["./src/modules/*"],
+        "@modules/redux": ["./src/modules/index.js"],
+        "@utils": ["./src/utils/index.ts"],
+        "@utils/*": ["./src/utils/*"],
+        "@styles/*": ["./src/styles/*"],
+        "@commmons/*": ["./src/commons/*"]
         
         
       }

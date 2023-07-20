@@ -1,0 +1,62 @@
+@import '@styles/scss/_variables';
+@import '@styles/scss/_mixins';
+
+.board-detail {
+	padding: 32px 20px 20px;
+	background: $white;
+
+	.title-wrap {
+		h3 {
+			@include text14;
+			@include ellipsis(2, 20px);
+
+			color: $greyscale900;
+		}
+
+		.list-date {
+			@include text12 {
+				font-weight: 300;
+			}
+
+			margin-top: 4px;
+			color: $greyscale600;
+		}
+	}
+
+	.file-wrap {
+		@include dividers-middle;
+
+		padding-top: 16px;
+		margin-top: 16px;
+
+		button {
+			@include text11 {
+				font-weight: 300;
+			}
+
+			display: flex;
+			width: 100%;
+			align-items: center;
+			color: $greyscale500;
+
+			img {
+				display: block;
+				width: 24px;
+				height: 24px;
+				margin-right: 8px;
+			}
+		}
+	}
+
+	.board-content {
+		@include text12 {
+			font-weight: 300;
+		}
+
+		padding: 16px 20px;
+		margin-top: 20px;
+		background: $greyscale100;
+		border-radius: 8px;
+		color: $greyscale600;
+	}
+}

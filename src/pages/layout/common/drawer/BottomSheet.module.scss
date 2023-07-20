@@ -1,0 +1,79 @@
+@import '@styles/scss/_variables';
+@import '@styles/scss/_mixins';
+
+.select-list {
+	[class*='list-wrap'] {
+		li:first-child {
+			button {
+				padding-top: 8px;
+			}
+		}
+
+		button {
+			padding: 16px 0;
+
+			span[class*='title-inner'] {
+				+ span {
+					display: inline-block;
+					margin-top: 4px;
+					color: $greyscale550;
+				}
+			}
+		}
+	}
+}
+
+.myaccount-list {
+	button {
+		padding: 16px 0;
+
+		span[class*='icon'] {
+			margin-right: 12px;
+		}
+
+		span[class*='title-inner'] {
+			+ span {
+				display: inline-block;
+				margin-top: 4px;
+				color: $greyscale550;
+			}
+		}
+	}
+}
+
+.info-wrap {
+	[class*='list-container-wrap'] {
+		[class*='list-info-wrap'] {
+			&:not([class*='import-desc']) {
+				color: $greyscale900;
+			}
+		}
+	}
+}
+
+.share-icons-wrap {
+	.on-bottom-sheet {
+		align-items: center;
+
+		&.type01 {
+			justify-content: space-around;
+		}
+
+		&.type02 {
+			$gap: 24px;
+
+			flex-wrap: wrap;
+			justify-content: initial;
+
+			> *:nth-child(4) ~ * {
+				margin-top: $gap;
+			}
+
+			> li {
+				display: flex;
+				flex: 0 0 25%;
+				justify-content: center;
+			}
+		}
+	}
+}
