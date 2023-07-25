@@ -1,0 +1,49 @@
+@import '@styles/scss/_variables';
+@import '@styles/scss/_mixins';
+
+:global .highcharts-data-table {
+	// @include hidden;
+}
+
+:global {
+	.chart-wrap {
+		margin-top: var(--spacing);
+
+		&.box {
+			overflow: hidden;
+			padding: 16px 0 24px;
+			border: 1px solid $borderCard;
+			border-radius: $borderRadiusCard;
+		}
+
+		&.bar {
+			.highcharts-data-labels {
+				right: 0;
+
+				.highcharts-data-label {
+					right: 0;
+					left: auto !important;
+					width: 55px !important;
+
+					span {
+						width: 50px !important;
+						white-space: normal !important;
+						word-break: break-all;
+					}
+				}
+			}
+		}
+
+		&:not(.bar) .highcharts-menu {
+			li:nth-child(1),
+			li:nth-child(2),
+			li:nth-child(3),
+			li:nth-child(7),
+			li:nth-child(9),
+			hr:nth-of-type(1),
+			li:nth-child(10) {
+				display: none;
+			}
+		}
+	}
+}

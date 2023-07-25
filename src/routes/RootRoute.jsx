@@ -16,6 +16,8 @@ import SamplePageTab from "@pages/components/SamplePageTab";
 import SamplePageToggle from "@pages/components/SamplePageToggle";
 import SamplePageDropdown from "@pages/components/SamplePageDropdown";
 import SamplePageTooltip from "@pages/components/SamplePageTooltip"; 
+import SamplePageChartDoughnut from "@pages/components/SamplePageChartDoughnut";
+import SamplePageChartLine from "@pages/components/SamplePageChartLine";
 import CommonAccList from "@pages/samplePages/CommonAccList"; 
 
 const RootRoute = () => {
@@ -80,6 +82,14 @@ const RootRoute = () => {
       path: "/SamplePageTooltip/*",
       element: <SamplePageTooltip />,
     },
+	{
+	  path: '/SamplePageChartDoughnut/*',
+	  element: <SamplePageChartDoughnut />,
+	},
+	{
+	  path: '/SamplePageChartLine/*',
+	  element: <SamplePageChartLine />,
+	},
     {
       path: "*",
       element: <NotFound />,

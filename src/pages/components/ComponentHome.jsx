@@ -66,6 +66,24 @@ function ComponentHome() {
           </Button>
           
         </ButtonGroup>
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("SamplePageChartDoughnut");
+            }}
+          >
+            DoughnutChat
+          </Button>
+        </ButtonGroup>
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("SamplePageChartLine");
+            }}
+          >
+            LineChat
+          </Button>
+        </ButtonGroup> 
       </ButtonToolbar>
     </>
   );

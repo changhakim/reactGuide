@@ -17,6 +17,8 @@ import Tooltip from './tooltip/Tooltip';
 import TabContent from './tab/TapContent';
 import TabContents from './tab/TapContents';
 import Dropdown from './dropdown/Dropdown';
+import ChartDoughnut from './chart/ChartDoughnut';
+import ChartLine01 from './chart/ChartLine01';
 
 import {List} from './listType/basicList';
 export {
@@ -40,5 +42,7 @@ export {
 	DrawerPopupPortal,
 	List,
 	Tooltip,
-	Dropdown
+	Dropdown,
+	ChartDoughnut,
+	ChartLine01
 };
