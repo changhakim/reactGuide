@@ -46,6 +46,26 @@ function ComponentHome() {
           </Button>
           
         </ButtonGroup>
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("SamplePageTooltip");
+            }}
+          >
+            Tooltip
+          </Button>
+          
+        </ButtonGroup>
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("SamplePageDropdown");
+            }}
+          >
+            Dropdown
+          </Button>
+          
+        </ButtonGroup>
       </ButtonToolbar>
     </>
   );

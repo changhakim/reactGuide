@@ -13,8 +13,10 @@ import { Drawer,DrawerPopupPortal } from './drawer';
 
 import Tab from './tab/Tab';
 import Toggle from './toggle/Toggle';
+import Tooltip from './tooltip/Tooltip';
 import TabContent from './tab/TapContent';
 import TabContents from './tab/TapContents';
+import Dropdown from './dropdown/Dropdown';
 
 import {List} from './listType/basicList';
 export {
