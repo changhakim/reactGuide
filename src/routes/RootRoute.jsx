@@ -13,7 +13,9 @@ import { SamplePageHome } from "@samplePages";
 import SamplePageCalendarPicker from "@pages/components/SamplePageCalendarPicker";
 import SamplePageCheckbox from "@pages/components/SamplePageCheckbox";
 import SamplePageTab from "@pages/components/SamplePageTab"; 
-import SamplePageToggle from "@pages/components/SamplePageToggle"; 
+import SamplePageToggle from "@pages/components/SamplePageToggle";
+import SamplePageDropdown from "@pages/components/SamplePageDropdown";
+import SamplePageTooltip from "@pages/components/SamplePageTooltip"; 
 import CommonAccList from "@pages/samplePages/CommonAccList"; 
 
 const RootRoute = () => {
@@ -69,6 +71,14 @@ const RootRoute = () => {
     {
       path: "/CommonAccList/*",
       element: <CommonAccList />,
+    },
+    {
+      path: "/SamplePageDropdown/*",
+      element: <SamplePageDropdown />,
+    },
+    {
+      path: "/SamplePageTooltip/*",
+      element: <SamplePageTooltip />,
     },
     {
       path: "*",

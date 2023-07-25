@@ -38,5 +38,7 @@ export {
 	TabContents,
 	Drawer,
 	DrawerPopupPortal,
-	List
+	List,
+	Tooltip,
+	Dropdown
 };
