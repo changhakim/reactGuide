@@ -1,8 +1,8 @@
 import React, { cloneElement, Children } from 'react'; 
+import TabStyle from './Tab.module.scss';
 
-
-const TapContents = ({children, activeTab, id})=>{ 
-
+const TabContents = ({children, activeTab, id})=>{ 
+    
     const act = activeTab;
     const temp  = Children.map(children, (el, idx)=>{ 
           return cloneElement(el, {
@@ -12,8 +12,9 @@ const TapContents = ({children, activeTab, id})=>{
           });
     });
 
-    return <div className="test">{temp}</div>
+    return <div className={TabStyle["div_tabContents"]}>{temp}</div>
+   
 
 }
 
-export default TapContents;
+export default TabContents;

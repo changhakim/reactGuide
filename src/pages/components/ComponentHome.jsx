@@ -49,6 +49,7 @@ function ComponentHome() {
         <ButtonGroup className="me-2">
           <Button
             onClick={() => {
+
               movePage("SamplePageTooltip");
             }}
           >
@@ -76,7 +77,7 @@ function ComponentHome() {
           </Button>
         </ButtonGroup>
         <ButtonGroup className="me-2">
-          <Button
+        <Button
             onClick={() => {
               movePage("SamplePageChartLine");
             }}
@@ -84,6 +85,18 @@ function ComponentHome() {
             LineChat
           </Button>
         </ButtonGroup> 
+        <ButtonGroup className="me-2">
+        <Button
+            onClick={() => {
+    
+              movePage("SamplePageButton");
+            }}
+          
+       >     
+            Button
+          </Button>
+          
+        </ButtonGroup>
       </ButtonToolbar>
     </>
   );

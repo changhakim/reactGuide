@@ -1,6 +1,5 @@
 import Tab from "./Tab";
-import TabItem from "./TabItem";
-import TapContents from "./TapContents";
-import TapContent from "./TapContent";
+import TabContents from "./TabContents";
+import TabContent from "./TabContent";
 
-export {Tab, TabItem,TapContents,TapContent}; 
+export {Tab,TabContents,TabContent}; 

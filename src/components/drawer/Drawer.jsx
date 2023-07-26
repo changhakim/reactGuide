@@ -213,7 +213,7 @@ const Drawer = ({
 	isLazyResize = false,
 	children = null,
 }) => {
-	debugger
+	
 	const [drawerOpts, setDrawerOpts] = useState(null);
 	const [isVisible, handleDrawer] = useDrawer(opts.drawerKey);
 	const { modalA11Y } = useA11Y(isVisible);

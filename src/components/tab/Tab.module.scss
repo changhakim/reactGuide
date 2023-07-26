@@ -1,4 +1,4 @@
-.tab-tabConten {
+.tab-container {
     border:  20px;
     padding : 10px
 }
@@ -9,12 +9,8 @@
 
 .tab-ul {
     list-style-type: none;
-    display: flex;
-    
-    
+    display: flex;    
 }
-
-
 
 .tab_ul_li {
     background-color: antiquewhite;
@@ -24,9 +20,12 @@
     margin: 0 5px;
     cursor: pointer;
     text-align: center;
-  
-  
 }
+
+.li_active {
+    color : red;
+}
+
 
 .tab_ul_li_active {
     background-color: antiquewhite;
@@ -37,7 +36,14 @@
     cursor: pointer;
     text-align: center;
     color : red;
-  
 }
 
+.div_tabContents { 
+    width: 700px;
+    padding :  30px;
+}
 
+.div_tabContent { 
+    border :  20px;
+    
+}

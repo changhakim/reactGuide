@@ -11,15 +11,12 @@ import { FullPopup, FullPopupPortal } from './popup/fullPopup';
 import { Checkbox, CheckboxItem, WRAPPER_TYPE } from './checkbox';
 import { Drawer,DrawerPopupPortal } from './drawer';
 
-import Tab from './tab/Tab';
+import {Tab ,TabContent , TabContents  }from './tab';
 import Toggle from './toggle/Toggle';
 import Tooltip from './tooltip/Tooltip';
-import TabContent from './tab/TapContent';
-import TabContents from './tab/TapContents';
 import Dropdown from './dropdown/Dropdown';
 import ChartDoughnut from './chart/ChartDoughnut';
 import ChartLine01 from './chart/ChartLine01';
-
 import {List} from './listType/basicList';
 export {
 	ModalPopupPortal,
