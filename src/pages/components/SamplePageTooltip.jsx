@@ -1,38 +1,43 @@
 import {Tooltip} from "@components";
+import { Button } from 'react-bootstrap';
 
 const SamplePageTooltip = () => {
   return (
     <>
-    <h1 style={{ marginLeft: '10px' }} >Tooltip Test</h1>
-    <div style={{ marginLeft: '200px' }} >
+    {/* <h1 style={{ marginLeft: '10px' }} >Tooltip Component </h1> */}
+    <div  style={{ marginLeft: '120px' }}>
       <div>
         <br/>
-        <Tooltip content="Hello, I'm a center tooltip!" position="center" >
-          <button>Center</button>
+        <Tooltip content="중앙 툴팁 테스트" position="center" >
+          <Button>Center</Button>
         </Tooltip>
       </div>
       <div>
         <br/>
-        <Tooltip content="Hello, I'm a top tooltip!" position="top" >
-          <button>Top</button>
+        <br/>
+        <Tooltip content="상단 툴팁 테스트" position="top" >
+          <Button>Top</Button>
         </Tooltip>
       </div>
       <div>
         <br/>
-        <Tooltip content="Hello, I'm a bottom tooltip!" position="bottom" >
-          <button>Bottom</button>
+        <br/>
+        <Tooltip content="하단 툴팁 테스트" position="bottom" >
+          <Button>Bottom</Button>
         </Tooltip>
       </div>
       <div>
         <br/>
-        <Tooltip content="Hello, I'm a right tooltip!" position="right" >
-        <span>Right</span>
+        <br/>
+        <Tooltip content="오른쪽 툴팁 테스트" position="right" >
+          <Button>Right</Button>
         </Tooltip>
       </div>
       <div>
         <br/>
-        <Tooltip content="Hello, I'm a left tooltip!" position="left" >
-        <span>Left</span>
+        <br/>
+        <Tooltip content="왼쪽 툴팁 테스트" position="left" >
+          <Button>Left</Button>
         </Tooltip>
       </div>
     </div>
