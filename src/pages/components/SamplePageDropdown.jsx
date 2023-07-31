@@ -9,9 +9,9 @@ const SamplePageDropdown = () => {
   ];
 
   const options2 = [
-    { label: '드롭다운 1', value: '드롭다운1' },
-    { label: '드롭다운 2', value: '드롭다운2' },
-    { label: '드롭다운 3', value: '드롭다운3' },
+    { label: '드롭다운 1', value: 'dropdown1' },
+    { label: '드롭다운 2', value: 'dropdown2' },
+    { label: '드롭다운 3', value: 'dropdown3' },
   ];
 
   const [selectedOption, setSelectedOption] = useState('');
@@ -26,19 +26,15 @@ const SamplePageDropdown = () => {
     setSelectedDropdown(selectedDropdown);
   };
 
+
   return (
-    <div>
-      <h1>Dropdown Test</h1>
-      <Dropdown options={options} onSelect={handleOptionSelect}>
-        옵션 선택
-      </Dropdown>
-      <p>선택된 옵션       : {selectedOption ? selectedOption.label : '없음'}</p>
+    <div>    
+      <Dropdown options={options} placeholder="드롭다운 옵션 선택" onSelect={handleOptionSelect} dropdownType="A" />
+      <p>선택된 옵션 label : {selectedOption ? selectedOption.label : '없음'}</p>
       <p>선택된 옵션 value : {selectedOption ? selectedOption.value : '없음'}</p>
 
-      <Dropdown options={options2} onSelect={handleDropdownSelect}>
-        드롭다운 선택
-      </Dropdown>
-      <p>선택된 드롭다운       : {selectedDropdown ? selectedDropdown.label : '없음'}</p>
+      <Dropdown options={options2} placeholder="드롭다운 선택" onSelect={handleDropdownSelect} dropdownType="B" />
+      <p>선택된 드롭다운 label : {selectedDropdown ? selectedDropdown.label : '없음'}</p>
       <p>선택된 드롭다운 value : {selectedDropdown ? selectedDropdown.value : '없음'}</p>
     </div>
   );
