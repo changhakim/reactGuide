@@ -24,7 +24,6 @@ function ComponentHome() {
           >
             checkbox
           </Button>
-          
         </ButtonGroup>
         <ButtonGroup className="me-2">
           <Button
@@ -34,7 +33,6 @@ function ComponentHome() {
           >
             Tab
           </Button>
-          
         </ButtonGroup>
         <ButtonGroup className="me-2">
           <Button
@@ -44,18 +42,15 @@ function ComponentHome() {
           >
             Toggle
           </Button>
-          
         </ButtonGroup>
         <ButtonGroup className="me-2">
           <Button
             onClick={() => {
-
               movePage("SamplePageTooltip");
             }}
           >
             Tooltip
           </Button>
-          
         </ButtonGroup>
         <ButtonGroup className="me-2">
           <Button
@@ -65,7 +60,6 @@ function ComponentHome() {
           >
             Dropdown
           </Button>
-          
         </ButtonGroup>
         <ButtonGroup className="me-2">
           <Button
@@ -77,25 +71,40 @@ function ComponentHome() {
           </Button>
         </ButtonGroup>
         <ButtonGroup className="me-2">
-        <Button
+          <Button
             onClick={() => {
               movePage("SamplePageChartLine");
             }}
           >
             LineChat
           </Button>
-        </ButtonGroup> 
+        </ButtonGroup>
         <ButtonGroup className="me-2">
-        <Button
+          <Button
             onClick={() => {
-    
               movePage("SamplePageButton");
             }}
-          
-       >     
+          >
             Button
           </Button>
-          
+        </ButtonGroup>
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("SamplePageAccordion");
+            }}
+          >
+            Accordion
+          </Button>
+        </ButtonGroup>
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("SamplePageTextArea");
+            }}
+          >
+            TextArea
+          </Button>
         </ButtonGroup>
       </ButtonToolbar>
     </>

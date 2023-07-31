@@ -17,6 +17,9 @@ import Tooltip from './tooltip/Tooltip';
 import Dropdown from './dropdown/Dropdown';
 import ChartDoughnut from './chart/ChartDoughnut';
 import ChartLine01 from './chart/ChartLine01';
+import Accordion from './accordion/Accordion';
+import TextArea from './textarea/TextArea';
+
 import {List} from './listType/basicList';
 export {
 	ModalPopupPortal,
@@ -41,5 +44,7 @@ export {
 	Tooltip,
 	Dropdown,
 	ChartDoughnut,
+	Accordion,
+	TextArea,
 	ChartLine01
 };
