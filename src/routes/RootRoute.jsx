@@ -12,15 +12,18 @@ import { SamplePageHome } from "@samplePages";
 
 import SamplePageCalendarPicker from "@pages/components/SamplePageCalendarPicker";
 import SamplePageCheckbox from "@pages/components/SamplePageCheckbox";
-import SamplePageTab from "@pages/components/SamplePageTab"; 
+import SamplePageTab from "@pages/components/SamplePageTab";
 
 import SamplePageToggle from "@pages/components/SamplePageToggle";
 import SamplePageDropdown from "@pages/components/SamplePageDropdown";
-import SamplePageTooltip from "@pages/components/SamplePageTooltip"; 
+import SamplePageTooltip from "@pages/components/SamplePageTooltip";
 import SamplePageChartDoughnut from "@pages/components/SamplePageChartDoughnut";
 import SamplePageChartLine from "@pages/components/SamplePageChartLine";
-import CommonAccList from "@pages/samplePages/CommonAccList"; 
+import CommonAccList from "@pages/samplePages/CommonAccList";
 import SamplePageRadio from "@pages/components/SamplePageRadio";
+
+import SamplePageTextArea from "@pages/components/SamplePageTextArea";
+import SamplePageAccordion from "@pages/components/SamplePageAccordion";
 
 const RootRoute = () => {
   const rootRoute = [
@@ -84,18 +87,34 @@ const RootRoute = () => {
       path: "/SamplePageTooltip/*",
       element: <SamplePageTooltip />,
     },
-	{
-	  path: '/SamplePageChartDoughnut/*',
-	  element: <SamplePageChartDoughnut />,
-	},
-	{
-	  path: '/SamplePageChartLine/*',
-	  element: <SamplePageChartLine />,
-	},
-  {
-	  path: '/SamplePageRadio/*',
-	  element: <SamplePageRadio />,
-	},
+    {
+      path: "/SamplePageChartDoughnut/*",
+      element: <SamplePageChartDoughnut />,
+    },
+    {
+      path: "/SamplePageChartLine/*",
+      element: <SamplePageChartLine />,
+    },
+    {
+      path: "/SamplePageRadio/*",
+      element: <SamplePageRadio />,
+    },
+    {
+      path: "/SamplePageChartDoughnut/*",
+      element: <SamplePageChartDoughnut />,
+    },
+    {
+      path: "/SamplePageChartLine/*",
+      element: <SamplePageChartLine />,
+    },
+    {
+      path: "/SamplePageAccordion/*",
+      element: <SamplePageAccordion />,
+    },
+    {
+      path: "/SamplePageTextArea/*",
+      element: <SamplePageTextArea />,
+    },
     {
       path: "*",
       element: <NotFound />,

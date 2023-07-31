@@ -17,6 +17,9 @@ import Tooltip from './tooltip/Tooltip';
 import Dropdown from './dropdown/Dropdown';
 import ChartDoughnut from './chart/ChartDoughnut';
 import ChartLine01 from './chart/ChartLine01';
+import Accordion from './accordion/Accordion';
+import TextArea from './textarea/TextArea';
+
 import {List} from './listType/basicList';
 import {Radio, RadioGroup} from './radio';
 export {
@@ -44,5 +47,7 @@ export {
 	ChartDoughnut,
 	ChartLine01,
 	Radio,
-	RadioGroup
+	RadioGroup,
+	Accordion,
+	TextArea
 };
