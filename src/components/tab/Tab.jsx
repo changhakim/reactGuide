@@ -1,9 +1,5 @@
-import { useEffect, useState } from "react";
-import {Nav} from 'react-bootstrap';
 import TabStyle from './Tab.module.scss';
 import PropTypes from 'prop-types';
-import { ary } from "lodash";
-import { propTypes } from "react-bootstrap/esm/Image";
 
 const Tab = ({
         tabData,  

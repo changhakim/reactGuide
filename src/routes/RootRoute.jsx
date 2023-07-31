@@ -20,6 +20,7 @@ import SamplePageTooltip from "@pages/components/SamplePageTooltip";
 import SamplePageChartDoughnut from "@pages/components/SamplePageChartDoughnut";
 import SamplePageChartLine from "@pages/components/SamplePageChartLine";
 import CommonAccList from "@pages/samplePages/CommonAccList"; 
+import SamplePageRadio from "@pages/components/SamplePageRadio";
 
 const RootRoute = () => {
   const rootRoute = [
@@ -90,6 +91,10 @@ const RootRoute = () => {
 	{
 	  path: '/SamplePageChartLine/*',
 	  element: <SamplePageChartLine />,
+	},
+  {
+	  path: '/SamplePageRadio/*',
+	  element: <SamplePageRadio />,
 	},
     {
       path: "*",

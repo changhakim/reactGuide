@@ -85,17 +85,16 @@ function ComponentHome() {
             LineChat
           </Button>
         </ButtonGroup> 
+        <ButtonGroup className="me-2">          
+        </ButtonGroup>
         <ButtonGroup className="me-2">
-        <Button
+          <Button
             onClick={() => {
-    
-              movePage("SamplePageButton");
+              movePage("SamplePageRadio");
             }}
-          
-       >     
-            Button
+          >
+            Radio
           </Button>
-          
         </ButtonGroup>
       </ButtonToolbar>
     </>

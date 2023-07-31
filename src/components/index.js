@@ -18,6 +18,7 @@ import Dropdown from './dropdown/Dropdown';
 import ChartDoughnut from './chart/ChartDoughnut';
 import ChartLine01 from './chart/ChartLine01';
 import {List} from './listType/basicList';
+import {Radio, RadioGroup} from './radio';
 export {
 	ModalPopupPortal,
 	ModalAlertPopup, 
@@ -41,5 +42,7 @@ export {
 	Tooltip,
 	Dropdown,
 	ChartDoughnut,
-	ChartLine01
+	ChartLine01,
+	Radio,
+	RadioGroup
 };
