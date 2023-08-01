@@ -24,6 +24,7 @@ import SamplePageRadio from "@pages/components/SamplePageRadio";
 
 import SamplePageTextArea from "@pages/components/SamplePageTextArea";
 import SamplePageAccordion from "@pages/components/SamplePageAccordion";
+import SamplePageSliders from "@pages/components/SamplePageSliders";
 
 const RootRoute = () => {
   const rootRoute = [
@@ -114,6 +115,10 @@ const RootRoute = () => {
     {
       path: "/SamplePageTextArea/*",
       element: <SamplePageTextArea />,
+    },
+    {
+      path: "/SamplePageSliders/*",
+      element: <SamplePageSliders />,
     },
     {
       path: "*",

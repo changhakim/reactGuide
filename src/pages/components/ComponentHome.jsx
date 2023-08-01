@@ -106,6 +106,15 @@ function ComponentHome() {
             TextArea
           </Button>
         </ButtonGroup>
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("SamplePageSliders");
+            }}
+          >
+            SamplePageSliders
+          </Button>
+        </ButtonGroup>
       </ButtonToolbar>
     </>
   );

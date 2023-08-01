@@ -22,6 +22,7 @@ import TextArea from './textarea/TextArea';
 
 import {List} from './listType/basicList';
 import {Radio, RadioGroup} from './radio';
+import {Sliders} from './sliders';
 export {
 	ModalPopupPortal,
 	ModalAlertPopup, 
@@ -49,5 +50,6 @@ export {
 	Radio,
 	RadioGroup,
 	Accordion,
-	TextArea
+	TextArea,
+	Sliders
 };
