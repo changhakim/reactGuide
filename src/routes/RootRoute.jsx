@@ -26,6 +26,8 @@ import SamplePageTextArea from "@pages/components/SamplePageTextArea";
 import SamplePageAccordion from "@pages/components/SamplePageAccordion";
 import SamplePageSliders from "@pages/components/SamplePageSliders";
 
+import CommonLogin from "@pages/samplePages/CommonLogin";
+
 const RootRoute = () => {
   const rootRoute = [
     {
@@ -119,6 +121,10 @@ const RootRoute = () => {
     {
       path: "/SamplePageSliders/*",
       element: <SamplePageSliders />,
+    },
+    {
+      path: "/CommonLogin/*",
+      element: <CommonLogin />,
     },
     {
       path: "*",
