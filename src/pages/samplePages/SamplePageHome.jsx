@@ -25,6 +25,16 @@ function SamplePage() {
             CommonLogin
           </Button>
         </ButtonGroup>
+
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("CommonAccMngList");
+            }}
+          >
+            CommonAccMngList
+          </Button>
+        </ButtonGroup>
       </ButtonToolbar>
     </>
   );

@@ -27,6 +27,7 @@ import SamplePageAccordion from "@pages/components/SamplePageAccordion";
 import SamplePageSliders from "@pages/components/SamplePageSliders";
 
 import CommonLogin from "@pages/samplePages/CommonLogin";
+import CommonAccMngList from "@pages/samplePages/CommonAccMngList";
 
 const RootRoute = () => {
   const rootRoute = [
@@ -125,6 +126,10 @@ const RootRoute = () => {
     {
       path: "/CommonLogin/*",
       element: <CommonLogin />,
+    },
+    {
+      path: "/CommonAccMngList/*",
+      element: <CommonAccMngList />,
     },
     {
       path: "*",
