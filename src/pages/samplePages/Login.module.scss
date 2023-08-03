@@ -23,6 +23,16 @@
 	color:#262626;
 }
 
+.titleWrap span{
+	display: inline;
+	background-image: 
+	  linear-gradient(to right, rgb(5, 67, 252), rgb(189, 228, 250));
+	background-size: 100% 20%;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+
+}
+
 .contentWrap {
 	margin-top: 26px;
 	flex:1;

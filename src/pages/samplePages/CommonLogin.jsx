@@ -85,9 +85,9 @@ function CommonLogin() {
   return (
     <div className={Styles.page}>
       <div className={Styles.titleWrap}>
-        이메일과 비밀번호를
+        <span>이메일과 비밀번호를</span>
         <br />
-        입력해주세요
+        <span>입력해주세요</span>
       </div>
 
       <div className={Styles.contentWrap}>
