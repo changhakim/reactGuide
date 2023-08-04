@@ -1,13 +1,19 @@
+.list_wrap{position: relative;padding:10px;border-bottom:1px solid #ddd;}
+.list_wrap>input[type="checkbox"]{position: absolute;right:10px;top:50%;transform:translateY(-50%);}
+
 ul.list {
 	margin: 0;
 	padding: 0;
-	border: 1px solid #000000;
-  }
+	//border: 1px solid #000000;
+}
   
-  ul.list > li.item {
+ul.list > li.item {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-	background-color: rgb(129, 193, 242);
-  }
+	//background-color: rgb(129, 193, 242);
+}
+
+.all_check{padding:10px;text-align:right;border-bottom:1px solid #333;}
+.all_check>input[type="checkbox"]{margin-left:10px}
   

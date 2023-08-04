@@ -32,19 +32,19 @@ function CommonAccMngList() {
     <div>
       <h2>출금 계좌</h2>
       <div>
-        <span>전체선택</span>
-        <label>
-          <input type="checkbox" />
-        </label>
+        <div className={Styles.all_check}>
+          <label for="allcheck01">전체선택</label>
+          <input type="checkbox" id="allcheck01" />
+        </div>        
         {InfoList["data"].map((it) => {
           return (
-            <div key={it.keyCode}>
+            <div className={Styles.list_wrap} key={it.keyCode}>
               <ul className={Styles.list}>
                 <li className={Styles.item}>은행 : {it.bankInfo[0]}</li>
                 <li className={Styles.item}>계좌명 : {it.bankInfo[1]}</li>
-                <li className={Styles.item}>계좌번호 : {it.accNo}</li>
-                <input type="checkbox" />
+                <li className={Styles.item}>계좌번호 : {it.accNo}</li>                
               </ul>
+              <input type="checkbox" />
             </div>
           );
         })}
