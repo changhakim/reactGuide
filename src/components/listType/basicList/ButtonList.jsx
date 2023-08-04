@@ -1,29 +1,27 @@
 import PropTypes from "prop-types";
 
-const BasicList = ({
+const ButtonList = ({
   titleText = "",
   children = [],
-  ulClass = "",
-  liClass = "",
+  buttonClass = "",
 }) => {
   const list = children.map((data, index) => (
-    <li key={data.key || `textList_${index}`} className={liClass}>
+    <button key={data.key || `buttonList_${index}`} className={buttonClass} onClick={data.onClick}>
       {data.listContent}
-    </li>
+    </button>
   ));
   return (
     <>
       {titleText}
-      <ul className={ulClass}>{list}</ul>
+      {list}
     </>
   );
 };
 
-BasicList.propTypes = {
+ButtonList.propTypes = {
   titleText: PropTypes.object,
   children: PropTypes.array.isRequired,
-  ulClass: PropTypes.string,
-  liClass: PropTypes.string,
+  buttonClass: PropTypes.string,
 };
 
-export default BasicList;
+export default ButtonList;

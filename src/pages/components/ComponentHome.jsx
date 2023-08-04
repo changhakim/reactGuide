@@ -115,6 +115,15 @@ function ComponentHome() {
             SamplePageSliders
           </Button>
         </ButtonGroup>
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("SamplePageList");
+            }}
+          >
+            List
+          </Button>
+        </ButtonGroup>
       </ButtonToolbar>
     </>
   );

@@ -25,6 +25,7 @@ import SamplePageRadio from "@pages/components/SamplePageRadio";
 import SamplePageTextArea from "@pages/components/SamplePageTextArea";
 import SamplePageAccordion from "@pages/components/SamplePageAccordion";
 import SamplePageSliders from "@pages/components/SamplePageSliders";
+import SamplePageList from "@pages/components/SamplePageList";
 
 import CommonLogin from "@pages/samplePages/CommonLogin";
 import CommonAccMngList from "@pages/samplePages/CommonAccMngList";
@@ -130,6 +131,10 @@ const RootRoute = () => {
     {
       path: "/CommonAccMngList/*",
       element: <CommonAccMngList />,
+    },
+    {
+      path: "/SamplePageList/*",
+      element: <SamplePageList />,
     },
     {
       path: "*",
