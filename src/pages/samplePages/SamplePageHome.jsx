@@ -15,6 +15,15 @@ function SamplePage() {
             CommonAccList
           </Button>
         </ButtonGroup>
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("CommonAccMngList");
+            }}
+          >
+            Button02
+          </Button>
+        </ButtonGroup>
 
         <ButtonGroup className="me-2">
           <Button
@@ -22,17 +31,7 @@ function SamplePage() {
               movePage("CommonLogin");
             }}
           >
-            CommonLogin
-          </Button>
-        </ButtonGroup>
-
-        <ButtonGroup className="me-2">
-          <Button
-            onClick={() => {
-              movePage("CommonAccMngList");
-            }}
-          >
-            CommonAccMngList
+            Button04
           </Button>
         </ButtonGroup>
 

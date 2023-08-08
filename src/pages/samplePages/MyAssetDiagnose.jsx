@@ -5,9 +5,13 @@ import { ChartDoughnut } from "@components";
 function MyAssetDiagnose() {
   console.log("== MyAssetDiagnose ==");
   const [name, setName] = useState("");
+  const [monData, setMonData] = useState(0);
+  const [amt, setAmt] = useState(0);
 
   useEffect(() => {
     setName("홍길동");
+    setMonData(2);
+    setAmt(1900);
   }, [name]);
 
   const getToday = () => {
@@ -30,7 +34,7 @@ function MyAssetDiagnose() {
       <div className={Styles.contentWrap}>
         나의 총 투자자산 <span>오늘 날짜 : {getToday()}</span>
         <div className={Styles.inFloat}>
-          투자 자산이 1개월 전보다 + 1377원 증가 했어요.
+          투자 자산이 {monData}개월 전보다 + {amt}원 증가 했어요.
         </div>
       </div>
       <div>
