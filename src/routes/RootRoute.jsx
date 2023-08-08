@@ -27,6 +27,8 @@ import SamplePageAccordion from "@pages/components/SamplePageAccordion";
 import SamplePageSliders from "@pages/components/SamplePageSliders";
 import SamplePageList from "@pages/components/SamplePageList";
 
+import MyAssetDiagnose from "@pages/samplePages/MyAssetDiagnose";
+
 import CommonLogin from "@pages/samplePages/CommonLogin";
 import CommonAccMngList from "@pages/samplePages/CommonAccMngList";
 
@@ -136,6 +138,12 @@ const RootRoute = () => {
       path: "/SamplePageList/*",
       element: <SamplePageList />,
     },
+    //내 자산진단
+    {
+      path: "/MyAssetDiagnose/*",
+      element: <MyAssetDiagnose />,
+    },
+
     {
       path: "*",
       element: <NotFound />,

@@ -35,6 +35,16 @@ function SamplePage() {
             CommonAccMngList
           </Button>
         </ButtonGroup>
+
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("MyAssetDiagnose");
+            }}
+          >
+            Button05
+          </Button>
+        </ButtonGroup>
       </ButtonToolbar>
     </>
   );

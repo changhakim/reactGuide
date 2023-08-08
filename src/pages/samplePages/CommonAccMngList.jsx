@@ -1,7 +1,23 @@
-import { useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import Styles from "./AccMngList.module.scss";
+import { Checkbox, WRAPPER_TYPE } from "@components";
+import { _ } from "@utils";
+import { Accordion } from "@components";
 
-const InfoList = {
+const bottomButton = {
+  width: "50%",
+  height: "48px",
+  border: "none",
+  fontWeight: "700",
+  backgroundColor: "#6c757d",
+  color: "white",
+  marginBottom: "40px",
+  marginTop: "40px",
+  marginLeft: "150px",
+  cursor: "pointer",
+};
+
+const InfoList2 = {
   data: [
     {
       keyCode: "1",
@@ -21,33 +37,120 @@ const InfoList = {
   ],
 };
 
+const accordionData = [
+  {
+    title: "알아 두세요.",
+    content: `출금계좌 등록을 하시면, 등록하신 계좌에서 출금을 하실 수 있습니다.`,
+  },
+];
+
+const InfoList = [
+  {
+    value: "110-251-369493",
+    description: "신한\n110-251-369493",
+    disabled: false,
+  },
+  {
+    value: "110-525-092986",
+    description: "신한\n110-525-092986",
+    disabled: false,
+  },
+  {
+    value: "180-006-795477",
+    description: "신한\n180-006-795477",
+    disabled: false,
+  },
+];
+
 function CommonAccMngList() {
   console.log("== CommonAccMngList ==");
 
-  for (const key in Object.keys(InfoList["data"])) {
-    console.log(InfoList.data[key].accNo);
-  }
+  const [checked, setChecked] = useState([]);
+  const [isAllChecked, setIsAllChecked] = useState(false);
+  const items = useRef(InfoList);
+
+  useEffect(() => {
+    if (checked.length === items.current.length) {
+      setIsAllChecked(true);
+    } else {
+      setIsAllChecked(false);
+    }
+  }, [checked]);
+
+  const onChangeControl = useCallback((e) => {
+    setChecked((prev) => {
+      const removePrev = [];
+
+      if (e.values) {
+        e.values.forEach((v) => {
+          removePrev.push(v);
+        });
+      }
+      return removePrev;
+    });
+  }, []);
+
+  const onChangeAllCont = (e) => {
+    const itemArr2 = _.cloneDeep(items.current);
+    const checkedarr = [];
+
+    if (e.current.checked) {
+      itemArr2.map((obj, idx) => {
+        obj.checked = true;
+        checkedarr.push(obj.value);
+        return true;
+      });
+    } else {
+      itemArr2.map((obj, idx) => {
+        obj.checked = false;
+        return true;
+      });
+    }
+    setChecked(checkedarr);
+    items.current = itemArr2;
+  };
 
   return (
     <div>
-      <h2>출금 계좌</h2>
       <div>
-        <div className={Styles.all_check}>
-          <label for="allcheck01">전체선택</label>
-          <input type="checkbox" id="allcheck01" />
-        </div>        
-        {InfoList["data"].map((it) => {
-          return (
-            <div className={Styles.list_wrap} key={it.keyCode}>
-              <ul className={Styles.list}>
-                <li className={Styles.item}>은행 : {it.bankInfo[0]}</li>
-                <li className={Styles.item}>계좌명 : {it.bankInfo[1]}</li>
-                <li className={Styles.item}>계좌번호 : {it.accNo}</li>                
-              </ul>
-              <input type="checkbox" />
-            </div>
-          );
-        })}
+        <span>
+          <h2>출금 계좌</h2>
+        </span>
+      </div>
+      <div>
+        <Checkbox
+          uiType={WRAPPER_TYPE.CHECKBOXLISTLINE}
+          items={[
+            {
+              value: "전체선택",
+              checked: isAllChecked,
+              description: "전체선택",
+              disabled: false,
+            },
+          ]}
+          onChange={(e) => {
+            setIsAllChecked(e.current.checked);
+            onChangeAllCont(e);
+          }}
+        />
+        <Checkbox
+          uiType={WRAPPER_TYPE.CHECKBOXLIST}
+          items={items.current.map((obj, idx) => {
+            return {
+              value: obj.value,
+              checked: checked.includes(obj.value),
+              description: obj.description,
+              disabled: obj.disabled,
+            };
+          })}
+          onChange={(e) => {
+            onChangeControl(e);
+          }}
+        />
+      </div>
+      <Accordion sections={accordionData} />
+      <div>
+        <button style={bottomButton}>확인</button>
       </div>
     </div>
   );
