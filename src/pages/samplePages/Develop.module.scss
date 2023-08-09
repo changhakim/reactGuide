@@ -101,3 +101,51 @@
 	background-color: #dadada;
 	color:white;
 }
+
+ul.mylist{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  
+    max-width: 900px;
+    width: 100%;
+}
+  
+ul.mylist li {
+	display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #efefef;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+ul.mylist li {
+    -webkit-transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
+    -ms-transition: background-color 0.3s linear;
+    -o-transition: background-color 0.3s linear;
+    transition: background-color 0.3s linear;
+}
+
+ul.mylist li input {
+	margin-left: 275px;
+}
+
+  
+ul.mylist li:hoverr {
+    background-color: #f6f6f6;
+}
+
+.bottomButton {
+	width: 50%;
+	border: "none";
+	font-weight: 700;
+	background-color: "#6c757d";
+	color: "white";
+	margin-Bottom: 40px;
+	margin-Top: 40px;
+	margin-Left: 150px;
+	cursor: "pointer";
+}

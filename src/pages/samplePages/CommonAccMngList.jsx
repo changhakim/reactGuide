@@ -1,50 +1,13 @@
-import { useRef, useState, useEffect, useCallback } from "react";
-import Styles from "./AccMngList.module.scss";
-import { Checkbox, WRAPPER_TYPE } from "@components";
-import { _ } from "@utils";
+import { useState, useEffect, useRef, useCallback } from "react";
+
+import { Tab, TabContent, TabContents } from "@components";
 import { Accordion } from "@components";
+import { _ } from "@utils";
+import Styles from "./Develop.module.scss";
 
-const bottomButton = {
-  width: "50%",
-  height: "48px",
-  border: "none",
-  fontWeight: "700",
-  backgroundColor: "#6c757d",
-  color: "white",
-  marginBottom: "40px",
-  marginTop: "40px",
-  marginLeft: "150px",
-  cursor: "pointer",
-};
-
-const InfoList2 = {
-  data: [
-    {
-      keyCode: "1",
-      accNo: "110-251-369493",
-      bankInfo: ["신한", "TOP 직장인플랜 저축예금"],
-    },
-    {
-      keyCode: "2",
-      accNo: "110-525-092986",
-      bankInfo: ["신한", "SOL편한 입출금통장"],
-    },
-    {
-      keyCode: "3",
-      accNo: "180-006-795477",
-      bankInfo: ["신한", "외화 체인지업 예금(EUR)"],
-    },
-  ],
-};
-
-const accordionData = [
-  {
-    title: "알아 두세요.",
-    content: `출금계좌 등록을 하시면, 등록하신 계좌에서 출금을 하실 수 있습니다.`,
-  },
-];
-
-const InfoList = [
+//RegistrationList
+//UnregisteredList
+const RegistrationList = [
   {
     value: "110-251-369493",
     description: "신한\n110-251-369493",
@@ -62,95 +25,179 @@ const InfoList = [
   },
 ];
 
+const UnRegisteredList = [
+  {
+    value: "110-251-369493",
+    description: "국민\n110-251-369412",
+    disabled: false,
+  },
+  {
+    value: "110-525-092986",
+    description: "국민\n110-525-092983",
+    disabled: false,
+  },
+  {
+    value: "180-006-795477",
+    description: "국민\n180-006-795473",
+    disabled: false,
+  },
+];
+
+const accordionData = [
+  {
+    title: "알아 두세요.",
+    content: `출금계좌 등록을 하시면, 등록하신 계좌에서 출금을 하실 수 있습니다.`,
+  },
+];
+
 function CommonAccMngList() {
   console.log("== CommonAccMngList ==");
 
-  const [checked, setChecked] = useState([]);
-  const [isAllChecked, setIsAllChecked] = useState(false);
-  const items = useRef(InfoList);
+  const [activeTab, setActiveTab] = useState(0);
+  const [checkItems1, setCheckItems1] = useState([]);
+  const [checkItems2, setCheckItems2] = useState([]);
 
-  useEffect(() => {
-    if (checked.length === items.current.length) {
-      setIsAllChecked(true);
+  const data1 = [
+    { id: 0, title: "국민\n110-251-369412" },
+    { id: 1, title: "국민\n110-251-369234" },
+    { id: 2, title: "국민\n110-251-369555" },
+    { id: 3, title: "국민\n110-251-369777" },
+  ];
+
+  const data2 = [
+    { id: 0, title: "신한\n110-251-369412" },
+    { id: 1, title: "제주\n110-251-369234" },
+    { id: 2, title: "기업\n110-251-369555" },
+    { id: 3, title: "하나\n110-251-369655" },
+  ];
+
+  const tabData = [
+    { title: "등록된 출금계좌" },
+    { title: "미등록된 출금계좌" },
+  ];
+
+  const handleSingle1Check = (checked, id) => {
+    if (checked) {
+      setCheckItems1((prev) => [...prev, id]);
     } else {
-      setIsAllChecked(false);
+      setCheckItems1(checkItems1.filter((el) => el !== id));
     }
-  }, [checked]);
-
-  const onChangeControl = useCallback((e) => {
-    setChecked((prev) => {
-      const removePrev = [];
-
-      if (e.values) {
-        e.values.forEach((v) => {
-          removePrev.push(v);
-        });
-      }
-      return removePrev;
-    });
-  }, []);
-
-  const onChangeAllCont = (e) => {
-    const itemArr2 = _.cloneDeep(items.current);
-    const checkedarr = [];
-
-    if (e.current.checked) {
-      itemArr2.map((obj, idx) => {
-        obj.checked = true;
-        checkedarr.push(obj.value);
-        return true;
-      });
-    } else {
-      itemArr2.map((obj, idx) => {
-        obj.checked = false;
-        return true;
-      });
-    }
-    setChecked(checkedarr);
-    items.current = itemArr2;
   };
 
+  const handleSingle2Check = (checked, id) => {
+    if (checked) {
+      setCheckItems2((prev) => [...prev, id]);
+    } else {
+      setCheckItems2(checkItems2.filter((el) => el !== id));
+    }
+  };
+
+  const handleAllCheck1 = (checked) => {
+    if (checked) {
+      const idArray = [];
+      data1.forEach((el) => idArray.push(el.id));
+      setCheckItems1(idArray);
+    } else {
+      setCheckItems1([]);
+    }
+  };
+
+  const handleAllCheck2 = (checked) => {
+    if (checked) {
+      const idArray = [];
+      data2.forEach((el) => idArray.push(el.id));
+      setCheckItems2(idArray);
+    } else {
+      setCheckItems2([]);
+    }
+  };
+
+  const onClickTabHandler = useCallback(
+    (idx) => {
+      setCheckItems1([]);
+      setCheckItems2([]);
+      setActiveTab(idx);
+    },
+    [activeTab]
+  );
+
   return (
-    <div>
+    <div className={Styles.page}>
+      <Tab
+        tabData={tabData}
+        activeTab={activeTab}
+        onClickTabHandler={onClickTabHandler}
+      />
+
+      <TabContents activeTab={activeTab}>
+        <TabContent id="TabPanel1" key="TabPanel1">
+          <div>
+            <ul className={Styles.mylist}>
+              <li>
+                전체 선택
+                <input
+                  type="checkbox"
+                  style={{ marginLeft: "340px" }}
+                  name="select-all"
+                  onChange={(e) => handleAllCheck1(e.target.checked)}
+                  checked={checkItems1.length === data1.length ? true : false}
+                />
+              </li>
+            </ul>
+            <ul className={Styles.mylist}>
+              {data1?.map((data, key) => (
+                <li key={key}>
+                  {data.title}
+                  <input
+                    type="checkbox"
+                    name={`select-${data.id}`}
+                    onChange={(e) =>
+                      handleSingle1Check(e.target.checked, data.id)
+                    }
+                    checked={checkItems1.includes(data.id) ? true : false}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </TabContent>
+        <TabContent id="TabPanel2" key="TabPanel2">
+          <ul className={Styles.mylist}>
+            <li>
+              전체 선택
+              <input
+                type="checkbox"
+                style={{ marginLeft: "340px" }}
+                name="select-all"
+                onChange={(e) => handleAllCheck2(e.target.checked)}
+                checked={checkItems2.length === data2.length ? true : false}
+              />
+            </li>
+          </ul>
+          <ul className={Styles.mylist}>
+            {data2?.map((data, key) => (
+              <li key={key}>
+                {data.title}
+                <input
+                  type="checkbox"
+                  name={`select-${data.id}`}
+                  onChange={(e) =>
+                    handleSingle2Check(e.target.checked, data.id)
+                  }
+                  checked={checkItems2.includes(data.id) ? true : false}
+                />
+              </li>
+            ))}
+          </ul>
+        </TabContent>
+      </TabContents>
+
       <div>
-        <span>
-          <h2>출금 계좌</h2>
-        </span>
+        <Accordion sections={accordionData} />
       </div>
+
       <div>
-        <Checkbox
-          uiType={WRAPPER_TYPE.CHECKBOXLISTLINE}
-          items={[
-            {
-              value: "전체선택",
-              checked: isAllChecked,
-              description: "전체선택",
-              disabled: false,
-            },
-          ]}
-          onChange={(e) => {
-            setIsAllChecked(e.current.checked);
-            onChangeAllCont(e);
-          }}
-        />
-        <Checkbox
-          uiType={WRAPPER_TYPE.CHECKBOXLIST}
-          items={items.current.map((obj, idx) => {
-            return {
-              value: obj.value,
-              checked: checked.includes(obj.value),
-              description: obj.description,
-              disabled: obj.disabled,
-            };
-          })}
-          onChange={(e) => {
-            onChangeControl(e);
-          }}
-        />
-      </div>
-      <Accordion sections={accordionData} />
-      <div>
-        <button style={bottomButton}>확인</button>
+        <input type="button" className={Styles.bottomButton} value="등록해지" />
       </div>
     </div>
   );
