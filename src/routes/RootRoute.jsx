@@ -26,6 +26,7 @@ import SamplePageTextArea from "@pages/components/SamplePageTextArea";
 import SamplePageAccordion from "@pages/components/SamplePageAccordion";
 import SamplePageSliders from "@pages/components/SamplePageSliders";
 import SamplePageList from "@pages/components/SamplePageList";
+import SamplePagePaging from "@pages/components/SamplePagePaging";
 
 import MyAssetDiagnose from "@pages/samplePages/MyAssetDiagnose";
 
@@ -142,6 +143,10 @@ const RootRoute = () => {
     {
       path: "/MyAssetDiagnose/*",
       element: <MyAssetDiagnose />,
+    },
+    {
+      path: "/SamplePagePaging/*",
+      element: <SamplePagePaging />,
     },
 
     {

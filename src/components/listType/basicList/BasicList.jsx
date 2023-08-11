@@ -7,7 +7,7 @@ const BasicList = ({
   liClass = "",
 }) => {
   const list = children.map((data, index) => (
-    <li key={data.key || `textList_${index}`} className={liClass}>
+    <li key={data.key || `textList_${index}`} onClick={data.onClick} className={liClass}>
       {data.listContent}
     </li>
   ));

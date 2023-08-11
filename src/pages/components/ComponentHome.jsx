@@ -124,6 +124,15 @@ function ComponentHome() {
             List
           </Button>
         </ButtonGroup>
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("SamplePagePaging");
+            }}
+          >
+            Paging
+          </Button>
+        </ButtonGroup>
       </ButtonToolbar>
     </>
   );
