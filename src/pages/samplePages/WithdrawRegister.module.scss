@@ -5,11 +5,12 @@
 .container {
     border: 2px solid ;
     width : 420px;
-    //padding-left: 40px;
     margin-left: 30px;
     margin-top: 20px;
-    //background-color: lightblue;
     background-color: #F7F7F7;
+    left:50%;
+	transform:translate(-50%,0);
+	position: absolute;
 }
 
 .container input {
@@ -34,10 +35,7 @@
 .TabHeader-li {
    color: gray;
    font-weight: bold;
-  // display: inline-block;
- 
    width: 50%;
-   
 
 }
 
