@@ -44,6 +44,15 @@ function SamplePage() {
             Button05
           </Button>
         </ButtonGroup>
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("HomeSetup");
+            }}
+          >
+            Button08
+          </Button>
+        </ButtonGroup>
       </ButtonToolbar>
     </>
   );

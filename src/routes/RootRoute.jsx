@@ -28,6 +28,7 @@ import SamplePageSliders from "@pages/components/SamplePageSliders";
 import SamplePageList from "@pages/components/SamplePageList";
 
 import MyAssetDiagnose from "@pages/samplePages/MyAssetDiagnose";
+import HomeSetup from "@pages/samplePages/HomeSetup";
 
 import CommonLogin from "@pages/samplePages/CommonLogin";
 import CommonAccMngList from "@pages/samplePages/CommonAccMngList";
@@ -142,6 +143,11 @@ const RootRoute = () => {
     {
       path: "/MyAssetDiagnose/*",
       element: <MyAssetDiagnose />,
+    },
+    //설정
+    {
+      path: "/HomeSetup/*",
+      element: <HomeSetup />,
     },
 
     {

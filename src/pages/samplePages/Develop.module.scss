@@ -149,3 +149,75 @@ ul.mylist li:hoverr {
 	margin-Left: 150px;
 	cursor: "pointer";
 }
+
+
+.tableContsPart { padding-top: 36px; }
+.tableContsPart { padding-top: 0; }
+.tableContsPart { margin-top: 60px; }
+.tableContsPart:first-child { margin-top: 0; }
+.tableContsPart .bullet_pack { margin-top: 26px; }
+.tableContsPart .bullet_pack { margin-top: 56px; }
+.tableContsPart .bullet_pack .ebbullet_title { font-size: 14px; }
+.tableContsPart .bullet_pack .ebbullet_title { font-size: 18px; }
+.tableContsPart .bullet_pack .ebullet_circle li { padding-bottom: 14px; }
+.tableContsPart .bullet_pack .ebullet_circle li { padding-bottom: 14px; }
+.tableContsPart .bullet_pack .ebullet_circle li .ebbullet_info { font-size: 14px; color: #707070; }
+.tableContsPart .bullet_pack .ebullet_circle li .ebbullet_info { font-size: 15px; color: #707070; }
+.tableContsPart > .ebullet_circle { padding-top: 16px; }
+.tableContsPart > .ebullet_circle { padding-top: 16px; }
+.tableContsPart > .ebtitleNormal { padding-bottom: 20px; }
+.tableContsPart > .checkbox_pack { margin-top: 20px; }
+.tableContsPart + .term_part { padding-top: 60px; }
+.tableContsPart +.subtitle { margin-top: 60px; }
+
+.tableContsPart .tableViewPack .ebtable tbody tr { border-bottom: none; }
+.tableContsPart .tableViewPack .ebtable tbody tr:last-of-type { border-bottom: 1px solid #f0f0f0; }
+.tableContsPart .tableViewPack .ebtable tbody tr th { text-align: left; }
+.tableContsPart .tableViewPack .ebtable tbody tr td > p { padding-top: 5px; }
+.tableContsPart .tableViewPack .ebtable tbody tr td > p > span.color05 { padding-top: 5px; }
+.tableContsPart .tableViewPack .ebtable tbody tr:first-of-type th,
+.tableContsPart .tableViewPack .ebtable tbody tr:first-of-type td { padding-top: 37px; }
+.tableContsPart .tableViewPack .ebtable tbody tr:last-of-type th,
+.tableContsPart .tableViewPack .ebtable tbody tr:last-of-type td { padding-bottom: 36px; }
+.tableContsPart .tableViewPack .ebtable tbody tr th,
+.tableContsPart .tableViewPack .ebtable tbody tr td { position: relative; padding: 20px; vertical-align: middle; text-align: left; }
+.tableContsPart .tableViewPack > .ebtable > tbody > tr > td .chkstatus { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); }
+.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr { border-bottom: 1px solid #f0f0f0; }
+.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr > td { padding: 28px 20px 25px;  text-align: right; }
+.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr > th { padding: 28px 20px 25px; }
+.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:first-child > th { padding-top: 28px; }
+.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:first-child > td { padding-top: 28px; }
+.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:last-child > th { padding-bottom: 28px; }
+.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:last-child > td { padding-bottom: 28px; }
+.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:last-child th,
+.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:last-child td { background-color: #f6f9fe; }
+ 
+.tableContsPart .tableViewPack.ty_01 .ebtable { border-top: none; }
+.tableContsPart .tableViewPack.ty_01 .ebtable tbody > tr { border-bottom: 1px solid #f0f0f0; }
+.tableContsPart .tableViewPack.ty_01 .ebtable tbody > tr:last-child { border-bottom: none; }
+.tableContsPart .tableViewPack.ty_01 .ebtable tbody > tr > th { padding: 35px 35px 33px; padding-left: 0; }
+.tableContsPart .tableViewPack.ty_01 .ebtable tbody > tr > td { padding: 35px; padding-left: 0; }
+.tableContsPart .tableViewPack.ty_01 .ebtable tbody > tr > th .title { font-size: 18px; }
+
+.tableContsPart .table_list_pack { border-top: 1px solid #303030; }
+.tableContsPart .table_list_pack .table_x_scroll .ebtable thead tr th { padding: 19px 9px; white-space: nowrap; }
+.tableContsPart .table_list_pack .ebtable { border-top: none; }
+.tableContsPart .table_list_pack .ebtable tbody tr th { font-weight: normal; }
+.tableContsPart .table_list_pack .ebtable tfoot tr th { padding: 22px 9px; border-right: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0; background-color: #f4f9ff; }
+.tableContsPart .table_list_pack .ebtable tfoot tr th:first-child { border-left: 1px solid #f0f0f0;}
+.tableContsPart .table_list_pack .ebtable tfoot tr td { padding: 22px 9px; border-right: 1px solid #f0f0f0; background-color: #f4f9ff; }
+.tableContsPart .table_list_pack .ebtable > tbody > tr > td .ttl,
+.tableContsPart .table_list_pack .ebtable > tbody > tr > td .desc { display: inline-block; padding-right: 30px; vertical-align: top; }
+.tableContsPart .table_list_pack.ty_01 .ebtable tbody tr th { font-weight: normal; }
+.tableContsPart .table_list_pack.ty_01 .ebtable tbody tr:last-child > * { background-color: #f4f9ff; }
+
+.tableContsPart .content_pack > ul { display: flex; display: -ms-flexbox; display: -moz-box; display: -webkit-flex; padding: 43px 70px 43px 0; }
+.tableContsPart .content_pack > ul > li { flex: 1; }
+.tableContsPart .content_pack > ul > li + li { padding-top: 0; }
+.tableContsPart .content_pack > ul > li > dl dd { padding-left: 20px; }
+.tableContsPart .content_pack > ul > li > dl dd .subtext { font-size: 16px; color: #707070; }
+.tableContsPart .content_pack > ul > li > dl dd .title + .subtext { margin-top: 13px; }
+.tableContsPart .contsTitlePack > .ebtitleNormal { display: inline-block; }
+.tableContsPart .contsTitlePack .ebtitleNormal { padding-bottom: 13px; font-size: 24px; }
+.tableContsPart .contsTitlePack > .ebtitleNormal { padding-bottom: 0; }
+
