@@ -44,7 +44,7 @@ function SamplePage() {
             Button05
           </Button>
         </ButtonGroup>
-        
+
         <ButtonGroup className="me-2">
           <Button
             onClick={() => {
@@ -54,8 +54,16 @@ function SamplePage() {
             Button06
           </Button>
         </ButtonGroup>
-        
-      </ButtonToolbar> 
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("HomeSetup");
+            }}
+          >
+            Button08
+          </Button>
+        </ButtonGroup>
+      </ButtonToolbar>
     </>
   );
 }

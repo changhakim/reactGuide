@@ -23,12 +23,13 @@ import CommonAccList from "@pages/samplePages/CommonAccList";
 import SamplePageRadio from "@pages/components/SamplePageRadio";
 
 import SamplePageTextArea from "@pages/components/SamplePageTextArea";
-import SamplePageAccordion from "@pages/components/SamplePageAccordion"; 
+import SamplePageAccordion from "@pages/components/SamplePageAccordion";
 import SamplePageSliders from "@pages/components/SamplePageSliders";
 import SamplePageList from "@pages/components/SamplePageList";
 import SamplePagePaging from "@pages/components/SamplePagePaging";
 
 import MyAssetDiagnose from "@pages/samplePages/MyAssetDiagnose";
+import HomeSetup from "@pages/samplePages/HomeSetup";
 
 import CommonLogin from "@pages/samplePages/CommonLogin";
 import CommonAccMngList from "@pages/samplePages/CommonAccMngList";
@@ -149,7 +150,10 @@ const RootRoute = () => {
       path: "/SamplePagePaging/*",
       element: <SamplePagePaging />,
     },
-
+    {
+      path: "/HomeSetup/*",
+      element: <HomeSetup />,
+    },
     {
       path: "/WithdrawRegister/*",
       element: <WithdrawRegister />,
