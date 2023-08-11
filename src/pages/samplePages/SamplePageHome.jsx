@@ -51,7 +51,7 @@ function SamplePage() {
               movePage("WithdrawRegister");
             }}
           >
-            Button06
+            Button99 
           </Button>
         </ButtonGroup>
         <ButtonGroup className="me-2">
