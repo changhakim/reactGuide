@@ -1,0 +1,42 @@
+.account_box{
+    padding:20px;
+    background-color: #fff;
+    border-radius: 10px;    
+    border:1px solid #ddd;
+}
+.account_box button{
+    background-color: #fff;
+    border:none;
+}
+.account_box p{
+    margin:0
+}
+.txt_price{
+    margin-top:10px;text-align:center;
+}
+.txt_price button{
+    background-color:#ddd;
+    border-radius:10px;
+    border:1px solid #ddd;
+    color:#333;
+    font-size:14px;
+    font-weight:bold;
+}
+.btn_wrap{
+    margin-top:20px;
+    display:table;
+    width:100%;
+}
+.btn_wrap>span{
+    display: table-cell;
+    width:50%;
+    text-align:center
+}
+.btn_wrap>span:first-child{
+    border-right:1px solid #ddd;
+}
+.btn_wrap>span>button{
+    font-size:14px;
+    font-weight: bold;
+    color:darkslategray;
+}
