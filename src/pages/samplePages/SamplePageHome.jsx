@@ -44,7 +44,18 @@ function SamplePage() {
             Button05
           </Button>
         </ButtonGroup>
-      </ButtonToolbar>
+        
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("WithdrawRegister");
+            }}
+          >
+            Button06
+          </Button>
+        </ButtonGroup>
+        
+      </ButtonToolbar> 
     </>
   );
 }
