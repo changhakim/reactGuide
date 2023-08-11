@@ -112,7 +112,7 @@ function ComponentHome() {
               movePage("SamplePageSliders");
             }}
           >
-            SamplePageSliders
+            Sliders
           </Button>
         </ButtonGroup>
         <ButtonGroup className="me-2">

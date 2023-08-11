@@ -32,6 +32,7 @@ import MyAssetDiagnose from "@pages/samplePages/MyAssetDiagnose";
 
 import CommonLogin from "@pages/samplePages/CommonLogin";
 import CommonAccMngList from "@pages/samplePages/CommonAccMngList";
+import WithdrawRegister from "@pages/samplePages/WithdrawRegister";
 
 const RootRoute = () => {
   const rootRoute = [
@@ -149,6 +150,10 @@ const RootRoute = () => {
       element: <SamplePagePaging />,
     },
 
+    {
+      path: "/WithdrawRegister/*",
+      element: <WithdrawRegister />,
+    },
     {
       path: "*",
       element: <NotFound />,
