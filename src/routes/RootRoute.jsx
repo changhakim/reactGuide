@@ -32,6 +32,7 @@ import MyAssetDiagnose from "@pages/samplePages/MyAssetDiagnose";
 
 import CommonLogin from "@pages/samplePages/CommonLogin";
 import CommonAccMngList from "@pages/samplePages/CommonAccMngList";
+import SampleMain from "@pages/samplePages/SampleMain";
 
 const RootRoute = () => {
   const rootRoute = [
@@ -147,6 +148,11 @@ const RootRoute = () => {
     {
       path: "/SamplePagePaging/*",
       element: <SamplePagePaging />,
+    },
+
+    {
+      path: "/SampleMain/*",
+      element: <SampleMain />,
     },
 
     {
