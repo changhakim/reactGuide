@@ -15,13 +15,44 @@ function SamplePage() {
             CommonAccList
           </Button>
         </ButtonGroup>
+
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("");
+            }}
+          >
+            Button01
+          </Button>
+        </ButtonGroup>
+
         <ButtonGroup className="me-2">
           <Button
             onClick={() => {
               movePage("CommonAccMngList");
             }}
           >
-            Button02
+            Button02-1
+          </Button>
+        </ButtonGroup>
+
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("WithdrawRegister");
+            }}
+          >
+            Button02-2
+          </Button>
+        </ButtonGroup>
+
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("");
+            }}
+          >
+            Button03
           </Button>
         </ButtonGroup>
 
@@ -34,7 +65,9 @@ function SamplePage() {
             Button04
           </Button>
         </ButtonGroup>
-
+      </ButtonToolbar>
+      <br></br>
+      <ButtonToolbar>
         <ButtonGroup className="me-2">
           <Button
             onClick={() => {
@@ -48,12 +81,23 @@ function SamplePage() {
         <ButtonGroup className="me-2">
           <Button
             onClick={() => {
-              movePage("WithdrawRegister");
+              movePage("");
             }}
           >
-            Button99 
+            Button06
           </Button>
         </ButtonGroup>
+
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("");
+            }}
+          >
+            Button07
+          </Button>
+        </ButtonGroup>
+
         <ButtonGroup className="me-2">
           <Button
             onClick={() => {
@@ -63,11 +107,26 @@ function SamplePage() {
             Button08
           </Button>
         </ButtonGroup>
+
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("");
+            }}
+          >
+            Button09
+          </Button>
+        </ButtonGroup>
       </ButtonToolbar>
     </>
   );
 }
 const movePage = (pageNm) => {
-  window.navigate("/" + pageNm, {});
+  if (pageNm === "") {
+    alert("작업 예정!");
+    return;
+  } else {
+    window.navigate("/" + pageNm, {});
+  }
 };
 export default SamplePage;
