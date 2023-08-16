@@ -34,6 +34,7 @@ import HomeSetup from "@pages/samplePages/HomeSetup";
 import CommonLogin from "@pages/samplePages/CommonLogin";
 import CommonAccMngList from "@pages/samplePages/CommonAccMngList";
 import WithdrawRegister from "@pages/samplePages/WithdrawRegister";
+import SampleMain from "@pages/samplePages/SampleMain";
 
 const RootRoute = () => {
   const rootRoute = [
@@ -158,6 +159,11 @@ const RootRoute = () => {
       path: "/WithdrawRegister/*",
       element: <WithdrawRegister />,
     },
+    {
+      path: "/SampleMain/*",
+      element: <SampleMain />,
+    },
+
     {
       path: "*",
       element: <NotFound />,

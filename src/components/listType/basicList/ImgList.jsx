@@ -6,7 +6,10 @@ const ImgList = ({
   imgClass = "",
 }) => {
   const list = children.map((data, index) => (
+    <div>
     <img key={data.key || `imgList_${index}`} className={imgClass} alt={data.alt} src={data.path} onClick={data.onClick}/>
+    {data.addInfo}
+    </div>
   ));
   return (
     <>
