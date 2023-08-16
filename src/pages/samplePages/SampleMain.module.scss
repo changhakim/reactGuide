@@ -1,28 +1,45 @@
 .account_box{
+    margin:20px;
     padding:20px;
-    background-color: #fff;
+    background-color: #f5f9f7;
     border-radius: 10px;    
-    border:1px solid #ddd;
+    border:1px solid #f5f9f7;
 }
-.account_box button{
-    background-color: #fff;
+.account_hide_btn{
+    background-color: #f7e7e7b8;
+    color: grey;
     border:none;
+    margin-left: 5px;
 }
 .account_box p{
-    margin:0
+    margin:0;
+}
+.inner_title{
+    font-weight:bold;
+}
+.inner_sub_title{
+    font-size: 14px;
+    font-weight:bold;
+    color: #929696;
 }
 .txt_price{
-    margin-top:10px;text-align:center;
+    text-align:center;
+    padding: 20px;
+}
+.txt_price span{
+    font-weight:bold;
+    font-size: 25px;
 }
 .txt_price button{
     background-color:#ddd;
     border-radius:10px;
     border:1px solid #ddd;
-    color:#333;
+    color:#8a8989;
     font-size:14px;
     font-weight:bold;
 }
 .btn_wrap{
+    background-color: #f5f9f7;
     margin-top:20px;
     display:table;
     width:100%;
@@ -38,5 +55,35 @@
 .btn_wrap>span>button{
     font-size:14px;
     font-weight: bold;
-    color:darkslategray;
+    background-color: #f5f9f7;
+    border: 1px solid #f5f9f7;
+    color:#387c57;
+}
+.imgArea {
+    background-color: #f5f9f7;
+    margin-top:20px;
+    overflow: hidden;
+    padding: 0 18px 0 18px;
+}
+.imgArea>div{
+    float:left;
+    width:33.3%;
+    text-align: center;
+    font-weight: bold;
+    color: #3e3f3e;
+}
+.icoImg {
+    border-radius: 18px;
+    display: block;
+    height: 60px;
+    width: 60px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #f7e7e7b8;
+}
+.slide_wrap {
+    margin: 20px 20px 40px 20px;
+}
+.slide_wrap img{
+    width:100%
 }
