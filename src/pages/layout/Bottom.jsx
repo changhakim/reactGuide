@@ -1,12 +1,12 @@
 function Bottom() {
   const bottomStyle = {
-    //임시주석
-    //height: "30px",
-    height: "0px",
+    height: "30px",
     position: "absolute",
     bottom: "0",
     width: "100%",
-    display: "flex",
+    //임시주석
+    //display: "flex",
+    display: "none",
     justifyContent: "center",
     backgroundColor: "rgb(220, 220, 220)",
   };
