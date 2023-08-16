@@ -40,6 +40,7 @@
 .contentWrap {
 	margin-top: 26px;
 	flex:1;
+	font-weight: bold;
 }
 
 .contentWrap span{
@@ -91,9 +92,10 @@
 	border:none;
 	font-weight: 700;
 	background-color: #3348ea;
-	border-radius: 64px;
+	border-radius: 0px;
 	color: white;
 	margin-bottom: 40px;
+	text-align: center;
 	cursor:pointer;
 }
 
@@ -133,23 +135,17 @@ ul.mylist li input {
 	margin-left: 275px;
 }
 
+ul.mylist li span {
+	margin-left: 330px;
+}
+
+ul.mylist li span.mylistSub2 {
+	margin-left: 377px;
+}
   
 ul.mylist li:hoverr {
     background-color: #f6f6f6;
 }
-
-.bottomButton {
-	width: 50%;
-	border: "none";
-	font-weight: 700;
-	background-color: "#6c757d";
-	color: "white";
-	margin-Bottom: 40px;
-	margin-Top: 40px;
-	margin-Left: 150px;
-	cursor: "pointer";
-}
-
 
 .tableContsPart { padding-top: 36px; }
 .tableContsPart { padding-top: 0; }
