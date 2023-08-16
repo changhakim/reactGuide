@@ -1,6 +1,8 @@
 function Bottom() {
   const bottomStyle = {
-    height: "30px",
+    //임시주석
+    //height: "30px",
+    height: "0px",
     position: "absolute",
     bottom: "0",
     width: "100%",
