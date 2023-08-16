@@ -99,7 +99,7 @@ const SampleMain = () => {
       ),
     },
     {
-      key: "sampleMainKey3",
+      key: "sampleMainKey4",
       alt: "pills",
       path: "img/pills.png",
       onClick: () => {
@@ -114,7 +114,7 @@ const SampleMain = () => {
       ),
     },
     {
-      key: "sampleMainKey3",
+      key: "sampleMainKey5",
       alt: "medical-check",
       path: "img/medical-check.png",
       onClick: () => {
@@ -129,7 +129,7 @@ const SampleMain = () => {
       ),
     },
     {
-      key: "sampleMainKey3",
+      key: "sampleMainKey6",
       alt: "gear",
       path: "img/gear.png",
       onClick: () => {
@@ -197,9 +197,8 @@ const SampleMain = () => {
       </div>
       <Slider {...bannerSettings} className={sampleMainStyle.slide_wrap}>
         {testBannerInfo.map((info, index) => (
-          <div>
+          <div key={info.key}>
             <img
-              key={info.key}
               alt={info.alt}
               src={info.path}
               onClick={info.onClick}
