@@ -4,8 +4,7 @@ import RadioStyle from './Radio.module.scss';
 const Radio = ({children, value, name,defaultChecked,disabled,onClickRadioHandler})=>{
     
     const onClickRadio =(e)=>{
-        console.log(e.target.value);
-   
+       
         onClickRadioHandler(e.target.value);
     }
     return( 

@@ -108,6 +108,16 @@ function SamplePage() {
             Button08
           </Button>
         </ButtonGroup>
+        
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("InquiryOption");
+            }}
+          >
+            Button98
+          </Button>
+        </ButtonGroup>
 
         <ButtonGroup className="me-2">
           <Button
@@ -118,6 +128,7 @@ function SamplePage() {
             Button09
           </Button>
         </ButtonGroup>
+        
       </ButtonToolbar>
     </>
   );

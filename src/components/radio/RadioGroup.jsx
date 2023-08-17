@@ -5,7 +5,7 @@ const RadioGroup = ({label, children})=>{
 
         <fieldset className={RadioStyle["Radio-fieldset"]}>
             
-            <legend>{label}</legend>
+            <legend className={RadioStyle["legend"]}>{label}</legend>
             {children}
         </fieldset>
     )

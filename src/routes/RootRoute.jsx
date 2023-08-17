@@ -34,7 +34,10 @@ import HomeSetup from "@pages/samplePages/HomeSetup";
 import CommonLogin from "@pages/samplePages/CommonLogin";
 import CommonAccMngList from "@pages/samplePages/CommonAccMngList";
 import WithdrawRegister from "@pages/samplePages/WithdrawRegister";
+
 import SampleMain from "@pages/samplePages/SampleMain";
+import InquiryOption from "@pages/samplePages/InquiryOption";
+
 
 const RootRoute = () => {
   const rootRoute = [
@@ -163,7 +166,10 @@ const RootRoute = () => {
       path: "/SampleMain/*",
       element: <SampleMain />,
     },
-
+    {
+      path: "/InquiryOption/*",
+      element: <InquiryOption />,
+    },
     {
       path: "*",
       element: <NotFound />,

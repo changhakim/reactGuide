@@ -7,18 +7,25 @@
 .Radio-label {
     padding:  10px;   
     font-size: 15px;
-    
-    
+    background-color: #e2dfdf;
+    border-radius: 10%;
+    margin-right: 5px;
 }
 
 .Radio-fieldset { 
     border:  1px;
-    padding: 20px;
-    background-color: beige;
-    font-size: 10px;
+    padding: 10px;
+    font-size: 11px;
     text-align: left;;
 }
 
 .Radio-input {
     margin-right: 10px;
+    
 }
+
+.legend {
+    font-size: 15px;
+    font-weight: bold;
+}
+
