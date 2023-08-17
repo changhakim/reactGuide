@@ -13,11 +13,11 @@ const SamplePageRadio =()=>{
     return ( 
 
         <RadioGroup label="marketing">
-            <Radio name="marketing" value="email" defaultedChecked
+            <Radio name="marketing" value="email" 
              onClickRadioHandler={onClickRadioHandler}>
                 Email
             </Radio>
-            <Radio name="marketing" value="phone"
+            <Radio name="marketing" value="phone" checked="checked"
             onClickRadioHandler={onClickRadioHandler}>
                 Phone
             </Radio>

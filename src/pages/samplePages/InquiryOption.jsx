@@ -25,15 +25,7 @@ const InquiryOption =()=> {
     const onClickRadioHandler = ()=>{ 
 
     }
-
-    // useEffect(()=> { 
-
-    // const aa = document.getElementsByClassName("btn btn-primary")[0];
-    // document.getElementsByClassName("calendar-wrap")[0].removeChild(aa);
-    // let new_pTag = document.createElement('Calendar');
-    // document.getElementsByClassName("calendar-wrap")[0].appendChild(new_pTag);
-
-    // },[]);
+    
     return(
         <>
         <Button className={Style["inquiryBtn"]}
@@ -54,11 +46,11 @@ const InquiryOption =()=> {
        >
         <div className={Style["modal"]}> 
         <RadioGroup label="조회기간" className={Style["radioGroup-label"]}>
-            <Radio name="inqPeriod" value="1Month" defaultedChecked
+            <Radio name="inqPeriod" value="1Month" 
             onClickRadioHandler={onClickRadioHandler}>
                 1개월
             </Radio>
-            <Radio name="inqPeriod" value="3Month" 
+            <Radio name="inqPeriod" value="3Month" checked="checked"
             onClickRadioHandler={onClickRadioHandler}>
                 3개월
             </Radio>
@@ -92,7 +84,7 @@ const InquiryOption =()=> {
         </div>
        
           <RadioGroup label="거래구분">
-            <Radio name="transation" value="all" defaultedChecked
+            <Radio name="transation" value="all" checked="checked"
             onClickRadioHandler={onClickRadioHandler}>
                 전체
             </Radio>
@@ -104,9 +96,9 @@ const InquiryOption =()=> {
             onClickRadioHandler={onClickRadioHandler}>
                 출금
             </Radio>
-        </RadioGroup>
+        </RadioGroup>``
         <RadioGroup label="정렬순서">
-            <Radio name="sortOrder" value="latest" defaultedChecked
+            <Radio name="sortOrder" value="latest" checked="checked"
             onClickRadioHandler={onClickRadioHandler}>
                 최신순
             </Radio>

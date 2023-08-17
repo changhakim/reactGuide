@@ -1,7 +1,7 @@
 
 import RadioStyle from './Radio.module.scss';
 
-const Radio = ({children, value, name,defaultChecked,disabled,onClickRadioHandler})=>{
+const Radio = ({children, value, name,checked,disabled,onClickRadioHandler})=>{
     
     const onClickRadio =(e)=>{
        
@@ -15,7 +15,7 @@ const Radio = ({children, value, name,defaultChecked,disabled,onClickRadioHandle
                 type = "radio"
                 value ={value}
                 name = {name}
-                defaultChecked = {defaultChecked}
+                defaultChecked = {checked}
                 disabled  = {disabled}
                 onClick={(e)=>{onClickRadio(e)}}
             />
