@@ -28,6 +28,9 @@ function MyAssetDiagnose() {
 
   return (
     <div className={Styles.page}>
+      <div className={Styles.header}>
+        <h1>내 자산 현황</h1>
+      </div>
       <div className={Styles.titleWrap}>
         <span>{name}님의</span>
         <br />

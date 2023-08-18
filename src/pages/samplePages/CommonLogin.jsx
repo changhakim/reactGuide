@@ -84,6 +84,9 @@ function CommonLogin() {
 
   return (
     <div className={Styles.page}>
+      <div className={Styles.header}>
+        <h1>로그인하기</h1>
+      </div>
       <div className={Styles.titleWrap}>
         <span>이메일과 비밀번호를</span>
         <br />

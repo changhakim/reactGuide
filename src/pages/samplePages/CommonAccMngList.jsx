@@ -123,6 +123,9 @@ function CommonAccMngList() {
 
   return (
     <div className={Styles.page}>
+      <div className={Styles.header}>
+        <h1>출금계좌 관리</h1>
+      </div>
       <Tab
         tabData={tabData}
         activeTab={activeTab}
