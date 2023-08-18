@@ -76,9 +76,8 @@ function SamplePage() {
           >
             Button05
           </Button>
-
         </ButtonGroup>
-        
+
         <ButtonGroup className="me-2">
           <Button
             onClick={() => {
@@ -92,7 +91,7 @@ function SamplePage() {
         <ButtonGroup className="me-2">
           <Button
             onClick={() => {
-              movePage("");
+              movePage("SampleEvent");
             }}
           >
             Button07
@@ -108,7 +107,7 @@ function SamplePage() {
             Button08
           </Button>
         </ButtonGroup>
-        
+
         <ButtonGroup className="me-2">
           <Button
             onClick={() => {
@@ -128,7 +127,6 @@ function SamplePage() {
             Button09
           </Button>
         </ButtonGroup>
-        
       </ButtonToolbar>
     </>
   );
