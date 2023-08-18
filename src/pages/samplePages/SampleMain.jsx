@@ -4,11 +4,12 @@ import "slick-carousel/slick/slick-theme.css";
 import { ReactComponent as ArrowLeft } from "@styles/assets/images/icon/icon-slider-arrow-left.svg";
 import { ReactComponent as ArrowRight } from "@styles/assets/images/icon/icon-slider-arrow-right.svg";
 import { ImgList } from "@components";
-// eslint-disable-next-line no-unused-vars
-import sampleMainStyle from "./SampleMain.module.scss"; //TODO
+import sampleMainStyle from "./SampleMain.module.scss";
 
 const SampleMain = () => {
   const sliderSettings = {
+    arrows: false,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -16,6 +17,7 @@ const SampleMain = () => {
   };
 
   const bannerSettings = {
+    arrows: true,
     dots: true,
     infinite: true,
     speed: 500,
@@ -62,9 +64,7 @@ const SampleMain = () => {
       },
       addInfo: (
         <>
-
           전체계좌
-
         </>
       ),
     },
@@ -77,9 +77,7 @@ const SampleMain = () => {
       },
       addInfo: (
         <>
-
           오픈뱅킹
-
         </>
       ),
     },
@@ -92,9 +90,7 @@ const SampleMain = () => {
       },
       addInfo: (
         <>
-
           이벤트
-
         </>
       ),
     },
@@ -107,9 +103,7 @@ const SampleMain = () => {
       },
       addInfo: (
         <>
-
           대출케어
-
         </>
       ),
     },
@@ -122,9 +116,7 @@ const SampleMain = () => {
       },
       addInfo: (
         <>
-
           아이웰스
-
         </>
       ),
     },
@@ -137,9 +129,7 @@ const SampleMain = () => {
       },
       addInfo: (
         <>
-
           맞춤설정
-
         </>
       ),
     },
