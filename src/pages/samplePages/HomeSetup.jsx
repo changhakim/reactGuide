@@ -25,7 +25,12 @@ function HomeSetup() {
           <tbody>
             <tr>
               <th scope="row">홈화면</th>
-              <td onClick={() => moveFuntion()}>기본&gt;</td>
+              <td onClick={() => moveFuntion()}>
+                <span style={{ fontWeight: "bold", color: "#2F855A" }}>
+                  기본
+                </span>
+                &nbsp;&gt;
+              </td>
             </tr>
             <tr>
               <th scope="row">큰글씨</th>
@@ -72,11 +77,21 @@ function HomeSetup() {
                   ❓
                 </Tooltip>{" "}
               </th>
-              <td onClick={() => moveFuntion()}>기본&gt;</td>
+              <td onClick={() => moveFuntion()}>
+                <span style={{ fontWeight: "bold", color: "#2F855A" }}>
+                  기본
+                </span>
+                &nbsp;&gt;
+              </td>
             </tr>
             <tr>
               <th scope="row">기본 로그인방법</th>
-              <td onClick={() => moveFuntion()}>간편비밀번호인증&gt;</td>
+              <td onClick={() => moveFuntion()}>
+                <span style={{ fontWeight: "bold", color: "#2F855A" }}>
+                  간편비밀번호인증
+                </span>
+                &nbsp;&gt;
+              </td>
             </tr>
             <tr>
               <th scope="row">인증/보안</th>
