@@ -123,16 +123,6 @@ function SamplePage() {
               movePage("InquiryOption");
             }}
           >
-            Button98
-          </Button>
-        </ButtonGroup>
-
-        <ButtonGroup className="me-2">
-          <Button
-            onClick={() => {
-              movePage("");
-            }}
-          >
             Button09
           </Button>
         </ButtonGroup>
