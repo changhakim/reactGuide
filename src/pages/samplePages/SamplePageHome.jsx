@@ -94,7 +94,16 @@ function SamplePage() {
               movePage("SampleEvent");
             }}
           >
-            Button07
+            Button07-1
+          </Button>
+        </ButtonGroup>
+        <ButtonGroup className="me-2">
+          <Button
+            onClick={() => {
+              movePage("SampleEventQuiz");
+            }}
+          >
+            Button07-2
           </Button>
         </ButtonGroup>
 
