@@ -1,281 +1,301 @@
-.page {
-	position: inherit;
-	top:50px;
-	bottom:0;
-	width:100%;
-	max-width: 500px;
-	padding: 0 20px;
-	overflow-y: scroll;
+	.page {
+		position: inherit;
+		top:50px;
+		bottom:0;
+		width:100%;
+		max-width: 500px;
+		padding: 0 20px;
+		overflow-y: scroll;
 
-	left:50%;
-	transform:translate(-50%,0);
+		left:50%;
+		transform:translate(-50%,0);
 
-	background-color: #F7F7F7;
+		background-color: #F7F7F7;
 
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-}
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
 
-.titleWrap {
-	margin-top: 10px;
-	font-size: 26px;
-	font-weight: 700;
-	color:#262626;
-}
+	.titleWrap {
+		margin-top: 10px;
+		font-size: 26px;
+		font-weight: 700;
+		color:#262626;
+	}
 
-.inFloat {
-	float: right;
-	margin-top: 30px;
-}
+	.inFloat {
+		float: right;
+		margin-top: 30px;
+	}
 
-.titleWrap span{
-	display: inline;
-	background-size: 100% 20%;
-	background-repeat: no-repeat;
-	background-position: center bottom;
+	.titleWrap span{
+		display: inline;
+		background-size: 100% 20%;
+		background-repeat: no-repeat;
+		background-position: center bottom;
 
-}
+	}
 
-.contentWrap {
-	margin-top: 26px;
-	flex:1;
-	font-weight: bold;
-}
+	.contentWrap {
+		margin-top: 26px;
+		flex:1;
+		font-weight: bold;
+	}
 
-.contentWrap span{
-	font-size:small;
-	color : #8FBC8F;
-}
+	.contentWrap span{
+		font-size:small;
+		color : #8FBC8F;
+	}
 
-.inputTitle {
-	font-size: 12px;
-	font-weight: 600;
-	color:#262626;
-}
+	.inputTitle {
+		font-size: 12px;
+		font-weight: 600;
+		color:#262626;
+	}
 
-.inputWrap {
-	display: flex;
-	border-radius: 8px;
-	padding: 16px;
-	margin-top: 8px;
-	background-color: white;
-	border: 1px solid #e2e0e0;
-}
+	.inputWrap {
+		display: flex;
+		border-radius: 8px;
+		padding: 16px;
+		margin-top: 8px;
+		background-color: white;
+		border: 1px solid #e2e0e0;
+	}
 
-.inputWrap:focus-within {
-	border: 1px solid #3348ea;
-}
+	.inputWrap:focus-within {
+		border: 1px solid #3348ea;
+	}
 
-.input {
-	width: 100%;
-	outline: none;
-	border:none;
-	height: 17px;
-	font-size: 14px;
-	font-weight: 400;
-}
+	.input {
+		width: 100%;
+		outline: none;
+		border:none;
+		height: 17px;
+		font-size: 14px;
+		font-weight: 400;
+	}
 
-.input::placeholder {
-	color:#dadada;
-}
+	.input::placeholder {
+		color:#dadada;
+	}
 
-.errorMessagWrap {
-	margin-top: 8px;
-	color:#ef0000;
-	font-size: 12px;
-}
+	.errorMessagWrap {
+		margin-top: 8px;
+		color:#ef0000;
+		font-size: 12px;
+	}
 
-.bottomButton {
-	width: 100%;
-	height: 48px;
-	border:none;
-	font-weight: 700;
-	background-color: #3348ea;
-	border-radius: 0px;
-	color: white;
-	margin-bottom: 40px;
-	text-align: center;
-	cursor:pointer;
-}
+	.bottomButton {
+		width: 100%;
+		height: 48px;
+		border:none;
+		font-weight: 700;
+		background-color: #3348ea;
+		border-radius: 0px;
+		color: white;
+		margin-bottom: 40px;
+		text-align: center;
+		cursor:pointer;
+	}
 
-.bottomButton:disabled {
-	background-color: #dadada;
-	color:white;
-}
+	.bottomButton:disabled {
+		background-color: #dadada;
+		color:white;
+	}
 
-ul.mylist{
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-  
-    max-width: 900px;
-    width: 100%;
-}
-  
-ul.mylist li {
-	display: block;
-    padding: 10px;
-    margin-bottom: 5px;
-    border: 1px solid #efefef;
-    font-size: 12px;
-    cursor: pointer;
-}
+	ul.mylist{
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
 
+		max-width: 900px;
+		width: 100%;
+	}
 
-ul.mylist li {
-    -webkit-transition: background-color 0.3s linear;
-    -moz-transition: background-color 0.3s linear;
-    -ms-transition: background-color 0.3s linear;
-    -o-transition: background-color 0.3s linear;
-    transition: background-color 0.3s linear;
-}
-
-ul.mylist li input {
-	margin-left: 275px;
-}
-
-ul.mylist li span {
-	margin-left: 330px;
-}
-
-ul.mylist li span.mylistSub2 {
-	margin-left: 377px;
-}
-  
-ul.mylist li:hoverr {
-    background-color: #f6f6f6;
-}
-
-.tableContsPart { padding-top: 36px; }
-.tableContsPart { padding-top: 0; }
-.tableContsPart { margin-top: 60px; }
-.tableContsPart:first-child { margin-top: 0; }
-.tableContsPart .bullet_pack { margin-top: 26px; }
-.tableContsPart .bullet_pack { margin-top: 56px; }
-.tableContsPart .bullet_pack .ebbullet_title { font-size: 14px; }
-.tableContsPart .bullet_pack .ebbullet_title { font-size: 18px; }
-.tableContsPart .bullet_pack .ebullet_circle li { padding-bottom: 14px; }
-.tableContsPart .bullet_pack .ebullet_circle li { padding-bottom: 14px; }
-.tableContsPart .bullet_pack .ebullet_circle li .ebbullet_info { font-size: 14px; color: #707070; }
-.tableContsPart .bullet_pack .ebullet_circle li .ebbullet_info { font-size: 15px; color: #707070; }
-.tableContsPart > .ebullet_circle { padding-top: 16px; }
-.tableContsPart > .ebullet_circle { padding-top: 16px; }
-.tableContsPart > .ebtitleNormal { padding-bottom: 20px; }
-.tableContsPart > .checkbox_pack { margin-top: 20px; }
-.tableContsPart + .term_part { padding-top: 60px; }
-.tableContsPart +.subtitle { margin-top: 60px; }
-
-.tableContsPart .tableViewPack .ebtable tbody tr { border-bottom: none; }
-.tableContsPart .tableViewPack .ebtable tbody tr:last-of-type { border-bottom: 1px solid #f0f0f0; }
-.tableContsPart .tableViewPack .ebtable tbody tr th { text-align: left; }
-.tableContsPart .tableViewPack .ebtable tbody tr td > p { padding-top: 5px; }
-.tableContsPart .tableViewPack .ebtable tbody tr td > p > span.color05 { padding-top: 5px; }
-.tableContsPart .tableViewPack .ebtable tbody tr:first-of-type th,
-.tableContsPart .tableViewPack .ebtable tbody tr:first-of-type td { padding-top: 37px; }
-.tableContsPart .tableViewPack .ebtable tbody tr:last-of-type th,
-.tableContsPart .tableViewPack .ebtable tbody tr:last-of-type td { padding-bottom: 36px; }
-.tableContsPart .tableViewPack .ebtable tbody tr th,
-.tableContsPart .tableViewPack .ebtable tbody tr td { position: relative; padding: 20px; vertical-align: middle; text-align: left; }
-.tableContsPart .tableViewPack > .ebtable > tbody > tr > td .chkstatus { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); }
-.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr { border-bottom: 1px solid #f0f0f0; }
-.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr > td { padding: 28px 20px 25px;  text-align: right; }
-.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr > th { padding: 28px 20px 25px; }
-.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:first-child > th { padding-top: 28px; }
-.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:first-child > td { padding-top: 28px; }
-.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:last-child > th { padding-bottom: 28px; }
-.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:last-child > td { padding-bottom: 28px; }
-.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:last-child th,
-.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:last-child td { background-color: #f6f9fe; }
- 
-.tableContsPart .tableViewPack.ty_01 .ebtable { border-top: none; }
-.tableContsPart .tableViewPack.ty_01 .ebtable tbody > tr { border-bottom: 1px solid #f0f0f0; }
-.tableContsPart .tableViewPack.ty_01 .ebtable tbody > tr:last-child { border-bottom: none; }
-.tableContsPart .tableViewPack.ty_01 .ebtable tbody > tr > th { padding: 35px 35px 33px; padding-left: 0; }
-.tableContsPart .tableViewPack.ty_01 .ebtable tbody > tr > td { padding: 35px; padding-left: 0; }
-.tableContsPart .tableViewPack.ty_01 .ebtable tbody > tr > th .title { font-size: 18px; }
-
-.tableContsPart .table_list_pack { border-top: 1px solid #303030; }
-.tableContsPart .table_list_pack .table_x_scroll .ebtable thead tr th { padding: 19px 9px; white-space: nowrap; }
-.tableContsPart .table_list_pack .ebtable { border-top: none; }
-.tableContsPart .table_list_pack .ebtable tbody tr th { font-weight: normal; }
-.tableContsPart .table_list_pack .ebtable tfoot tr th { padding: 22px 9px; border-right: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0; background-color: #f4f9ff; }
-.tableContsPart .table_list_pack .ebtable tfoot tr th:first-child { border-left: 1px solid #f0f0f0;}
-.tableContsPart .table_list_pack .ebtable tfoot tr td { padding: 22px 9px; border-right: 1px solid #f0f0f0; background-color: #f4f9ff; }
-.tableContsPart .table_list_pack .ebtable > tbody > tr > td .ttl,
-.tableContsPart .table_list_pack .ebtable > tbody > tr > td .desc { display: inline-block; padding-right: 30px; vertical-align: top; }
-.tableContsPart .table_list_pack.ty_01 .ebtable tbody tr th { font-weight: normal; }
-.tableContsPart .table_list_pack.ty_01 .ebtable tbody tr:last-child > * { background-color: #f4f9ff; }
-
-.tableContsPart .content_pack > ul { display: flex; display: -ms-flexbox; display: -moz-box; display: -webkit-flex; padding: 43px 70px 43px 0; }
-.tableContsPart .content_pack > ul > li { flex: 1; }
-.tableContsPart .content_pack > ul > li + li { padding-top: 0; }
-.tableContsPart .content_pack > ul > li > dl dd { padding-left: 20px; }
-.tableContsPart .content_pack > ul > li > dl dd .subtext { font-size: 16px; color: #707070; }
-.tableContsPart .content_pack > ul > li > dl dd .title + .subtext { margin-top: 13px; }
-.tableContsPart .contsTitlePack > .ebtitleNormal { display: inline-block; }
-.tableContsPart .contsTitlePack .ebtitleNormal { padding-bottom: 13px; font-size: 24px; }
-.tableContsPart .contsTitlePack > .ebtitleNormal { padding-bottom: 0; }
+	ul.mylist li {
+		display: block;
+		padding: 10px;
+		margin-bottom: 5px;
+		border: 1px solid #efefef;
+		font-size: 12px;
+		cursor: pointer;
+	}
 
 
+	ul.mylist li {
+		-webkit-transition: background-color 0.3s linear;
+		-moz-transition: background-color 0.3s linear;
+		-ms-transition: background-color 0.3s linear;
+		-o-transition: background-color 0.3s linear;
+		transition: background-color 0.3s linear;
+	}
+
+	ul.mylist li input {
+		margin-left: 275px;
+	}
+
+	ul.mylist li span {
+		margin-left: 330px;
+	}
+
+	ul.mylist li span.mylistSub2 {
+		margin-left: 377px;
+	}
+
+	ul.mylist li:hoverr {
+		background-color: #f6f6f6;
+	}
+
+	.tableContsPart { padding-top: 36px; }
+	.tableContsPart { padding-top: 0; }
+	.tableContsPart { margin-top: 60px; }
+	.tableContsPart:first-child { margin-top: 0; }
+	.tableContsPart .bullet_pack { margin-top: 26px; }
+	.tableContsPart .bullet_pack { margin-top: 56px; }
+	.tableContsPart .bullet_pack .ebbullet_title { font-size: 14px; }
+	.tableContsPart .bullet_pack .ebbullet_title { font-size: 18px; }
+	.tableContsPart .bullet_pack .ebullet_circle li { padding-bottom: 14px; }
+	.tableContsPart .bullet_pack .ebullet_circle li { padding-bottom: 14px; }
+	.tableContsPart .bullet_pack .ebullet_circle li .ebbullet_info { font-size: 14px; color: #707070; }
+	.tableContsPart .bullet_pack .ebullet_circle li .ebbullet_info { font-size: 15px; color: #707070; }
+	.tableContsPart > .ebullet_circle { padding-top: 16px; }
+	.tableContsPart > .ebullet_circle { padding-top: 16px; }
+	.tableContsPart > .ebtitleNormal { padding-bottom: 20px; }
+	.tableContsPart > .checkbox_pack { margin-top: 20px; }
+	.tableContsPart + .term_part { padding-top: 60px; }
+	.tableContsPart +.subtitle { margin-top: 60px; }
+
+	.tableContsPart .tableViewPack .ebtable tbody tr { border-bottom: none; }
+	.tableContsPart .tableViewPack .ebtable tbody tr:last-of-type { border-bottom: 1px solid #f0f0f0; }
+	.tableContsPart .tableViewPack .ebtable tbody tr th { text-align: left; }
+	.tableContsPart .tableViewPack .ebtable tbody tr td > p { padding-top: 5px; }
+	.tableContsPart .tableViewPack .ebtable tbody tr td > p > span.color05 { padding-top: 5px; }
+	.tableContsPart .tableViewPack .ebtable tbody tr:first-of-type th,
+	.tableContsPart .tableViewPack .ebtable tbody tr:first-of-type td { padding-top: 37px; }
+	.tableContsPart .tableViewPack .ebtable tbody tr:last-of-type th,
+	.tableContsPart .tableViewPack .ebtable tbody tr:last-of-type td { padding-bottom: 36px; }
+	.tableContsPart .tableViewPack .ebtable tbody tr th,
+	.tableContsPart .tableViewPack .ebtable tbody tr td { position: relative; padding: 20px; vertical-align: middle; text-align: left; }
+	.tableContsPart .tableViewPack > .ebtable > tbody > tr > td .chkstatus { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); }
+	.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr { border-bottom: 1px solid #f0f0f0; }
+	.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr > td { padding: 28px 20px 25px;	text-align: right; }
+	.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr > th { padding: 28px 20px 25px; }
+	.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:first-child > th { padding-top: 28px; }
+	.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:first-child > td { padding-top: 28px; }
+	.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:last-child > th { padding-bottom: 28px; }
+	.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:last-child > td { padding-bottom: 28px; }
+	.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:last-child th,
+	.tableContsPart .tableViewPack.ty_line > .ebtable > tbody > tr:last-child td { background-color: #f6f9fe; }
+
+	.tableContsPart .tableViewPack.ty_01 .ebtable { border-top: none; }
+	.tableContsPart .tableViewPack.ty_01 .ebtable tbody > tr { border-bottom: 1px solid #f0f0f0; }
+	.tableContsPart .tableViewPack.ty_01 .ebtable tbody > tr:last-child { border-bottom: none; }
+	.tableContsPart .tableViewPack.ty_01 .ebtable tbody > tr > th { padding: 35px 35px 33px; padding-left: 0; }
+	.tableContsPart .tableViewPack.ty_01 .ebtable tbody > tr > td { padding: 35px; padding-left: 0; }
+	.tableContsPart .tableViewPack.ty_01 .ebtable tbody > tr > th .title { font-size: 18px; }
+
+	.tableContsPart .table_list_pack { border-top: 1px solid #303030; }
+	.tableContsPart .table_list_pack .table_x_scroll .ebtable thead tr th { padding: 19px 9px; white-space: nowrap; }
+	.tableContsPart .table_list_pack .ebtable { border-top: none; }
+	.tableContsPart .table_list_pack .ebtable tbody tr th { font-weight: normal; }
+	.tableContsPart .table_list_pack .ebtable tfoot tr th { padding: 22px 9px; border-right: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0; background-color: #f4f9ff; }
+	.tableContsPart .table_list_pack .ebtable tfoot tr th:first-child { border-left: 1px solid #f0f0f0;}
+	.tableContsPart .table_list_pack .ebtable tfoot tr td { padding: 22px 9px; border-right: 1px solid #f0f0f0; background-color: #f4f9ff; }
+	.tableContsPart .table_list_pack .ebtable > tbody > tr > td .ttl,
+	.tableContsPart .table_list_pack .ebtable > tbody > tr > td .desc { display: inline-block; padding-right: 30px; vertical-align: top; }
+	.tableContsPart .table_list_pack.ty_01 .ebtable tbody tr th { font-weight: normal; }
+	.tableContsPart .table_list_pack.ty_01 .ebtable tbody tr:last-child > * { background-color: #f4f9ff; }
+
+	.tableContsPart .content_pack > ul { display: flex; display: -ms-flexbox; display: -moz-box; display: -webkit-flex; padding: 43px 70px 43px 0; }
+	.tableContsPart .content_pack > ul > li { flex: 1; }
+	.tableContsPart .content_pack > ul > li + li { padding-top: 0; }
+	.tableContsPart .content_pack > ul > li > dl dd { padding-left: 20px; }
+	.tableContsPart .content_pack > ul > li > dl dd .subtext { font-size: 16px; color: #707070; }
+	.tableContsPart .content_pack > ul > li > dl dd .title + .subtext { margin-top: 13px; }
+	.tableContsPart .contsTitlePack > .ebtitleNormal { display: inline-block; }
+	.tableContsPart .contsTitlePack .ebtitleNormal { padding-bottom: 13px; font-size: 24px; }
+	.tableContsPart .contsTitlePack > .ebtitleNormal { padding-bottom: 0; }
+
+	.setList {
+		width: 500px;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}
+
+	.setList h1 {
+		font-size: 15px;
+		text-align: left;
+		padding: 10px;
+		border-radius: 0px;
+		font-weight: bold;
+	}
+
+	.setList ul {
+		width: 100%;
+	}
+
+	.setList ul li {
+		line-height: 30px; /*li 세로 간격*/
+		padding-left: 20px;
+		list-style : none;
+		padding-left : 0px;
+	}
 
 
-.setList {
-    width: 500px;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
+	.table01_area .table01.row tbody th{background:#fafafa; border-right:1px solid #e5e5e5; border-bottom:1px solid #e5e5e5}
 
-.setList h1 {
-    font-size: 15px;
-    text-align: left;
-    padding: 10px;
-    border-radius: 0px;
-	font-weight: bold;
-}
+	/* 테이블_리스트 */
+	.table01_area{border-top:1px solid #fafafa}
+	.table01{width:100%}
+	.table01 thead th{background:#fafafa; border-bottom:1px solid #eee; padding:18px 0; text-align:center; font-size:16px; color:#333}
+	.table01 tbody td{padding:18px 10px; float: right; font-size:16px; color:#555; border-bottom:1px solid #eee; text-align:center;}
+	.table01 tfoot td{padding:18px 10px; font-size:16px; color:#555; border-bottom:1px solid #eee; text-align:center;}
 
-.setList ul {
-    width: 100%;
-}
+	/* 테이블 _ 뷰*/
+	.view_area{border-top:1px solid #aaa; border-bottom:1px solid #aaa}
+	.table01_view thead th{background:#fafafa; padding:20px 0; border-bottom:1px solid #e5e5e5; font-size:16px; color:#333; }
+	.table_view_txt{padding:45px 25px; font-size:16px; color:#555}
+	.mat20{margin-top:20px}
 
-.setList ul li {
-    line-height: 30px; /*li 세로 간격*/
-    padding-left: 20px;
-	list-style : none;
-	padding-left : 0px;
-}
+	.header h1 {
+		text-align:center;
 
+		text-transform:uppercase;
+		font-size:26px; letter-spacing:1px;
 
-.table01_area .table01.row tbody th{background:#fafafa; border-right:1px solid #e5e5e5; border-bottom:1px solid #e5e5e5}
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
+		grid-template-rows: 16px 0;
+		grid-gap: 22px;
+	}
 
-/* 테이블_리스트 */
-.table01_area{border-top:1px solid #fafafa}
-.table01{width:100%}
-.table01 thead th{background:#fafafa; border-bottom:1px solid #eee; padding:18px 0; text-align:center; font-size:16px; color:#333}
-.table01 tbody td{padding:18px 10px; float: right; font-size:16px; color:#555; border-bottom:1px solid #eee; text-align:center;}
-.table01 tfoot td{padding:18px 10px; font-size:16px; color:#555; border-bottom:1px solid #eee; text-align:center;}
+	.header h1:after,.header h1:before {
+		content: " ";
+		display: block;
+		border-bottom: 2px solid #ccc;
+		background-color:#f8f8f8;
+	}
 
-/* 테이블 _ 뷰*/
-.view_area{border-top:1px solid #aaa; border-bottom:1px solid #aaa}
-.table01_view thead th{background:#fafafa; padding:20px 0; border-bottom:1px solid #e5e5e5; font-size:16px; color:#333; }
-.table_view_txt{padding:45px 25px; font-size:16px; color:#555}
-.mat20{margin-top:20px}
+	.modal {
+		margin-top: 20px;
+		padding: 0px;
+		background-color: #c0c0c0;
+	}
 
-.header h1 {
-	text-align:center;
-   
-	text-transform:uppercase;
-	font-size:26px; letter-spacing:1px;
-	
-	display: grid;
-	grid-template-columns: 1fr auto 1fr;
-	grid-template-rows: 16px 0;
-	grid-gap: 22px;
-  }
-  
-  .header h1:after,.header h1:before {
-	content: " ";
-	display: block;
-	border-bottom: 2px solid #ccc;
-	background-color:#f8f8f8;
-  }
+	.eventImg {
+		width: 460px;
+		height: 890px;
+	}
+
+	.eventBtn {
+		position: absolute;
+		top: 370px;
+		left : 170px;
+	}
+
+	.eventModal {
+		position: absolute;
+		top: 309px;
+		left : 42px;
+	}

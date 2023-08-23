@@ -37,6 +37,7 @@ import WithdrawRegister from "@pages/samplePages/WithdrawRegister";
 
 import SampleMain from "@pages/samplePages/SampleMain";
 import SampleEvent from "@pages/samplePages/SampleEvent";
+import SampleEventQuiz from "@pages/samplePages/SampleEventQuiz";
 import InquiryOption from "@pages/samplePages/InquiryOption";
 
 const RootRoute = () => {
@@ -173,6 +174,10 @@ const RootRoute = () => {
     {
       path: "SampleEvent",
       element: <SampleEvent />,
+    },
+    {
+      path: "SampleEventQuiz",
+      element: <SampleEventQuiz />,
     },
     {
       path: "*",
