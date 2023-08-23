@@ -19,7 +19,7 @@ function SamplePage() {
         <ButtonGroup className="me-2">
           <Button
             onClick={() => {
-              movePage("");
+              movePage("SampleAllAccList");
             }}
           >
             Button01

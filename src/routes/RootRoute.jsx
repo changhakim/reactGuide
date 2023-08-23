@@ -41,6 +41,8 @@ import SampleEventQuiz from "@pages/samplePages/SampleEventQuiz";
 import InquiryOption from "@pages/samplePages/InquiryOption";
 import SampleTransfer from "@pages/samplePages/SampleTransfer";
 
+import SampleAllAccList from "@pages/samplePages/SampleAllAccList";
+
 const RootRoute = () => {
   const rootRoute = [
     {
@@ -184,6 +186,11 @@ const RootRoute = () => {
       path: "SampleTransfer",
       element: <SampleTransfer />,
     },
+    {
+      path: "SampleAllAccList",
+      element: <SampleAllAccList />,
+    },
+
     {
       path: "*",
       element: <NotFound />,
