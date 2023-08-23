@@ -3,7 +3,12 @@
     padding:20px;
     background-color: #f5f9f7;
     border-radius: 10px;    
-    border:1px solid #f5f9f7;
+}
+.account_box1{
+    margin:20px;
+    padding:20px;
+    background-color: #f5f9f7;
+    border-radius: 10px;    
 }
 .account_hide_btn{
     background-color: #f7e7e7b8;
@@ -26,7 +31,11 @@
     text-align:center;
     padding: 20px;
 }
-.txt_price span{
+.txt_price1{
+    text-align:center;
+    padding: 3px;
+}
+.txt_price span,.txt_price1 span{
     font-weight:bold;
     font-size: 25px;
 }
@@ -86,4 +95,90 @@
 }
 .slide_wrap img{
     width:100%
+}
+.float_right {
+    float: right;
+}
+.text_center {
+    text-align: center;
+}
+.sub_title {
+    font-size: 18px;
+    font-weight:bold;
+    color: #929696;
+}
+.account_box1 {
+    margin:20px;
+    padding:20px;
+    background-color: #ecdede;
+    border-radius: 10px;    
+}
+.temp_btm_pop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    z-index: 100;
+    padding: 30px 24px;
+    border-radius: 24px 24px 0 0;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+.temp_btm_pop input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid green;
+    line-height: 30px;
+}
+.temp_btm_pop input:focus {
+    outline: none;
+}
+.temp_btm_pop_tab{
+    margin: 14px 0 10px 0;
+    padding: 0;
+}
+.temp_btm_pop_tab > div {
+    padding: 0;
+}
+.temp_btm_pop_tab ul {
+    margin-bottom: 0;
+    padding-left: 0;
+}
+.temp_btm_pop_tab ul > li {
+    height: 35px;
+    line-height: 35px;
+}
+.account_btn_list {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    background: none;
+}
+.account_btn_list span:first-child {
+    flex-shrink: 0;
+    justify-content: start;
+    display: block;
+    width: 38px;
+    height: 38px;
+    margin-right: 20px;
+    > img {width: 100%; height: auto; margin: 0; padding: 0; vertical-align: top;}
+}
+.account_btn_list span + span {
+    flex-grow: 1;
+    text-align: left;
+    p:first-child{margin: 6px 0 8px 0; color: #000; font-size: 18px; font-weight: bold;}
+    p + p {margin-bottom: 0; color: #333; font-size: 14px;}
+}
+.temp_btm_pop_tab li {
+    background-color: white;
+    color: black;
+}
+.temp_btm_pop_tab li[class*=active]{
+    font-weight:bold;
+    border-bottom: 2px solid #387c57;
+}
+.temp_btm_show {
+    bottom: 0;
 }
