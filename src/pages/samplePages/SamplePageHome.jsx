@@ -49,7 +49,7 @@ function SamplePage() {
         <ButtonGroup className="me-2">
           <Button
             onClick={() => {
-              movePage("");
+              movePage("SampleTransfer");
             }}
           >
             Button03

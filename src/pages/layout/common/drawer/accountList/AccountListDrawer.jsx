@@ -66,18 +66,19 @@ const AccountListDrawer = (props) => {
 		(list) => {
 			if (list && !list.amount?.isLoading) {
 				loadKey.current = accountList.loadKey;
-				props.onSelect(list.acctId, list.originData);
+				//props.onSelect(list.acctId, list.originData);
+				props.onSelect(list.acctId, list);
 			}
 		},
 		[props, accountList.loadKey],
 	);
-	debugger
+	//debugger
 	return (
 		<Drawer
 			key={Type.COMPONENT.ACCOUNT_LIST_DRAWER}
 			opts={{
 				drawerKey: Type.COMPONENT.ACCOUNT_LIST_DRAWER,
-				header: { title: props.title },
+				header: { title: props.title, subTitle: props.subTitle },
 				isPuller: false,
 				height: 406,
 			}}
