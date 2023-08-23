@@ -38,6 +38,7 @@ import WithdrawRegister from "@pages/samplePages/WithdrawRegister";
 import SampleMain from "@pages/samplePages/SampleMain";
 import SampleEvent from "@pages/samplePages/SampleEvent";
 import InquiryOption from "@pages/samplePages/InquiryOption";
+import SampleTransfer from "@pages/samplePages/SampleTransfer";
 
 const RootRoute = () => {
   const rootRoute = [
@@ -173,6 +174,10 @@ const RootRoute = () => {
     {
       path: "SampleEvent",
       element: <SampleEvent />,
+    },
+    {
+      path: "SampleTransfer",
+      element: <SampleTransfer />,
     },
     {
       path: "*",

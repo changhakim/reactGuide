@@ -6,6 +6,7 @@ import {  List } from '@components';
 import { NoData } from '@layouts';
 import BottomSheet from '@layouts/common/drawer/BottomSheet.module.scss';
 import CardListStyle from './CardList.module.scss';
+import stringUtil00 from "@utils/basis/stringUtil00";
 
 const cx = classNames.bind(CardListStyle);
 const AccountCardList = ({
@@ -52,10 +53,20 @@ const AccountCardList = ({
 
 					<span className={cx('inner')}>
 						<span className={cx('amount-wrap')}>
-							{prop.item.disabled && (
+							{
+							//prop.item.disabled && (
+								/*
+								TODO - 본사 내부 프로젝트 _ 계좌 조회 불가로 임시 값 만들어 사용하는 케이스에 한함. 
+										추후 해당 케이스 복원 필요
 								<span className={cx('disabled-text')}>계좌확인필요</span>
-							)}
-							{!prop.item.disabled && prop.item.amount && (
+								*/
+							//)
+							}
+							{
+							//!prop.item.disabled && prop.item.testAmount && (
+								/*
+								TODO - 본사 내부 프로젝트 _ 계좌 조회 불가로 임시 값 만들어 사용하는 케이스에 한함. 
+										추후 해당 케이스 복원 필요
 								<>
 									<span className={cx('text')}>출금가능금액</span>
 									<span className={cx('amount')}>						
@@ -64,6 +75,25 @@ const AccountCardList = ({
 										</span>
 										<span className={CardListStyle['unit']}>
 										'원'
+										</span>
+									</span>
+								</>
+								*/
+							//)
+							}
+							{prop.item.disabled && prop.item.testAmount && (
+								/*
+								TODO - 본사 내부 프로젝트 _ 계좌 조회 불가로 임시 값 만들어 사용하는 케이스에 한함. 
+										추후 해당 케이스 삭제 필요
+								*/
+								<>
+									<span className={cx('text')}>출금가능금액</span>
+									<span className={cx('amount')}>						
+										<span className={CardListStyle['num']}>
+											{stringUtil00.sbGetFormatAmt(prop.item.testAmount.balance)}
+										</span>
+										<span className={CardListStyle['unit']}>
+										원
 										</span>
 									</span>
 								</>
@@ -95,7 +125,8 @@ const AccountCardList = ({
 								item={item}
 								index={index}
 								isShowBalance={isShowBalance}
-								onSelected={item.disabled ? undefined : onSelected}
+								//onSelected={item.disabled ? undefined : onSelected}
+								onSelected={onSelected}
 							/>
 						);
 					})}
