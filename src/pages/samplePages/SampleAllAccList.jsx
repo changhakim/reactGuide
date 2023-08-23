@@ -1,14 +1,12 @@
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ReactComponent as ArrowLeft } from "@styles/assets/images/icon/icon-slider-arrow-left.svg";
 import { ReactComponent as ArrowRight } from "@styles/assets/images/icon/icon-slider-arrow-right.svg";
-import { ImgList } from "@components";
 import SampleMainStyle from "./SampleMain.module.scss";
 import Styles from "./Develop.module.scss";
-import SampleData from "./SampleData";
 import classNames from "classnames/bind";
-
+import { Tab, TabContent, TabContents } from "@components";
+import { useState, useCallback } from "react";
 const SampleAllAccList = () => {
   let accInfo = [
     {
@@ -31,6 +29,21 @@ const SampleAllAccList = () => {
     },
   ];
 
+  const [activeTab, setActiveTab] = useState(0);
+  const tabData = [
+    { title: "하나은행" },
+    { title: "다른금융" },
+    { title: "하나금융" },
+  ];
+
+  const onClickTabHandler = useCallback(
+    (idx) => {
+      //alert(idx);
+      setActiveTab(idx);
+    },
+    [activeTab]
+  );
+
   const cx = classNames.bind(SampleMainStyle);
   const sliderSettings = {
     arrows: false,
@@ -43,8 +56,20 @@ const SampleAllAccList = () => {
 
   return (
     <div className={Styles.page}>
+      <Tab
+        tabData={tabData}
+        activeTab={activeTab}
+        onClickTabHandler={onClickTabHandler}
+      />
       <span style={{ fontWeight: "bold", marginLeft: "40px" }}>입출금</span>
-      <span style={{ fontWeight: "bold", position: "absolute", left: "380px" }}>
+      <span
+        style={{
+          fontWeight: "bold",
+          position: "absolute",
+          left: "357px",
+          top: "65px",
+        }}
+      >
         15,000,000 원
       </span>
       <div {...sliderSettings} className={cx("account_box")}>
